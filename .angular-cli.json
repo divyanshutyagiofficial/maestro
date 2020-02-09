@@ -1,0 +1,38 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "version": "1.0.4",
+    "name": "@coreui/angular"
+  },
+  "apps": [{
+    "root": "src",
+    "outDir": "dist/droweb",
+    "assets": [
+      "assets",
+      "dist/droweb/firebase-messaging-sw.js",
+      "manifest.json" 
+    ],
+    "index": "index.html",
+    "main": "main.ts",
+    "polyfills": "polyfills.ts",
+    "tsconfig": "tsconfig.app.json",
+    "prefix": "app",
+    "styles": [
+      "../node_modules/font-awesome/css/font-awesome.css",
+      "../node_modules/simple-line-icons/css/simple-line-icons.css",
+      "../node_modules/nouislider/distribute/nouislider.min.css",
+      "scss/style.scss",
+      "assets/css/style.css",
+      "assets/css/responsive.css",
+      "assets/css/training_module.css"
+    ],
+    "scripts": [ "../node_modules/jspdf/dist/jspdf.min.js" ]
+  }],
+  "lint": [{
+    "project": "src/tsconfig.app.json"
+  }],
+  "defaults": {
+    "styleExt": "scss",
+    "prefixInterfaces": false
+  }
+}

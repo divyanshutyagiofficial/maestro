@@ -1,0 +1,120 @@
+::ng-deep .t_boty_container{
+    min-height: 91vh;
+    display: grid;
+    overflow: hidden;
+}
+
+
+.forgot-password {
+    background: #fbfcfd;
+    padding: 40px 0;
+}
+.active-dros {
+    text-align: center;
+}
+.active-dros img {
+    margin: 0 0 32px 0;
+    height: 300px;
+}
+.active-dros .medium-title {
+    font-size: 28px;
+	color:#232732;
+}
+.terms-conditions .medium-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.study-information .row:last-child .col-md-12 .read-more-sec {
+    border-bottom: none;
+}
+.active-dros .read-more-sec {
+    margin: 0;
+	overflow:hidden;
+}
+.study-information p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #4d525a;
+}
+.terms-conditions p {
+    margin-bottom: 15px;
+}
+.active-dros .read-more-sec p {
+    color: #888b8d;
+}
+.active-dros .read-more-sec a {
+    margin: 18px 0 0 0;
+    padding: 15px 28px;
+    background: #02a9f0;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+}
+.active-dros .read-more-sec a:hover {
+    background: #0fc445;
+}
+
+
+
+@media (min-width: 1200px) { }
+
+@media (min-width: 992px) and (max-width: 1199px){}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (min-width: 480px) and (max-width: 767px) {	
+	/** forgot password css start **/
+	.forgot-password .box{margin-bottom:15px;}
+	/** forgot password css end **/
+	
+	/** Default pages css start **/
+	.defaul-page iframe{width:100%;}
+	.decline-page .shadow-box{width:100%; padding:12px;}
+	.forgot-password .medium-title{font-size:18px;}
+	.header-section .print_section .save_print{text-align:left; margin-top:0px;}
+	.header-section .print_section .save_print li{display:block; margin:0 0 10px; padding:0; border-right:none;}
+	
+	.decline-page .transparent .medium-title{margin:8px 0 0 0; font-size:20px; line-height:30px;}
+	.decline-page .shadow-box .order{margin:18px 0 18px 16px;}
+	.decline-page .shadow-box select{width:100%; font-size:13px;}
+	.decline-page .shadow-box .btn{width:100%; margin:18px auto 5px;}
+	.decline-page .shadow-box .btn a{font-size:13px;}
+	.active-dros .medium-title{font-size:18px;}
+	/** Default pages css end **/
+}
+
+@media (min-width: 300px) and (max-width: 479px) {	
+	/** forgot password css start **/
+	.forgot-password .box{margin-bottom:15px; padding:15px 12px;}
+	.forgot-password .box .icon img {width: 30px; height: auto;}
+	.forgot-password .box .text{margin-left: 8px; font-size: 13px; float: left; text-align: left;}
+	.forgot-password .box .active-icon .selected img {height: auto;}
+	.popup-section .popup-box{width:250px;}
+	.popup-section .popup-box .small-title {padding-top: 15px; font-size: 14px; line-height: 24px;}
+	.forgot-password .box .icon{float: left; margin: 0px 0; padding: 0; text-align: center;}
+	.forgot-password .box .active-icon{position:relative; top:0; right:-11px;}
+	/** forgot password css end **/
+	
+	/** Default pages css start **/
+	.defaul-page iframe{width:100%; height:auto;}
+	.decline-page .shadow-box{width:100%; padding:12px;}
+	.new-password .medium-title{text-align:left; font-size:26px;}
+	.disclaimer img{height:auto;}
+	.legal_statment .heading_section .ls-email {text-align: left; margin: 0px 0 18px 0; padding: 0;}
+	.legal_statment .sub-header h2{font-size:18px;}
+	.header-section .print_section .save_print{text-align:left; margin-top:0px;}
+	.header-section .print_section .save_print li{display:block; margin:0 0 10px; padding:0; border-right:none;}
+	
+	.decline-page .transparent .medium-title{margin:8px 0 0 0; font-size:20px; line-height:30px;}
+	.decline-page .shadow-box .order{margin:18px 0 18px 16px;}
+	.decline-page .shadow-box select{width:100%; font-size:13px;}
+	.decline-page .shadow-box .btn{width:100%; margin:18px auto 5px;}
+	.decline-page .shadow-box .btn a{font-size:13px;}
+	.active-dros .medium-title{font-size:18px;}
+	/** Default pages css end **/
+}

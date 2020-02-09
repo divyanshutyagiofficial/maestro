@@ -1,0 +1,54 @@
+<div class="personaldetail_container">
+  <article class="forgot-password decline-page personal_detail">
+    <!-- Article section start -->
+    <div class="transparent">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="shadow-box">
+              <div class="skeleton" *ngIf="!loaded" style="text-align:center">
+                <a>
+                  <img src="assets/details_skeleton.png" content="origin" alt="" />
+                </a>
+              </div>
+              <div class="form-box" *ngIf="loaded">
+                <form id="contact-form" role="form" (submit)="updatePersonalDetails()">
+                  <div class="messages"></div>
+                  <div class="controls">
+                    <dynamic-layout [fields]="personalDetailsData?.fields" [notify]="notify"></dynamic-layout>
+                  </div>
+                </form>
+              </div>
+              <!-- POPUP START -->
+              <div *ngIf="savingCurrentDetails" class="modal fade show in danger personal_detail_popup" id="myModal"
+                role="dialog">
+                <div class="modal-dialog popup-box">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <a (click)="cross()" class="close" referrerpolicy="origin">
+                        <span class="cross">
+                          <img src="assets/img/close.png" content="origin" alt="" />
+                        </span>
+                      </a>
+                      <div class="small-title">
+                        <img src="assets/img/ok.png" content="origin" alt="" />
+                      </div>
+                      <p>{{personalDetailsConent[1]}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- POPUP END -->
+              <div class="col-md-12" *ngIf="hasErrors">
+                <p class="error">
+                  {{personalDetailsConent[2]}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <!-- Article section end -->
+</div>

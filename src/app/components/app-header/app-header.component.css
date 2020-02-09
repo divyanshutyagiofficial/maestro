@@ -1,0 +1,219 @@
+/** Header css start **/
+.header-section{margin:0;padding:0;}
+.topbar{background:#f5f9fc;padding:12px 0;margin:0;}
+.menu li .profile-pic img{height:100%;border-radius:0;object-fit:cover;width:100%;}
+.topbar .column{float:right;}
+.topbar .skip{float:left;font-family:"Montserrat";font-weight:500;color:#009cde;font-size:13px;margin:6px 15px 0 0;padding:0;cursor:pointer;}
+.topbar ul{margin:0;padding:0;float:left;}
+.topbar ul li:first-child{font-size:14px;}
+.topbar ul li:last-child{font-size:18px;}
+.topbar ul li{list-style:none;margin:0 0 0 5px;padding:0;height:30px;line-height:30px;width:30px;font-size:16px;background:#003764;color:#fff;text-align:center;float:left;font-weight:500;}
+
+/** Logo css start **/
+.logo-section{background:#222731;margin:0;padding:14px 0px 15px;position:relative;}
+.logo-section .logo{margin:0px 0 0 -16px;padding:0;height:38px;overflow:hidden;}
+.logo-section .logo img{height:38px;max-width:100%;}
+.logo-section .user_login{margin:1px 0 0 0;padding:0;float:right;}
+.logo-section .user_login li:last-child{border-right:none;}
+.logo-section .user_login li{list-style:none;margin:0;padding:0 20px;float:left;border-right:1px solid rgba(255,255,255,0.6);}
+.logo-section .user_login li .lang-section{float:none;margin:0;padding:0;height:auto;}
+.logo-section .user_login li .profile-pic{width:30px;height:30px;border-radius:100%;overflow:hidden;float:left;}
+.logo-section .user_login li .profile-pic img{height:100%;object-fit:cover;border-radius:0;width:100%;}
+.logo-section .user_login li .name{color:#fff;float:left;margin:7px 0 0px 18px;font-size:13px;padding:0;font-family:"Montserrat";font-weight:500;cursor:pointer;}
+
+/** Dashboard menu css start **/
+/* Desktop menu start */
+.menu-bar{margin:0;padding:0px 0;background:#003056;}
+.menu_section{margin:0px 0 0 0;padding:0;}
+.menu_section ul{list-style:none;margin:0;padding:0;}
+.menu_section ul li{float:left;margin:0 24px 0 0;padding:0;position:relative;}
+.menu_section ul li:last-child{margin-right:0;}
+.menu_section ul li a.active{border-bottom:5px solid #009cde;}
+.menu_section ul li a {text-decoration:none;color:#fff;text-transform:capitalize;font-size:14px;font-family:"Montserrat";font-weight:500;padding-bottom:5px;transition-duration:0.4s;padding:6px 0 3px;display:inline-block;border-bottom:5px solid rgba(0,0,0,0.0);}
+.menu_section ul li a span{background:#e93349;font-size:10px;position:absolute;text-align:center;border-radius:18px;padding:2px 7px;top:1px;right:-17px;border:1px solid #003056;}
+/* Desktop menu end */
+
+/* Mobile menu start */
+.modal_section{height:100%;width:100%;background:rgba(0,0,0,0.0);top:0;left:0;right:0;z-index:0;position:fixed;transition:all 0.4s ease-in-out;}
+.show-background{background: rgba(0,0,0,0.0);}
+.toggle_menu{display:none;}
+.toggle_menu{position:absolute;left:-10px;top:2px;z-index:2;cursor:pointer;}
+.toggle_menu img{height:13px;}
+.mobile_section{background:#003056;padding:40px 20px;top:0;left:-112%;position:fixed;transition:all 0.5s ease 0s;width:260px;height:100%;z-index:99999999;text-transform:capitalize;overflow-y:auto;}
+.nav-wrapper-opened{left:0;}
+.mobile{display:none;}
+.menu{list-style:none;margin:0;padding:0;position:relative;}
+.mobile .closed{color:#fff;opacity:1;text-shadow:none;position:absolute;right:-8px;top:-28px;cursor:pointer;font-family:"Montserrat";font-size:14px;font-weight:600;}
+.mobile .closed img{width:20px; cursor: pointer;}
+.menu li{margin:0 0 18px 0;width:100%;clear:both;padding:0px;overflow:hidden;position:relative;}
+.menu li a span{background:#e93349;font-size:10px;position:absolute;text-align:center;border-radius:18px;top:0px;right:118px;padding:2px 7px;border:1px solid #003056;}
+.menu li .profile-pic{width:35px;height:35px;overflow:hidden;border-radius:50%;float:left;}
+.menu li .name{color:#fff;float:left;font-size:13px;padding:0;font-family:"Montserrat";margin:7px 0 0px 18px;}
+.menu li .logout-icon{float:left;margin:5px 0 0 0;padding:0;}
+.menu li .logout-icon img{height:15px;}
+.menu li .text{color:#fff;float:left;margin:7px 0 0px 12px;font-size:13px;padding:0;font-family:"Montserrat";}
+.menu li a{color:#fff;font-family:"Montserrat";text-transform:capitalize;text-decoration:none;outline:none;display:block;padding:5px 15px;font-weight:500;}
+/* Mobile menu end */
+/** Dashboard menu css end **/
+
+/** Header css start **/
+.header-section{margin:0;padding:0;}
+.logo-section .user_login li .name{color:#fff;float:left;margin:8px 0 0px 18px;font-size:13px;padding:0;font-family:"Montserrat";font-weight:500;}
+.logo-section .user_login li .logout-icon {float:left;margin:5px 0 0 0;padding:0;}
+.logo-section .user_login li .logout-icon img {height: 15px; cursor: pointer;}
+.logo-section .user_login li .text {color:#fff;float:left;margin: 8px 0 0px 12px;font-size:13px;padding:0;font-family:"Montserrat";font-weight:500;}
+.logo-section .user_login li .text a:hover,
+.logo-section .user_login li .text a:focus,
+.logo-section .user_login li .text a{color:#fff;}
+.logo-section .user_login li .text a:hover{text-decoration: none;}
+.logo-section .user_login li .lang-section .nav-pills li{border-right:none;padding:0;}
+.logo-section .lang-section{margin:2px 0 0 0;padding:0;float:right;height:46px;}
+.logo-section .lang-section .lang-column{float:left;margin:0;padding:0;}
+.logo-section .lang-section .lang-column .lang-icon{margin:0px 0 0 0;padding:0;width:30px;float:left;height:30px;text-align:center;line-height:30px;}
+.logo-section .lang-section .lang-column .lang-icon img{height:25px;}
+.logo-section .lang-section .lang-column .lang{float:left;color:#fff;margin:7px 0 0 8px;padding:0;font-size:13px;font-weight:500;font-family:"Montserrat";}
+.logo-section .lang-section .lang-drp-dwn-column{float:left;margin:7px 0 0 8px;padding:0;width:70px;background:url('../../../assets/img/down-arrow.png') no-repeat right 6px;background-origin:content-box;background-size:auto 60%;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills{margin:0;padding:0;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li{margin:0; padding:0;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li a{margin:0; padding:0; color:#fff; font-family:"Montserrat"; font-size:13px; width:73px; font-weight: 500;}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{background: rgba(0,0,0,0.0) !important;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li a:focus,
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li a:hover{background:rgba(0, 0, 0, 0.0); color:#fff; outline: none;}
+
+/** ::-webkit **/
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu{top:42px !important;left:-115px !important;min-width:200px;border-top-right-radius:0;border-top-left-radius:0;padding:12px 0;max-height:260px;overflow-y:auto;background:#fff;box-shadow:0px 8px 47px rgba(0,0,0,0.3) !important;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu::-webkit-scrollbar{width:3px;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);-webkit-border-radius:10px;border-radius:10px;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu::-webkit-scrollbar-thumb{-webkit-border-radius:10px;border-radius:10px;background:#afbdc2;-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.5);}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu::-webkit-scrollbar-thumb:window-inactive{background:#afbdc2;}
+
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .active-arrow{position:relative; color:#222731 !important; font-weight:600 !important;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .active-arrow::after{content:"";display:block;width:20px;height:20px;border-radius:100%;background:#01a4ea url('../../../assets/img/checked.png') no-repeat center center;background-origin:content-box;background-size:auto 50%;float:right;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu a {display:block;color:#888b8d;padding:5px 24px;font-size:14px;font-family:"Montserrat";font-weight:500;width:auto;margin-bottom:10px;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu a:first-child{padding-top:1px;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu a:last-child{margin-bottom:0;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu a:hover{text-decoration:none;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu .dropdown-divider{border-top:1px solid #eee;padding-top:2px;padding-bottom:3px;margin-top:9px;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu .dropdown-divider a{color:#009cde;font-weight:500;font-family:"Montserrat";font-size:13px;width:auto;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu .responsive-view{display:none;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .all-language{clear:both;position:absolute;right:0;top:48px;width:560px;background:#fff;box-shadow:0 6px 12px rgba(43, 47, 62, 0.3);border-bottom-right-radius:4px;border-bottom-left-radius:4px;height:220px;z-index:9;margin:0;padding:0;overflow-y:scroll;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .all-language li{float:left;width:25%;list-style:none;margin:0;padding:12px 15px;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .all-language a{color:#888b8d;padding:10px 15px;font-size:14px;font-family:"Montserrat";font-weight:500;display:block;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .all-language a:hover{text-decoration:none;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .all-language .divider{clear:both;text-align:right;border-top:1px solid #eee;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .all-language .divider a{color:#009cde;font-weight:500;font-family:"Montserrat";font-size:13px;float:right;}
+/** Logo css end **/
+
+/** SURVEY NAV ICON CSS START **/
+.header-section .logo-section #logo-section{margin-top:10px;}
+.header-section .logo-section #logo-section .logo .hm_ic img{margin:0; padding:0; float: left; height: 28px; width:auto;}
+.header-section .logo-section #logo-section .logo .hm_ic .logo-title{margin: 5px 0 0 8px; padding:0; float: left; color:#fff;}
+.logo-section .lang-section .right-column .lang-icon{margin-top:9px;}
+.logo-section .lang-section .right-column .lang-icon img{height: 28px; margin:0; padding:0; float: left;}
+.logo-section .lang-section .right-column .lang-icon .clos_ic_txt{margin: 4px 0 0 8px; padding:0; float: left;}
+.logo-section .lang-section .right-column .lang-icon .clos_ic_txt a{color:#fff;}
+/** SURVEY NAV ICON CSS END **/
+
+@media (min-width: 1200px) {
+.mobile_section {display: none;}   
+#main{margin-left:0px !important; margin-right:0px !important;}
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+/** Menu start **/
+.menu-bar{display:none;}
+.toggle_menu{display:block;}
+.mobile {display:block;}
+.show-background{background: rgba(0,0,0,0.5); z-index: 9999999;}
+/** Menu start **/
+
+/** logo section css start **/
+.logo-section .lang-section{height:auto; margin:0px 0 0 0;}
+.logo-section .logo{margin-left:5px;}
+.logo-section .logo img{height: 26px; width: auto;}
+.logo-section .lang-section .lang-column{display:none;}
+.logo-section .user_login li{border-right:none;}
+.logo-section .user_login{margin:0;}
+.logo-section .lang-section .lang-drp-dwn-column{margin-top:7px;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu{top:34px !important; margin:0; left:-108px !important; min-width:178px;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .all-language{top:34px;}
+.toggle_menu img{height:auto;}
+/** logo section css end **/
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+/** Menu start **/
+.menu-bar{display:none;}
+.toggle_menu{display:block;}
+.mobile {display:block;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu{top:38px !important; margin:0; padding-bottom: 12px; left:-108px !important; min-width:178px;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu .responsive-view{display:block;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu .dropdown-divider{display: none;}
+.show-background{background: rgba(0,0,0,0.5); z-index: 9999999;}
+/** Menu start **/
+
+/** logo section css start **/
+.logo-section .lang-section{height:auto; margin:0px 0 0 0;}
+.logo-section .logo{margin-left:5px;}
+.logo-section .logo img{height: 26px; width: auto;}
+.logo-section .lang-section .lang-column{display:none;}
+.logo-section .user_login li{border-right:none;}
+.logo-section .user_login{margin:0;}
+.logo-section .lang-section .lang-drp-dwn-column{margin-top:3px;}
+.logo-section .user_login li:nth-child(2){display:none;}
+.logo-section .user_login li:nth-child(3){display:none;}
+.toggle_menu img{height:auto;}
+/** logo section css end **/
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+/** Menu start **/
+.menu-bar{display:none;}
+.toggle_menu{display:block;}
+.mobile {display:block;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu{top:38px !important; margin:0; padding-bottom: 12px; left:-108px !important; min-width:178px;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu .responsive-view{display:block;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu .dropdown-divider{display: none;}
+.show-background{background: rgba(0,0,0,0.5); z-index: 9999999;}
+/** Menu start **/
+
+/** logo section css start **/
+.logo-section .lang-section{height:auto; margin:0px 0 0 0;}
+.logo-section .logo{margin-left:5px;}
+.logo-section .logo img{height: 26px; width: auto;}
+.logo-section .lang-section .lang-column{display:none;}
+.logo-section .user_login li{border-right:none;}
+.logo-section .user_login{margin:0;}
+.logo-section .lang-section .lang-drp-dwn-column{margin-top:3px;}
+.logo-section .user_login li:nth-child(2){display:none;}
+.logo-section .user_login li:nth-child(3){display:none;}
+.toggle_menu img{height:auto;}
+/** logo section css end **/
+}
+
+@media (min-width: 300px) and (max-width: 479px) {
+/** Menu start **/
+.menu-bar{display:none;}
+.toggle_menu{display:block;}
+.mobile {display:block;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu{top:35px !important; padding-bottom: 12px; left:-108px !important; min-width:178px;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu .responsive-view{display:block;}
+.logo-section .lang-section .lang-drp-dwn-column .nav-pills li .dropdown-menu .dropdown-divider{display: none;}
+.show-background{background: rgba(0,0,0,0.5); z-index: 9999999;}
+/** Menu start **/
+
+/** logo section css start **/
+.logo-section .lang-section{height:auto; margin:0px 0 0 0;}
+.logo-section .logo{margin-left:5px; width: 120px; padding: 3px 0px 0px 0px;}
+.logo-section .logo img{height: 26px; width: auto;}
+.logo-section .lang-section .lang-column{display:none;}
+.logo-section .user_login li{border-right:none;}
+.logo-section .user_login{margin:0;}
+.logo-section .lang-section .lang-drp-dwn-column{margin-top:7px;}
+.logo-section .user_login li:nth-child(2){display:none;}
+.logo-section .user_login li:nth-child(3){display:none;}
+.logo-section .user_login li .lang-section{ margin-right: -35px;}
+.toggle_menu img{height:auto;}
+.toggle_menu {padding: 3px 0 0 0;}
+/** logo section css end **/
+}

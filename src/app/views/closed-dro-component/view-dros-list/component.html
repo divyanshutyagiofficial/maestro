@@ -1,0 +1,111 @@
+<div class="col-md-9 col-sm-12 col-xs-12">
+  <div class="table_section">
+    <div class="thead">
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="title">{{content[8]}}</div>
+      </div>
+
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="title" (click)="sort('progressStatus')">{{content[9]}}
+          <i class="fa" [ngClass]="{'fa-sort': column != 'status', 'fa-sort-asc': (column == 'status' && isDesc), 'fa-sort-desc': (column == 'status' && !isDesc) }"
+            aria-hidden="true"> </i>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="title" (click)="sort('timeSpent')">{{content[11]}}
+          <i class="fa" [ngClass]="{'fa-sort': column != 'timeSpent', 'fa-sort-asc': (column == 'timeSpent' && isDesc), 'fa-sort-desc': (column == 'timeSpent' && !isDesc) }"
+            aria-hidden="true"> </i>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-2 col-xs-12">
+        <div class="box">
+          <span>sort by:</span>
+          <div class="title" (click)="sort('endTime')">{{content[10]}}
+            <i class="fa" [ngClass]="{'fa-sort': column != 'endTime', 'fa-sort-asc': (column == 'endTime' && isDesc), 'fa-sort-desc': (column == 'endTime' && !isDesc) }"
+              aria-hidden="true"> </i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tbody">
+      <div class="text-center" *ngIf="surveys.length <= 0">
+        <h4>{{content[12]}}</h4>
+      </div>
+      <div class="list_column" *ngFor="let survey of surveys | paginate: { itemsPerPage: 10, currentPage: page} |orderBy: {property: column, direction: direction} as aSurveys">
+        <div class="col-md-4 col-sm-12 col-xs-12 padding-right">
+          <div class="title">{{survey.name}}</div>
+        </div>
+
+        <div class="col-md-8 col-sm-12 col-xs-12 padding-left">
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <div class="card">
+              <div *ngIf="survey.declined === true;else second">
+                <div class="text">{{content[23]}}</div>
+                <div class="img_icon">
+                  <img src="assets/img/declined_icon.png" content="origin" alt="" />
+                </div>
+              </div>
+              <ng-template #second>
+                <ng-container *ngIf="survey.progressStatus === 'COMPLETED';else third">
+                  <div class="text">{{content[22]}}</div>
+                  <div class="img_icon">
+                    <img src="assets/img/completed2.png" content="origin" alt="" />
+                  </div>
+                </ng-container>
+              </ng-template>
+              <ng-template #third>
+                <div class="text">{{content[24]}}</div>
+                <div class="img_icon">
+                  <img src="assets/img/expired2.png" content="origin" alt="" />
+                </div>
+              </ng-template>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-3 col-xs-3 time-spent">
+            <div class="one minutes" *ngIf="((survey.timeSpent/60) | number : '1.0-0') > 0">{{(survey.timeSpent / 60) | number : '1.0-0'}} {{content[15]}}</div>
+            <div *ngIf="survey.timeSpent%60 != 0" class="one seconds"> {{(survey.timeSpent%60)}} {{content[28]}}</div>
+            <div *ngIf="survey.timeSpent%60 == 0" class="nil">-</div>
+          </div>
+
+          <div class="col-md-5 col-sm-5 col-xs-5" *ngIf="survey.endTime != 0">
+            {{ returnTime(survey.endTime) | date : 'medium'}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination_section">
+    <div class="col-md-6 col-sm-6 col-xs-12 no-padding">
+      <div class="showing" *ngIf="surveys.length != 0">
+        <ul>
+          <li>{{content[26]}}</li>
+          <li>
+            <span>{{from}}-
+              <div *ngIf="to<=surveys.length">{{to}}</div>
+              <div *ngIf="to > surveys.length">{{surveys.length}}</div>
+            </span>
+          </li>
+          <li>{{content[27]}}</li>
+          <li>
+            <span>{{surveys.length}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-12 no-padding">
+      <div class="controls">
+        <nav aria-label="...">
+          <ul class="pagination">
+            <pagination-controls autoHide="true" (pageChange)="change($event, surveys.length); page = $event"></pagination-controls>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

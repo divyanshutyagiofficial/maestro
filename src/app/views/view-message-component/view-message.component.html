@@ -1,0 +1,613 @@
+<div class="skeleton" *ngIf="!loaded && !this._restApiService.getNoDataErrorFlag()" style="text-align:center">
+  <a>
+    <img src="assets/message_skeleton.png" content="origin" alt="" />
+  </a>
+</div>
+<article class="message_section" *ngIf="loaded">
+  <!-- Article section start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="medium-title">
+          {{viewMessageContent[1]}}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12 mobile_view_footer">
+        <div class="tabs_menu_section">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="section">
+          <div class="search-bar">
+            <input type="text" placeholder="Search message here" [(ngModel)]="search" />
+          </div>
+          <div class="tab">
+            <tabset>
+              <!-- Tab section start -->
+              <tab heading="{{viewMessageContent[8]}}" id="tab1">
+                <div class="tab-content1">
+                  <!-- Tab panel start -->
+                  <div class="filter_section">
+                    <!-- Filter section start -->
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                      <div class="short_menu">
+                        <div class="menu_title" (click)="sort('senderName')">
+                          {{viewMessageContent[2]}}
+                          <i class="fa"
+                            [ngClass]="{'fa-sort': column != 'senderName', 'fa-sort-asc': (column == 'senderName' && isDesc), 'fa-sort-desc': (column == 'senderName' && !isDesc) }"
+                            aria-hidden="true"> </i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-4 no-padding">
+                      <div class="short_menu">
+                        <div class="menu_title" (click)="sort('createTime')">
+                          <span class="sortby">{{viewMessageContent[14]}}</span> {{viewMessageContent[3]}}
+                          <i class="fa"
+                            [ngClass]="{'fa-sort': column != 'createTime', 'fa-sort-asc': (column == 'createTime' && isDesc), 'fa-sort-desc': (column == 'createTime' && !isDesc) }"
+                            aria-hidden="true"> </i>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-4 col-xs-4">
+                      <div class="short_menu">
+                        <div class="menu_title">
+                          {{viewMessageContent[1]}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Filter section end -->
+
+                  <ul class="tab_in_accordian">
+                    <!-- Accordian start -->
+                    <!-- Accordian panel start -->
+                    <li *ngIf="unreadMessages?.length <= 0 && readMessages?.length <= 0">{{viewMessageContent[5]}}</li>
+                    <li
+                      *ngFor="let unreadMessage of unreadMessages | filter: search |orderBy: {property: column, direction: direction} as cMessages; index as i;"
+                      [ngClass]="(unreadMessage.isStarred == true)?'favorite':''" class="unread_li">
+
+                      <a
+                        (click)=" unreadmessageModal.show(); setCurrentMessage(unreadMessage); updateMessageStatus(unreadMessage);">
+                        <div class="col-md-3 col-sm-12 col-xs-12 padding-left">
+                          <div class="name">
+                            <img
+                              [src]="(unreadMessage.isStarred == true)?'assets/img/favorite-add.png':'assets/img/favorite.png'"
+                              class="star" (click)="addToStarred(unreadMessage)" content="origin" alt="" />
+                            <div class="new">{{viewMessageContent[15]}}</div>
+                            <div class="unread">{{ unreadMessage?.senderName }}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 col-xs-12 padding-left">
+                          <div class="date unread_msg">{{ unreadMessage?.createTime
+                            | date:'medium' }}</div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                          <div class="sub_title unread_msg">
+                            {{ unreadMessage.messageTile }}
+                          </div>
+                        </div>
+                      </a>
+
+
+                      <div class="column" [collapse]="!isCollapsed[i]" (collapsed)="collapsed($event)"
+                        (expanded)="expanded($event)">
+                        <div class="col-md-3 col-sm-12 col-xs-12 padding-left"></div>
+                        <div class="col-md-3 col-sm-12 col-xs-12 padding-left"></div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                          <div class="discription">
+                            <div [innerHTML]="unreadMessage.textMessage"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="transparent">
+                      <div bsModal #unreadmessageModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+                        aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content" style="margin-top:150px">
+                            <div class="modal-header">
+                              <h4 class="modal-title pull-left">{{viewMessageContent[16]}}</h4>
+                              <div class="name_date_section">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <div class="from_name">
+                                    <span>From:</span> {{ getCurrentMessage() && getCurrentMessage().senderName }}</div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <div class="from_date">
+                                    {{  getCurrentMessage() && getCurrentMessage().createTime | date:'medium' }}</div>
+                                </div>
+                              </div>
+                              <button type="button" class="close pull-right" aria-label="Close"
+                                (click)="unreadmessageModal.hide()">
+                                <span class="cross">
+                                  <img src="assets/img/close.png" content="origin" alt="" />
+                                </span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <div [innerHTML]="getCurrentMessage() &&  getCurrentMessage().textMessage"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li
+                      *ngFor="let readMessage of readMessages | filter:search | orderBy: {property: column, direction: direction} as bMessages; index as i;"
+                      [ngClass]="(readMessage.isStarred == true)?'favorite':''">
+                      <a>
+                        <div class="col-md-3 col-sm-12 col-xs-12 padding-left">
+                          <div class="name">
+                            <img
+                              [src]="(readMessage.isStarred == true)?'assets/img/favorite-add.png':'assets/img/favorite.png'"
+                              class="star" (click)="addToStarred(readMessage)" content="origin" alt="" />
+                            <div class="title" (click)="readmessageModal.show()">{{ readMessage?.senderName }}</div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 col-xs-12 padding-left">
+                          <div class="date" (click)="readmessageModal.show()">{{ readMessage?.createTime |
+                            date:'medium' }}</div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                          <div class="sub_title" (click)="readmessageModal.show()">
+                            {{ readMessage.messageTile }}
+                          </div>
+                        </div>
+                      </a>
+                      <div class="column" [collapse]="!isCollapsed[i]" (collapsed)="collapsed($event)"
+                        (expanded)="expanded($event)">
+                        <div class="col-md-3 col-sm-12 col-xs-12 padding-left"></div>
+                        <div class="col-md-3 col-sm-12 col-xs-12 padding-left"></div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                          <div class="discription">
+                            <div [innerHTML]="readMessage?.textMessage"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div bsModal #readmessageModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+                        aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content" style="margin-top:150px">
+                            <div class="modal-header">
+                              <h4 class="modal-title pull-left">{{viewMessageContent[16]}}</h4>
+                              <div class="name_date_section">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <div class="from_name">
+                                    <span>From:</span> {{ readMessage?.senderName }}</div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <div class="from_date">{{ readMessage?.createTime | date:'medium' }}</div>
+                                </div>
+                              </div>
+                              <button type="button" class="close pull-right" aria-label="Close"
+                                (click)="readmessageModal.hide()">
+                                <span class="cross">
+                                  <img src="assets/img/close.png" content="origin" alt="" />
+                                </span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <div [innerHTML]="readMessage.textMessage"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </tab>
+              <!-- Tab panel end -->
+              <tab heading="{{viewMessageContent[9]}} ({{0+readMessages?.length}})">
+                <div class="tab-content1">
+                  <!-- Tab panel start -->
+                  <div class="filter_section">
+                    <!-- Filter section start -->
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                      <div class="short_menu">
+                        <div class="menu_title" (click)="sort('senderName')">
+                          {{viewMessageContent[2]}}
+                          <i class="fa"
+                            [ngClass]="{'fa-sort': column != 'senderName', 'fa-sort-asc': (column == 'senderName' && isDesc), 'fa-sort-desc': (column == 'senderName' && !isDesc) }"
+                            aria-hidden="true"> </i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                      <div class="short_menu">
+                        <div class="menu_title" (click)="sort('createTime')">
+                          {{viewMessageContent[3]}}
+                          <i class="fa"
+                            [ngClass]="{'fa-sort': column != 'createTime', 'fa-sort-asc': (column == 'createTime' && isDesc), 'fa-sort-desc': (column == 'createTime' && !isDesc) }"
+                            aria-hidden="true"> </i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-4 col-xs-4">
+                      <div class="short_menu">
+                        <div class="menu_title">
+                          {{viewMessageContent[1]}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Filter section end -->
+
+                  <ul class="tab_in_accordian">
+                    <li *ngIf="readMessages?.length <= 0">{{viewMessageContent[12]}}</li>
+                    <!-- Accordian start -->
+                    <!-- Accordian panel start -->
+                    <ng-container *ngIf="readMessages?.length">
+                      <li
+                        *ngFor="let readMessage of readMessages | filter:search | orderBy: {property: column, direction: direction} as bMessages; index as i;"
+                        [ngClass]="(readMessage.isStarred == true)?'favorite':''">
+                        <a>
+                          <div class="col-md-3 col-sm-12 col-xs-12 padding-left">
+                            <div class="name">
+                              <img
+                                [src]="(readMessage.isStarred == true)?'assets/img/favorite-add.png':'assets/img/favorite.png'"
+                                class="star" (click)="addToStarred(readMessage)" content="origin" alt="" />
+                              <div class="title" (click)="readmessageModal.show()">{{ readMessage?.senderName }}</div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-3 col-sm-12 col-xs-12 padding-left">
+                            <div class="date" (click)="readmessageModal.show()">{{ readMessage?.createTime |
+                              date:'medium' }}</div>
+                          </div>
+
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="sub_title" (click)="readmessageModal.show()">
+                              {{ readMessage?.messageTile }}
+                            </div>
+                          </div>
+                        </a>
+
+                        <div class="column" [collapse]="!isCollapsed[i]" (collapsed)="collapsed($event)"
+                          (expanded)="expanded($event)">
+                          <div class="col-md-3 col-sm-12 col-xs-12 padding-left"></div>
+                          <div class="col-md-3 col-sm-12 col-xs-12 padding-left"></div>
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="discription" ng:bind="readMessage?.textMessage">
+                              <div [innerHTML]="readMessage?.textMessage"></div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                        <!--open modal for message details-->
+                        <div bsModal #readmessageModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+                          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content" style="margin-top:150px">
+                              <div class="modal-header">
+                                <h4 class="modal-title pull-left">{{viewMessageContent[16]}}</h4>
+                                <div class="name_date_section">
+                                  <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="from_name">
+                                      <span>From:</span> {{ readMessage?.senderName }}</div>
+                                  </div>
+
+                                  <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="from_date">{{ readMessage?.createTime | date:'medium' }}</div>
+                                  </div>
+                                </div>
+                                <button type="button" class="close pull-right" aria-label="Close"
+                                  (click)="readmessageModal.hide()">
+                                  <span class="cross">
+                                    <img src="assets/img/close.png" content="origin" alt="" />
+                                  </span>
+                                </button>
+                              </div>
+
+                              <div class="modal-body">
+                                <div [innerHTML]="readMessage.textMessage"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--close modal for message details-->
+
+                      </li>
+                    </ng-container>
+                    <!-- Accordian panel end -->
+                  </ul>
+                  <!-- Accordian end -->
+                </div>
+              </tab>
+              <!-- Tab panel end -->
+
+              <tab heading="{{viewMessageContent[10]}} ({{0+unreadMessages?.length}})">
+                <div class="tab-content1">
+                  <!-- Tab panel start -->
+                  <div class="filter_section">
+                    <!-- Filter section start -->
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                      <div class="short_menu">
+                        <div class="menu_title" (click)="sort('senderName')">
+                          {{viewMessageContent[2]}}
+                          <i class="fa"
+                            [ngClass]="{'fa-sort': column != 'senderName', 'fa-sort-asc': (column == 'senderName' && isDesc), 'fa-sort-desc': (column == 'senderName' && !isDesc) }"
+                            aria-hidden="true"> </i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                      <div class="short_menu">
+                        <div class="menu_title" (click)="sort('createTime')">
+                          {{viewMessageContent[3]}}
+                          <i class="fa"
+                            [ngClass]="{'fa-sort': column != 'createTime', 'fa-sort-asc': (column == 'createTime' && isDesc), 'fa-sort-desc': (column == 'createTime' && !isDesc) }"
+                            aria-hidden="true"> </i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-4 col-xs-4">
+                      <div class="short_menu">
+                        <div class="menu_title">
+                          {{viewMessageContent[4]}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Filter section end -->
+
+                  <ul class="tab_in_accordian">
+                    <li *ngIf="unreadMessages?.length <= 0 ">{{viewMessageContent[6]}}</li>
+                    <!-- Accordian start -->
+                    <!-- Accordian panel start -->
+                    <ng-container *ngIf="unreadMessages?.length > 0 || unreadMessages?.length != undefined">
+                      <li
+                        *ngFor="let unreadMessage of unreadMessages | filter:search | orderBy: {property: column, direction: direction} as cMessages; index as i;"
+                        [ngClass]="(unreadMessage.isStarred == true)?'favorite':''" class="unread_li">
+                        <a
+                          (click)="setCurrentMessage(unreadMessage); unreadmessageModal.show(); updateMessageStatus(unreadMessage);">
+                          <div class="col-md-3 col-sm-12 col-xs-12 padding-left">
+                            <div class="name">
+                              <img
+                                [src]="(unreadMessage.isStarred == true)?'assets/img/favorite-add.png':'assets/img/favorite.png'"
+                                class="star" (click)="addToStarred(unreadMessage)" content="origin" alt="" />
+                              <div class="title unread_msg">{{ unreadMessage?.senderName }}</div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-3 col-sm-12 col-xs-12 padding-left">
+                            <div class="date unread_msg">{{ unreadMessage?.createTime | date:'medium' }}</div>
+                          </div>
+
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="sub_title unread_msg">
+                              {{ unreadMessage?.messageTile }}
+                            </div>
+                          </div>
+                        </a>
+                        <!--<span class="plus" (click)="collapse(i)" (click)="updateMessageStatus(unreadMessage)"></span>-->
+
+                        <div class="column" [collapse]="!isCollapsed[i]" (collapsed)="collapsed($event)"
+                          (expanded)="expanded($event)">
+                          <div class="col-md-3 col-sm-12 col-xs-12 padding-left"></div>
+                          <div class="col-md-3 col-sm-12 col-xs-12 padding-left"></div>
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="discription">
+                              <div [innerHTML]="unreadMessage.textMessage"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--open modal for message details-->
+
+                        <!--close modal for message details-->
+                      </li>
+
+
+                      <li class="transparent">
+                        <div bsModal #unreadmessageModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+                          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content" style="margin-top:150px">
+                              <div class="modal-header">
+                                <h4 class="modal-title pull-left">{{viewMessageContent[16]}}</h4>
+                                <div class="name_date_section">
+                                  <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="from_name">
+                                      <span>From:</span> {{ getCurrentMessage() && getCurrentMessage()?.senderName }}
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="from_date">
+                                      {{getCurrentMessage() && getCurrentMessage()?.createTime | date:'medium' }}</div>
+                                  </div>
+                                </div>
+                                <button type="button" class="close pull-right" aria-label="Close"
+                                  (click)="unreadmessageModal.hide()">
+                                  <span class="cross">
+                                    <img src="assets/img/close.png" content="origin" alt="" />
+                                  </span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <div [innerHTML]="getCurrentMessage() && getCurrentMessage().textMessage"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+
+                    </ng-container>
+                    <!-- Accordian panel end -->
+                  </ul>
+
+                  <!-- Accordian end -->
+                </div>
+                <div class="req_error" *ngIf="errorFlag">
+                  <div class="modal fade show in danger" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                      <button class="close_button" (click)="errorFlag = false; _restApiService.setErrorFlag(false);">
+                        <i class="material-icons close">close</i>
+                      </button>
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <i class="material-icons">warning</i>
+                          <h2 class="heading">Whoops, something went wrong...</h2>
+                          <p class="text">The Survey was not submitted successfully due to some technical issues.
+                            Please contact the customer
+                            support.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </tab>
+              <!-- Tab panel end -->
+
+              <tab heading="{{viewMessageContent[11]}} ({{0+starredMessages?.length}})">
+                <div class="tab-content1">
+                  <!-- Tab panel start -->
+                  <div class="filter_section">
+                    <!-- Filter section start -->
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                      <div class="short_menu">
+                        <div class="menu_title" (click)="sort('senderName')">
+                          {{viewMessageContent[2]}}
+                          <i class="fa"
+                            [ngClass]="{'fa-sort': column != 'senderName', 'fa-sort-asc': (column == 'senderName' && isDesc), 'fa-sort-desc': (column == 'senderName' && !isDesc) }"
+                            aria-hidden="true"> </i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                      <div class="short_menu">
+                        <div class="menu_title" (click)="sort('createTime')">
+                          {{viewMessageContent[3]}}
+                          <i class="fa"
+                            [ngClass]="{'fa-sort': column != 'createTime', 'fa-sort-asc': (column == 'createTime' && isDesc), 'fa-sort-desc': (column == 'createTime' && !isDesc) }"
+                            aria-hidden="true"> </i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-4 col-xs-4">
+                      <div class="short_menu">
+                        <div class="menu_title">
+                          {{viewMessageContent[1]}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Filter section end -->
+
+                  <ul class="tab_in_accordian">
+                    <!-- Accordian start -->
+                    <!-- Accordian panel start -->
+                    <li *ngIf="starredMessages?.length <= 0 ">{{viewMessageContent[7]}}</li>
+                    <ng-container *ngIf="starredMessages?.length > 0 || starredMessages?.length != undefined">
+                      <li class="favorite"
+                        *ngFor="let starredMessage of starredMessages | filter:search | orderBy: {property: column, direction: direction} as dMessages; index as i;"
+                        [ngClass]="{'unread_li': starredMessage.readStatus == 'UNREAD'}">
+                        <a>
+                          <div class="col-md-3 col-sm-12 col-xs-12 padding-left">
+                            <div class="name">
+                              <img src="assets/img/favorite-add.png" class="star"
+                                (click)="addToStarred(starredMessage)" content="origin" alt="" />
+                              <div class="favorite-title unread_msg" (click)="starredmessageModal.show()">{{
+                                starredMessage.senderName }}</div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-3 col-sm-12 col-xs-12 padding-left">
+                            <div class="date unread_msg" (click)="starredmessageModal.show()">{{
+                              starredMessage.createTime | date:'medium' }}</div>
+                          </div>
+
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="favorite_sub_title unread_msg" (click)="starredmessageModal.show()">
+                              {{ starredMessage.messageTile }}
+                            </div>
+                          </div>
+                        </a>
+                        <!--<span class="plus" (click)="collapse(i)"></span>-->
+
+                        <div class="column" [collapse]="!isCollapsed[i]" (collapsed)="collapsed($event)"
+                          (expanded)="expanded($event)">
+                          <div class="col-md-3 col-sm-12 col-xs-12 padding-left"></div>
+                          <div class="col-md-3 col-sm-12 col-xs-12 padding-left"></div>
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="discription">
+                              <div [innerHTML]="starredMessage.textMessage"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--open modal for message details-->
+                        <div bsModal #starredmessageModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+                          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content" style="margin-top:150px">
+                              <div class="modal-header">
+                                <h4 class="modal-title pull-left">{{viewMessageContent[16]}}</h4>
+                                <div class="name_date_section">
+                                  <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="from_name">
+                                      <span>From:</span> {{ starredMessage?.senderName }}</div>
+                                  </div>
+
+                                  <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="from_date">{{ starredMessage?.createTime | date:'medium' }}</div>
+                                  </div>
+                                </div>
+                                <button type="button" class="close pull-right" aria-label="Close"
+                                  (click)="starredmessageModal.hide()">
+                                  <span class="cross">
+                                    <img src="assets/img/close.png" content="origin" alt="" />
+                                  </span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <div [innerHTML]="starredMessage.textMessage"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--close modal for message details-->
+                      </li>
+                    </ng-container>
+                    <!-- Accordian panel end -->
+                  </ul>
+                  <!-- Accordian end -->
+                </div>
+              </tab>
+            </tabset>
+            <!-- Tab panel end -->
+          </div>
+          <!-- Tab section end -->
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>
+<!-- Article section end -->

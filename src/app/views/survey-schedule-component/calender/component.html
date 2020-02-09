@@ -1,0 +1,86 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="calendar_column">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12 text-left">
+          <div class="btn_sec">
+            <button (click)="todayClick()">{{content[1]}}</button>
+          </div>
+          <div class="calendar_nav_column">
+            <i (click)="previous()" class="previous"></i>
+            <span>
+              <b>{{lastday}} - {{today}}</b>
+            </span>
+            <i (click)="next()" class="next"></i>
+          </div>
+
+          <div class="mobile_view">
+            <img src="assets/img/vertical-menu.png" (click)="toggle()" content="origin" alt="" />
+            <div id="card_view" class="card_view" style="display:none">
+              <img src="assets/img/forwad.png" content="origin" alt="" />
+              <a (click)="toggleShowCopyCalendarLink()" *ngIf="!showCopyCalendarLink" referrerpolicy="origin">
+                {{content[25]}}
+              </a>
+              <a (click)="toggleShowCopyCalendarLink()" *ngIf="showCopyCalendarLink" referrerpolicy="origin">
+                {{content[26]}}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12 text-right">
+          <div class="forwad">
+            <img src="assets/img/forwad.png" content="origin" alt="" />
+            <a (click)="toggleShowCopyCalendarLink()" referrerpolicy="origin">
+              {{content[25]}}
+            </a>
+            <!--<a (click)="toggleShowCopyCalendarLink()" *ngIf="showCopyCalendarLink">
+              {{content[26]}}
+            </a>-->
+          </div>
+
+          <!--<div class="input-group" *ngIf="showCopyCalendarLink">
+            <input type="text" class="form-control" [(ngModel)]="calendarDownloadLink" placeholder="{{content[35]}}">
+            <span class="input-group-btn">
+              <button class="btn btn-default" [class.btn-success]="isCopied1" type="button" ngxClipboard [cbContent]="calendarDownloadLink"
+                (cbOnSuccess)="isCopied1 = true">{{content[27]}}</button>
+            </span>
+          </div>-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <ul class="weekdays">
+            <li>
+              {{content[28]}}
+            </li>
+            <li>
+              {{content[29]}}
+            </li>
+            <li>
+              {{content[30]}}
+            </li>
+            <li>
+              {{content[31]}}
+            </li>
+            <li>
+              {{content[32]}}
+            </li>
+            <li>
+              {{content[33]}}
+            </li>
+            <li>
+              {{content[34]}}
+            </li>
+          </ul>
+          <ul class="days" *ngFor="let week of weeks;let w=index">
+            <li *ngFor="let day of week.days;let i=index;" (click)="selectedDay(day,w,i)" [class.selected]="day.isSelected" [class.active]="day.active"
+              [class.inactive]="!day.active" [class.today]="day.isToday">{{day.number}}
+              <span [class.dro]="!day.isSelected">{{day.noofDRO}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

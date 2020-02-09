@@ -1,0 +1,110 @@
+<div class="welcome_container">
+  <article class="article-section" id="article-section">
+    <!-- Article section start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="img-column">
+            <img src="assets/img/form-fill.png" content="origin" alt="" />
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <div class="content-column">
+            <h1 class="large-title">{{content?.name}}</h1>
+            <div *ngFor="let field of content?.fields">
+              <p *ngIf="field.fieldType == 'VIEW_LABEL'">{{ field.masterBank.description }}</p>
+            </div>
+            <ul>
+              <li>
+                <a (click)="goToLogin()" referrerpolicy="origin">
+                  <!--<i class="fa fa-envelope" aria-hidden="true"></i>-->
+                  <img src="assets/img/sign-in.png" class="icon" content="origin" alt="" />
+                  <span>{{welcomeLangContent[1]}}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="showLogOutModal" class="modal fade show in danger popup_section" id="myModal" role="dialog">
+        <div class="modal-dialog popup-box">
+          <div class="modal-content">
+            <div class="modal-body">
+              <a (click)="continue()" class="close" referrerpolicy="origin">
+                <span class="cross">X</span>
+              </a>
+              <h1 class="medium-title confirm_title">{{welcomeLangContent[4]}}</h1>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" (click)="continue()" class="btn btn-success">{{welcomeLangContent[5]}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="orgExist" class="modal fade show in danger" id="myModal" role="dialog">
+        <div class="modal-dialog popup-box">
+          <div class="modal-content">
+            <div class="modal-body">
+              <a (click)="closeModal()" class="close" referrerpolicy="origin">
+                <span class="cross">X</span>
+              </a>
+              <h1 class="medium-title confirm_title">{{welcomeLangContent[9]}}</h1>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" (click)="closeModal()" class="btn btn-success">{{welcomeLangContent[5]}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+</div>
+<!-- Article section end -->
+
+<div class="req_error" *ngIf="errorFlag">
+  <div class="modal fade show in danger" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <button class="close_button" (click)="errorFlag = false; _restApiService.setSessionErrorFlag(false);">
+        <i class="material-icons close">close</i>
+      </button>
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="assets/img/security.png" content="origin" alt="" />
+          <h4 class="text">As a security measure the system automatically logs out when multiple instances of session are active. Please login
+            again to continue.</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOADER START -->
+<div class="animation_loader_section">
+  <div class="loader_section">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="198px"
+      height="198px" viewBox="0 0 433 434" style="enable-background:new 0 0 433 434;" xml:space="preserve">
+
+      <g id="Forma_1_1_" class="st0">
+        <g id="Forma_1">
+          <g>
+            <path id="circle" class="st3" d="M423.537,160.98C392.648,47.097,274.865-20.426,160.98,10.463C47.096,41.353-20.426,159.134,10.463,273.02
+              c1.259,4.642,6.044,7.385,10.686,6.126s7.385-6.045,6.126-10.687C-1.1,163.846,60.926,55.649,165.541,27.275
+              C270.154-1.1,378.351,60.927,406.725,165.541C435.1,270.154,373.075,378.35,268.459,406.725
+              c-71.176,19.306-146.416-2.464-196.356-56.813c-3.254-3.543-8.764-3.774-12.306-0.521c-3.542,3.254-3.774,8.766-0.521,12.307
+              c54.361,59.159,136.263,82.854,213.743,61.84C386.905,392.647,454.426,274.865,423.537,160.98z" />
+          </g>
+        </g>
+      </g>
+      <g id="hi_x21_">
+        <text id="dro_logo" transform="matrix(1 0 0 1 41.7231 298)" class="st1 st4 st2 st5">hi!</text>
+      </g>
+    </svg>
+  </div>
+</div>
+<!-- LOADER END -->

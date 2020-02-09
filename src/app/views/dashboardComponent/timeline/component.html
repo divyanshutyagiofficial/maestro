@@ -1,0 +1,76 @@
+<!--<div class="responsive_add_view_section">
+  <div class="middle_ad_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="left_sidebar">
+            <div class="bottom_img_one">
+              <img src="assets/img/img1.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+
+<div class="right_sidebar">
+  <div class="title_section">
+    <h4>{{content[18]}}</h4>
+  </div>
+
+  <div class="section" *ngIf="!timelineData.length">
+    <div class="inner_fix_box">
+      <div class="no_data">{{content[39]}}</div>
+    </div>
+  </div>
+
+  <div class="section" *ngIf="timelineData && timelineData.length">
+    <div class="inner_fix_box">
+      <div class="fix_box" *ngFor="let data of timelineData">
+        <span class="count">{{data.date | date : "d"}}</span>
+        <div class="small_title" *ngIf="checkToday(data.date); else default">Today</div>
+        <ng-template #default>
+          <div class="small_title">{{data.date | date : "EEEE"}}, {{data.date | date : "MMMM" }} {{data.date | date :
+            "y"}}</div>
+        </ng-template>
+
+        <div *ngFor="let x of data.events">
+          <div class="box" *ngIf="x.event =='CONTINUE'">
+            <div class="icon">
+              <img src="assets/img/continue.png" content="origin" alt="" />
+            </div>
+            <div class="text">{{x.msg}}</div>
+          </div>
+          <div class="box" *ngIf="x.event =='DECLINE'">
+            <div class="icon">
+              <img src="assets/img/declined2.png" content="origin" alt="" />
+            </div>
+            <div class="text">{{x.msg}}</div>
+          </div>
+          <div class="box" *ngIf="x.event =='COMPLETED'">
+            <div class="icon">
+              <img src="assets/img/completed2.png" content="origin" alt="" />
+            </div>
+            <div class="text">{{x.msg}}</div>
+          </div>
+          <div class="box" *ngIf="x.event =='ASSIGN'">
+            <div class="icon">
+              <img src="assets/img/assigned2.png" content="origin" alt="" />
+            </div>
+            <div class="text">{{x.msg}}</div>
+          </div>
+          <div class="box" *ngIf="x.event=='EXPIRED'">
+            <div class="icon">
+              <img src="assets/img/expired2.png" content="origin" alt="" />
+            </div>
+            <div class="text">{{x.msg}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="load_more" *ngIf="showMore"><span (click)="loadMore()">Load More <img class="icon" src="assets/img/load_more.png"
+            alt="Load More" content="origin" /></span></div>
+    </div>
+  </div>
+</div>

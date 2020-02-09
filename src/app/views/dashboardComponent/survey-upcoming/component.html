@@ -1,0 +1,45 @@
+
+  <div class="left_sidebar">
+    <div class="title_section">
+      <h4>{{languageContent[23]}}</h4>
+    </div>
+    <div class="no-schedule" *ngIf="!surveys.length && !loading">
+      <img src="assets/img/no-schedule.png" content="origin" alt="" />
+      <h3>{{languageContent[62]}}</h3>
+    </div>
+    <div class="survey_section" *ngIf="surveys.length">
+      <div class="eventbased">
+        <div class="horizontal_list" *ngFor="let survey of surveys">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="sub_title">
+              <div class="survey-name">{{survey?.surveyName}}</div>
+              <div class="optional" *ngIf="survey.surveySessionInfo.scheduleType=='UNSCHEDULED'">(Optional)</div>
+            </div>
+            <span *ngIf="survey.surveySessionInfo.endTime != 0">{{languageContent[26]}} {{survey?.surveySessionInfo?.endTime + offset | date:'medium'}}</span>
+          </div>
+
+          <div class="col-md-3 col-sm-12 col-xs-12">
+            <div class="precent_detail" *ngIf="survey.surveySessionInfo.progressStatus=='STARTED'">
+              <div class="text">{{survey?.surveySessionInfo?.percentageCompleted}}% {{languageContent[21]}}</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                  [ngStyle]="{'width':survey.surveySessionInfo.percentageCompleted+'%'}">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-12 col-xs-12">
+            <div>
+              <div class="btn" *ngIf="survey.surveySessionInfo.progressStatus=='STARTED' && survey.surveySessionInfo.userSurveySessionId !== 0">
+                <a (click)="goToSurvey(survey.surveySessionInfo.userSurveySessionId, survey.surveySessionInfo.progressStatus)" referrerpolicy="origin">{{languageContent[24]}}</a>
+              </div>
+              <div class="btn start" *ngIf="survey.surveySessionInfo.progressStatus=='NOT_STARTED' && survey.surveySessionInfo.percentageCompleted == 0 && survey.surveySessionInfo.userSurveySessionId !== 0">
+                <a (click)="goToSurvey(survey.surveySessionInfo.userSurveySessionId, survey.surveySessionInfo.progressStatus)" referrerpolicy="origin">{{languageContent[25]}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

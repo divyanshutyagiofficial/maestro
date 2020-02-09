@@ -1,0 +1,207 @@
+/**** DEFAUL PAGES CSS START *****/
+/** Terms condition css start **/
+::ng-deep .study-information{min-height:91vh;}
+.forgot-password {
+    background: #fbfcfd;
+    padding: 40px 0;
+}
+.terms-conditions .medium-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.terms-conditions p {
+    margin-bottom: 15px;
+}
+.defaul-page p {
+    margin: 0 0 20px 0;
+}
+.defaul-page .list {
+    margin: 0 0 0 18px;
+    padding: 0;
+}
+.defaul-page .list li {
+    margin: 0 0 8px 0;
+    padding: 0;
+    color: #03a2e8;
+}
+.defaul-page .list li a {
+    color: #03a2e8;
+    text-decoration: underline;
+    font-weight: 600;
+}
+::ng-deep .study-information .column .small-title {
+    margin: 30px 0 8px 0;
+}
+.defaul-page .column p {
+    margin-bottom: 10px;
+}
+.defaul-page a {
+    color: #03a2e8;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.defaul-page iframe{
+	margin: 8px 0 0 0;
+    width: 500px;
+    height: 250px;
+}
+.defaul-page .read-more{text-align:right;}
+.defaul-page .read-more-sec{border-bottom:1px solid #d4dbe3; 
+
+margin:0; padding:0 0 25px;}
+.defaul-page .medium-title {
+    margin-top: 25px;
+}
+.disclaimer img {
+    height: 250px;
+    margin-bottom: 10px;
+}
+.legal_statment .order {
+    margin: 0px 0 15px 18px;
+    padding: 0;
+}
+.legal_statment .order li {
+    margin-bottom: 12px;
+    padding: 0 0 0 0;
+	font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #4d525a;
+}
+.legal_statment .heading_section {
+    margin: 0 15px;
+    padding: 0 0px;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+.legal_statment .heading_section .ls-email {
+    text-align: right;
+    margin: 30px 0 0 0;
+    padding: 0;
+}
+.legal_statment .heading_section .ls-email a {
+    color: #03a2e8;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.legal_statment .heading_section .ls-email a .fa {
+    margin-right: 10px;
+}
+.legal_statment .sub-header {
+    text-align: center;
+    margin: 25px 0;
+}
+.legal_statment .sub-header h2 {
+    margin: 0;
+    color: #232732;
+    font-size: 23px;
+    font-family:"Montserrat";
+    font-weight: 600;
+    padding: 0;
+}
+.legal_statment .sub-header h3 {
+    margin: 7px 0 0 0;
+    color: #232732;
+    font-size: 13px;
+    font-family:"Montserrat";
+    font-weight: 500;
+    padding: 0;
+}
+.header-section .print_section{
+	margin:0;
+	padding:13px 0;
+	background:#003056;
+}
+.header-section .print_section .section {
+    margin: 0;
+    padding: 0;
+}
+.header-section .print_section .section a {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    padding: 0 0 0 0;
+}
+.header-section .print_section .section a:hover{text-decoration:none;}
+.header-section .print_section .section a img {
+    margin: 0 10px 0 0;
+    height: 20px;
+}
+.header-section .print_section .save_print {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+.header-section .print_section .save_print li {
+    list-style: none;
+    margin: 0 0 0 0;
+    padding: 0 15px;
+    display: inline-block;
+    border-right: 1px solid #fff;
+}
+.header-section .print_section .save_print li:last-child{
+	border-right:none;
+	padding-right:0;
+}
+.header-section .print_section .save_print li a {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.header-section .print_section .save_print li a img {
+    height: 20px;
+    margin: 0 10px 0 0;
+}
+/*:host ::ng-deep .study-information .column .small-title{margin-top:0px;}*/
+/** Terms condition css end **/
+
+
+
+@media (min-width: 1200px) { }
+
+@media (min-width: 992px) and (max-width: 1199px){}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (min-width: 480px) and (max-width: 767px) {
+	/** Default pages css start **/
+	.forgot-password{padding:20px 0;}
+	::ng-deep .study-information .column .small-title{margin-top:10px !important;}
+	.defaul-page iframe{width:100%;}
+	.decline-page .shadow-box{width:100%; padding:12px;}
+	.forgot-password .medium-title{font-size:18px;}
+	.header-section .print_section .save_print{text-align:left; margin-top:0px;}
+	.header-section .print_section .save_print li{display:block; margin:0 0 10px; padding:0; border-right:none;}
+	
+	.decline-page .transparent .medium-title{margin:8px 0 0 0; font-size:20px; line-height:30px;}
+	.decline-page .shadow-box .order{margin:18px 0 18px 16px;}
+	.decline-page .shadow-box select{width:100%; font-size:13px;}
+	.decline-page .shadow-box .btn{width:100%; margin:18px auto 5px;}
+	.decline-page .shadow-box .btn a{font-size:13px;}
+	.active-dros .medium-title{font-size:18px;}
+	/** Default pages css end **/
+}
+
+@media (min-width: 300px) and (max-width: 479px) {	
+    /** Default pages css start **/
+    .forgot-password{padding:20px 0; min-height: 100%;}
+    ::ng-deep .study-information .column:first-child .small-title{margin-top:10px !important;}
+	::ng-deep .study-information .column .small-title{margin-top:20px !important;}
+	.defaul-page iframe{width:100%; height:auto;}
+	.decline-page .shadow-box{width:100%; padding:12px;}
+	.new-password .medium-title{text-align:left; font-size:26px;}
+	.disclaimer img{height:auto;}
+	.legal_statment .heading_section .ls-email {text-align: left; margin: 0px 0 18px 0; padding: 0;}
+	.legal_statment .sub-header h2{font-size:18px;}
+	.header-section .print_section .save_print{text-align:left; margin-top:0px;}
+	.header-section .print_section .save_print li{display:block; margin:0 0 10px; padding:0; border-right:none;}
+	
+	.decline-page .transparent .medium-title{margin:8px 0 0 0; font-size:20px; line-height:30px;}
+	.decline-page .shadow-box .order{margin:18px 0 18px 16px;}
+	.decline-page .shadow-box select{width:100%; font-size:13px;}
+	.decline-page .shadow-box .btn{width:100%; margin:18px auto 5px;}
+	.decline-page .shadow-box .btn a{font-size:13px;}
+	.active-dros .medium-title{font-size:18px;}
+	/** Default pages css end **/
+}

@@ -1,0 +1,488 @@
+.no_new_message {
+    text-align: center;
+}
+.req_error{
+    background: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+.close_button {
+    z-index: 99999;
+    position: absolute;
+    right: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+i.close {
+    font-size: 30px !important;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+}
+.modal-dialog {
+    top: 25% !important;
+}
+.fade.in {
+    opacity: 1 !important;
+    background: rgba(1,1,1,0.8) !important;
+}
+.modal-body {
+    position: relative;
+    padding: 20px 50px 40px 50px;
+}
+.material-icons {
+    font-size: 80px;
+}
+
+/** msg slider start **/
+.middle_ad_section .two_column_section li .msgslider {
+    border: 1px solid #d4dbe3;
+    box-shadow: none;
+    background: #fff;
+    border-radius: 3px;
+    padding: 15px;
+    margin: 0;
+    height: 176px;
+}
+.middle_ad_section .two_column_section li .msgslider .info h3{font-size: 16px; margin:0; padding:0;}
+.middle_ad_section .two_column_section li .msgslider .carousel-inner{height: 133px; overflow-y: auto;}
+/** ::-webkit **/
+.middle_ad_section .two_column_section li .msgslider .carousel-inner::-webkit-scrollbar {width: 3px;}
+.middle_ad_section .two_column_section li .msgslider .carousel-inner::-webkit-scrollbar-track {-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);  -webkit-border-radius:10px; border-radius:10px;}
+.middle_ad_section .two_column_section li .msgslider .carousel-inner::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background:#afbdc2;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.middle_ad_section .two_column_section li .msgslider .carousel-inner::-webkit-scrollbar-thumb:window-inactive{background:#afbdc2;}
+
+.middle_ad_section .two_column_section li .msgslider .bx-viewport {height: 127px !important;}
+.item {word-wrap: break-word;}
+.load_more {font-size: 14px; color: #009cde; font-weight: 500; text-decoration: underline; width: 100%; text-align: center; display: block;}
+.middle_ad_section .two_column_section li .msgslider .carousel-indicators {bottom: 8px; left: 0; width: 30px; margin: 0 auto; right: 0;}
+.middle_ad_section .two_column_section li .msgslider .carousel-indicators li {height: 8px; width: 8px; border-radius: 50%; background: #b3b5b9; margin-right: 3px; float: left; display: block;}
+.middle_ad_section .two_column_section li .msgslider .carousel-indicators li:last-child{margin-right: 0;}
+.middle_ad_section .two_column_section li .msgslider .carousel-indicators li.active {background: #686c74;}
+.middle_ad_section .two_column_section li .msgslider .section {margin: 0; padding: 0;}
+.middle_ad_section .two_column_section li .msgslider .section .box{margin: 0; padding: 0;}
+.middle_ad_section .two_column_section li .msgslider .section .box .icon {float: left; margin: 0 8px 0 0; padding: 0; width: 15%;}
+.middle_ad_section .two_column_section li .msgslider .section .box .sub_title {color: #222731; font-size: 14px; font-weight: 600; width: 80%; float: left; margin: 10px 0 0 0;}
+.middle_ad_section .two_column_section li .msgslider .section .box .small_title {clear: both; font-size: 14px; font-weight: 700; color: #222731; margin: 10px 0 0px 0; display: inline-block; width: 100%;}
+.middle_ad_section .two_column_section li .msgslider .section .box p {color: #888b8d; font-size: 14px; font-weight:500;}
+.middle_ad_section .two_column_section li .msgslider .section .box p a {text-decoration: underline; font-weight: 600; color:#01a7ed;}
+.middle_ad_section .two_column_section li .msgslider .section .box p a:hover,
+.middle_ad_section .two_column_section li .msgslider .section .box p a:focus{text-decoration:underline; color:#01a7ed;}
+/** msg slider end **/
+
+/** Dashboard clinical page css start **/
+.popup_section {background: rgba(0, 0, 0, 0.5); top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; z-index: 99; position: fixed; display:none;}
+.popup_section .popup-box {background: #fff; width: 590px; text-align: center; padding: 25px; height: 285px; border-radius: 4px; margin: auto; top: 0; bottom: 0; left: 0; right: 0; position: absolute; box-shadow: 0px 0px 29px 11px rgba(0, 0, 0, 0.1);}
+.popup_section .popup-box .small-title {padding-top: 0; font-size: 24px; line-height: 36px; text-align: left; margin-bottom:15px;}
+.popup_section .popup-box p {font-size: 16px; color: #222731; font-weight: 500; text-align: left; line-height: 26px; margin-bottom:25px;}
+.popup_section .popup-box p span {font-weight: 700;}
+.popup_section .popup-box .btn-section {text-align: right; margin: 0; padding: 0;}
+.popup_section .popup-box .btn-section .show_dashboard {font-weight: 500; font-size: 16px; color: #fb3c45; text-decoration: underline;}
+.popup_section .popup-box .yes {font-size: 16px; background: #01a5eb; color: #fff; padding: 9px 23px; margin-left: 20px; border-radius: 3px; font-weight: 500; text-decoration: none; transition:all 0.4s ease-in-out;}
+.popup_section .popup-box .yes:hover{background:#0fc445; text-decoration:none;}
+
+.dashboard_clinical {margin: 0; padding: 0; background: #fbfcfd;}
+.dashboard_clinical .title_box{margin:0 0 25px 0; padding:0;}
+.dashboard_clinical .title_box h3 {margin: 0; padding: 0; font-size: 28px; font-weight: 500; font-family:"Montserrat"; color: #222731;}
+.dashboard_clinical .title_box h3 span{font-weight: 700;}
+.dashboard_clinical .detail_box {text-align: right; margin: 0; padding: 0; font-size:14px; font-weight:500;}
+.dashboard_clinical .detail_box .visi_time {color: #888b8d;}
+.dashboard_clinical .detail_box span {color: #222731;}
+.dashboard_clinical .detail_box span span{color: #888b8d;}
+
+.dashboard_clinical .calendar_section{margin:0 0 35px 0; padding:0 18px 18px; background:#003056 url('../../../assets/img/pattern.png') no-repeat center top; background-size:cover; overflow:hidden; border-radius:4px;}
+.dashboard_clinical .calendar_section .icon {float: left; margin: 16px 0 0 0; padding: 0; width: 5%;}
+.dashboard_clinical .calendar_section .content {float: left; margin: 18px 0 0 0; padding: 0 0 0 18px; width: 95%;}
+.dashboard_clinical .calendar_section .content p {color: #fff; margin: 0px 0 0 0; font-size: 18px; font-weight: 500;}
+
+.dashboard_clinical .calendar_section .content .detail{font-size: 14px; font-weight: 400; position: relative; color:#fff; margin-top:5px;}
+.dashboard_clinical .calendar_section .arrow_icon{width: 3.5%; margin: 0px 0 0 0; padding: 0; right:0; bottom:6px; position: absolute;}
+.dashboard_clinical .calendar_section .mobile_view_details{display:none; font-size: 14px; font-weight: 400; position: relative; color: #fff; clear: both;}
+.dashboard_clinical .calendar_section .mobile_view_details .text_data{width:83%; font-size: 12px;}
+.dashboard_clinical .calendar_section .mobile_view_details .arrow_icon {width:5%; margin: 0px 0 0 0; padding: 0; bottom: 0; right: 0; position: absolute;}
+
+
+.dashboard_clinical .left_sidebar {margin: 0; padding: 0;}
+.dashboard_clinical .left_sidebar .title_section {clear: both; margin: 0 0 15px 0; padding: 0;}
+.dashboard_clinical .left_sidebar .title_section h4{font-size: 20px; color: #222731; font-weight: 600; margin: 0; padding: 0;}
+.dashboard_clinical .right_sidebar {margin: 0; padding: 0;}
+.dashboard_clinical .right_sidebar .title_section {clear: both; margin: 0 0 15px 0; padding: 0;}
+.dashboard_clinical .right_sidebar .title_section h4 {font-size: 20px; color: #222731; font-weight: 600; margin: 0; padding: 0;}
+.middle_ad_section{margin:23px 0 24px; padding:0;}
+.middle_ad_section .left_sidebar {margin: 0; padding: 0;}
+.middle_ad_section .left_sidebar .bottom_img_one {
+    background: #fff;
+    border: 1px solid #d4dbe3;
+    text-align: center;
+    padding: 15px;
+    border-radius: 2px;
+}
+.middle_ad_section .left_sidebar .bottom_img_one img {
+    height: 70px;
+}
+.middle_ad_section .two_column_section {
+    margin: 30px 0 0 0;
+    padding: 0;
+    overflow: hidden;
+}
+.middle_ad_section .two_column_section li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 49%;
+    float:left;
+}
+.middle_ad_section .two_column_section li .heading {
+    color: #222731;
+    font-size: 20px;
+    font-weight: 600;
+	margin:0 0 8px 0;
+}
+.middle_ad_section .two_column_section li:last-child .heading {
+    margin-left: 8px;
+}
+.middle_ad_section .two_column_section li .bx-wrapper {
+    border: 1px solid #d4dbe3;
+    box-shadow: none;
+    background: #fff;
+    border-radius: 3px;
+    padding: 15px;
+	margin:0;
+}
+.middle_ad_section .two_column_section li .bx-wrapper .bx-viewport {
+    height: 127px !important;
+}
+.middle_ad_section .two_column_section li .bx-wrapper .bx-default-pager {
+    bottom: 8px;
+}
+.middle_ad_section .two_column_section li .bx-wrapper .bx-default-pager a {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: #b3b5b9;
+}
+.middle_ad_section .two_column_section li .bx-wrapper .bx-default-pager a.active {
+    background: #686c74;
+}
+.middle_ad_section .two_column_section li .bx-wrapper .section {
+    margin: 0;
+    padding: 0;
+}
+.middle_ad_section .two_column_section li .bx-wrapper .section .box{
+    margin: 0;
+    padding: 0;
+}
+.middle_ad_section .two_column_section li .bx-wrapper .section .box .icon {
+    float: left;
+    margin: 0 8px 0 0;
+    padding: 0;
+    width: 15%;
+}
+.middle_ad_section .two_column_section li .bx-wrapper .section .box .sub_title {
+    color: #222731;
+    font-size: 14px;
+    font-weight: 600;
+    width: 80%;
+    float: left;
+    margin: 10px 0 0 0;
+}
+.middle_ad_section .two_column_section li .bx-wrapper .section .box .small_title {
+    clear: both;
+    font-size: 14px;
+    font-weight: 700;
+    color: #222731;
+    margin: 10px 0 4px 0;
+    display: inline-block;
+    width: 100%;
+}
+.middle_ad_section .two_column_section li .bx-wrapper .section .box p {
+    color: #888b8d;
+    font-size: 14px;
+	font-weight:500;
+}
+.middle_ad_section .two_column_section li .bx-wrapper .section .box p a {
+    text-decoration: underline;
+    font-weight: 600;
+	color:#01a7ed;
+}
+.middle_ad_section .two_column_section li .bx-wrapper .section .box p a:hover,
+.middle_ad_section .two_column_section li .bx-wrapper .section .box p a:focus{text-decoration:underline; color:#01a7ed;}
+
+.middle_ad_section .two_column_section li:first-child .right_box{margin-left:0;}
+.middle_ad_section .two_column_section li .right_box {
+    margin: 0 0 0 8px;
+    padding: 15px;
+    border: 1px solid #d4dbe3;
+    height:176px;
+    border-radius: 3px;
+    overflow:hidden;
+}
+.middle_ad_section .two_column_section li .right_box .column {
+    margin: 0;
+    padding: 0;
+}
+.middle_ad_section .two_column_section li .right_box .column .icon {
+    float: left;
+    margin: 0 8px 0 0;
+    padding: 0;
+    width: 15%;
+}
+.middle_ad_section .two_column_section li .right_box .column .detail {
+    color: #222731;
+    font-size: 14px;
+    font-weight: 600;
+    width: 80%;
+    float: left;
+    margin: 10px 0 0 0;
+    height:133px;
+    overflow-y:auto;
+}
+/** ::-webkit **/
+.middle_ad_section .two_column_section li .right_box .column .detail::-webkit-scrollbar {width: 3px;}
+.middle_ad_section .two_column_section li .right_box .column .detail::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.middle_ad_section .two_column_section li .right_box .column .detail::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background:#afbdc2;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.middle_ad_section .two_column_section li .right_box .column .detail::-webkit-scrollbar-thumb:window-inactive{background:#afbdc2;}
+
+.middle_ad_section .two_column_section li .right_box .column a {
+    clear: both;
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+    font-weight: 600;
+    text-decoration: underline;
+    margin: 14px 0 0 0;
+	color:#01a7ed;
+}
+.middle_ad_section .two_column_section li .right_box .column a:focus,
+.middle_ad_section .two_column_section li .right_box .column a:hover{text-decoration:underline; color:#01a7ed;}
+.middle_ad_section .two_column_section li .browse_msg{
+	margin:12px 0 0 0;
+	padding:0;
+}
+.middle_ad_section .two_column_section li:last-child .browse_msg {
+    margin-left: 11px;
+}
+.middle_ad_section .two_column_section li .browse_msg a{font-weight:600; text-decoration:underline; color:#01a7ed;}
+.middle_ad_section .two_column_section li .browse_msg a:focus,
+.middle_ad_section .two_column_section li .browse_msg a:hover{text-decoration:underline; color:#01a7ed;}
+
+.middle_ad_section .right_sidebar{
+	margin:0;
+	padding:0;
+}
+.middle_ad_section .right_sidebar .bottom_img_one{
+	margin:0;
+	padding:0;
+	width:100%;
+}
+.middle_ad_section .right_sidebar .bottom_img_one img{width:100%; padding-left:11px;}
+
+.middle_ad_section .ad_three {
+    text-align: center;
+    margin: 35px 0 10px;
+}
+/** Dashboard clinical page css start **/
+
+/** MODAL CSS START **/
+::ng-deep .dashboard_modal_section{margin:0; padding:0;}
+::ng-deep .dashboard_modal_section .modal{background: rgba(0,0,0,0.5);}
+::ng-deep .dashboard_modal_section .modal .modal-dialog{margin-top:120px;}
+::ng-deep .dashboard_modal_section .modal .modal-content{
+    padding:25px; 
+    position:relative; 
+    border-radius:4px; 
+    box-shadow: 0px 0px 29px 11px rgba(0,0,0,0.1) !important;
+    border:none;
+}
+::ng-deep .dashboard_modal_section .modal .modal-content .modal-header{padding:0; border:none; margin-bottom:15px;}
+::ng-deep .dashboard_modal_section .modal .modal-content .modal-header h4{
+    color:#232732;
+    font-family:"Montserrat";
+    font-size: 22px;
+    line-height: 34px;
+    font-weight: 600;
+}
+::ng-deep .dashboard_modal_section .modal .modal-content .modal-header .close {
+    position: absolute;
+    background: #222731;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    display: block;
+    text-align: center;
+    top: -15px;
+    right: -17px;
+    border-radius: 100%;
+    font-weight: 600;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+::ng-deep .dashboard_modal_section .modal .modal-content .modal-header .close .cross {margin:0; padding:0; vertical-align:middle; height:35px; width:35px; display:block; text-align:center; position:relative;}
+::ng-deep .dashboard_modal_section .modal .modal-content .modal-header .close .cross img{margin:7.3px 0 0 0; padding:0; width:19px;}
+::ng-deep .dashboard_modal_section .modal .modal-content .modal-header .close:hover{background:rgb(252, 55, 55);}
+::ng-deep .dashboard_modal_section .modal .modal-content .modal-body{
+    padding: 0;
+    font-size: 16px;
+    color: #222731;
+    line-height: 26px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+::ng-deep .dashboard_modal_section .modal .modal-content .modal-footer{padding:0; border:none;}
+::ng-deep .dashboard_modal_section .modal .modal-content .modal-footer .btn-success {
+    font-size: 16px;
+    background: #01a5eb;
+    color: #fff;
+    padding: 7px 20px;
+    margin-left: 20px;
+    border-radius: 3px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid #01a5eb;
+}
+::ng-deep .dashboard_modal_section .modal .modal-content .modal-footer .btn-success:hover{background:#18d14f; border:1px solid #18d14f;}
+/** MODAL CSS END **/
+
+@media (min-width: 1200px) { }
+
+@media (min-width: 992px) and (max-width: 1199px){
+    ::ng-deep .dashboard_clinical .calendar_section{height: auto !important; padding-bottom: 15px !important;}
+    ::ng-deep .dashboard_clinical .left_sidebar .btn{padding:0;}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	/** Dashboard clinical page css start **/
+	.dashboard_clinical .calendar_section{height:auto; padding:0 15px 18px;}
+    .dashboard_clinical .calendar_section .content .detail{display: block;}
+    .dashboard_clinical .calendar_section .mobile_view_details{display:none; margin-top:21px;}
+	.dashboard_clinical .left_sidebar .btn{padding:0; margin:10px 0 0 0;}
+    .dashboard_clinical .left_sidebar .btn a{width:100%;}
+    .middle_ad_section{margin-bottom:40px;}
+	.middle_ad_section .two_column_section li{float:none; width:100%;}
+    .middle_ad_section .two_column_section li .bx-wrapper .bx-viewport .msgslider div{width:100% !important;}
+    .middle_ad_section .two_column_section li:last-child .heading{margin-left:0; margin-bottom:12px;}
+	.middle_ad_section .two_column_section li .bx-wrapper .section .box .icon{width:20% !important;}
+	.middle_ad_section .two_column_section li .bx-wrapper .section .box .sub_title{width:75% !important;}
+    .middle_ad_section .two_column_section li .bx-wrapper .section .box p{font-size:12px;}
+	.middle_ad_section .two_column_section li .right_box{margin-left:0;}
+    .middle_ad_section .right_sidebar .bottom_img_one{display:none;}
+    .middle_ad_section .left_sidebar .bottom_img_one{padding:8px; margin-top:22px;}
+    .middle_ad_section .left_sidebar .bottom_img_one img{height:60px;}
+    .middle_ad_section .ad_three img{height: 62px;}
+	.middle_ad_section .ad_three{margin:23px 0 0px;}
+    .dashboard_clinical .detail_box span{float: left; margin-left: 2px; font-weight: 600;}
+    .dashboard_clinical .detail_box{float:right;}
+    .dashboard_clinical .title_box h3{font-size: 22px;}
+    .middle_ad_section .two_column_section li .browse_msg{margin-top:10px; margin-bottom: 30px;}
+    .middle_ad_section .two_column_section li:last-child .browse_msg{margin-bottom: 4px; margin-left: 0;}
+    /** Dashboard clinical page css end **/
+    
+    /** MODAL CSS START **/
+    ::ng-deep .dashboard_modal_section .modal .modal-dialog{margin: 70px auto;}
+    ::ng-deep .dashboard_modal_section .modal .modal-content{padding:25px 15px 16px;}
+    ::ng-deep .dashboard_modal_section .modal .modal-content .modal-header h4{font-size:16px; line-height: 24px;}
+    ::ng-deep .dashboard_modal_section .modal .modal-content .modal-body{font-size:13px; line-height: 22px;}
+    ::ng-deep .dashboard_modal_section .modal .modal-content .modal-footer .btn-success{font-size: 14px;}
+    /** MODAL CSS END **/
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+	/** Dashboard clinical page css start **/
+    .dashboard_clinical .calendar_section{height:auto; padding:0 15px 18px;}
+	.dashboard_clinical .calendar_section .icon{width:18%;}
+    .dashboard_clinical .calendar_section .content{width:70%; padding-left:12px;}
+    .dashboard_clinical .calendar_section .content .detail{display: none;}
+    .dashboard_clinical .calendar_section .mobile_view_details{display:inline-block; margin-top:21px; width:100%;}
+    .dashboard_clinical .calendar_section .mobile_view_details .arrow_icon{width:9%; bottom:13px;}
+    .dashboard_clinical .calendar_section .content p{font-size: 14px;}
+    .dashboard_clinical .calendar_section .mobile_view_details .arrow_icon{width:5%; bottom:-5px;}
+	.dashboard_clinical .left_sidebar .btn{padding:0; margin:10px 0 0 0;}
+    .dashboard_clinical .left_sidebar .btn a{width:100%;}
+    .middle_ad_section{margin-bottom:40px;}
+	.middle_ad_section .two_column_section li{float:none; width:100%;}
+    .middle_ad_section .two_column_section li .bx-wrapper .bx-viewport .msgslider div{width:100% !important;}
+    .middle_ad_section .two_column_section li:last-child .heading{margin-left:0; margin-bottom:12px;}
+	.middle_ad_section .two_column_section li .bx-wrapper .section .box .icon{width:20% !important;}
+	.middle_ad_section .two_column_section li .bx-wrapper .section .box .sub_title{width:75% !important;}
+    .middle_ad_section .two_column_section li .bx-wrapper .section .box p{font-size:12px;}
+	.middle_ad_section .two_column_section li .right_box{margin-left:0;}
+    .middle_ad_section .right_sidebar .bottom_img_one{display:none;}
+    .middle_ad_section .left_sidebar .bottom_img_one{padding:8px; margin-top:22px;}
+	.middle_ad_section .ad_three{margin:23px 0 0px;}
+    .dashboard_clinical .title_box{margin-bottom: 6px;}
+    .dashboard_clinical .detail_box .visi_time{float: left;}
+    .dashboard_clinical .detail_box span{float: left; margin-left: 2px; font-weight: 600;}
+    .dashboard_clinical .detail_box{font-size: 11px; margin-bottom: 20px; float: left;}
+    .dashboard_clinical .title_box h3{font-size: 22px;}
+    .middle_ad_section .two_column_section li .browse_msg{margin-top:10px; margin-bottom: 30px;}
+    .middle_ad_section .two_column_section li:last-child .browse_msg{margin-bottom: 4px; margin-left: 0;}
+    /** Dashboard clinical page css end **/
+    
+    /** MODAL CSS START **/
+    ::ng-deep .dashboard_modal_section .modal .modal-dialog{margin:70px 25px 25px;}
+    ::ng-deep .dashboard_modal_section .modal .modal-content{padding:25px 15px 16px;}
+    ::ng-deep .dashboard_modal_section .modal .modal-content .modal-header h4{font-size:16px; line-height: 24px;}
+    ::ng-deep .dashboard_modal_section .modal .modal-content .modal-body{font-size:13px; line-height: 22px;}
+    ::ng-deep .dashboard_modal_section .modal .modal-content .modal-footer .btn-success{font-size: 14px;}
+    /** MODAL CSS END **/
+}
+
+@media (min-width: 300px) and (max-width: 479px) {
+	/** Dashboard clinical page css start **/
+	.dashboard_clinical .calendar_section{height:auto; padding:0 15px 18px;}
+	.dashboard_clinical .calendar_section .icon{width:18%;}
+    .dashboard_clinical .calendar_section .content{width:70%; padding-left:12px;}
+    .dashboard_clinical .calendar_section .content .detail{display: none;}
+    .dashboard_clinical .calendar_section .mobile_view_details{display:inline-block; margin-top:21px; width:100%;}
+    .dashboard_clinical .calendar_section .mobile_view_details .arrow_icon{width:9%; bottom:5px;}
+    .dashboard_clinical .calendar_section .content p{font-size: 14px;}
+    .dashboard_clinical .calendar_section .content p span{display:inline-block; margin:18px 0 0 0;}
+	.dashboard_clinical .left_sidebar .btn{padding:0; margin:10px 0 0 0;}
+    .dashboard_clinical .left_sidebar .btn a{width:100%;}
+    .middle_ad_section{margin-bottom:40px;}
+	.middle_ad_section .two_column_section li{float:none; width:100%;}
+    .middle_ad_section .two_column_section li .bx-wrapper .bx-viewport .msgslider div{width:100% !important;}
+    .middle_ad_section .two_column_section li:last-child .heading{margin-left:0; margin-bottom:12px;}
+	.middle_ad_section .two_column_section li .bx-wrapper .section .box .icon{width:20% !important;}
+	.middle_ad_section .two_column_section li .bx-wrapper .section .box .sub_title{width:75% !important;}
+    .middle_ad_section .two_column_section li .bx-wrapper .section .box p{font-size:12px;}
+	.middle_ad_section .two_column_section li .right_box{margin-left:0;}
+    .middle_ad_section .right_sidebar .bottom_img_one{display:none;}
+    .middle_ad_section .left_sidebar .bottom_img_one{padding:8px; margin-top:22px;}
+    .middle_ad_section .left_sidebar .bottom_img_one img{height:50px;}
+    .middle_ad_section .ad_three img{height: 50px;}
+	.middle_ad_section .ad_three{margin:23px 0 0px;}
+    .dashboard_clinical .title_box{margin-bottom: 6px;}
+    .dashboard_clinical .detail_box .visi_time{float: left;}
+    .dashboard_clinical .detail_box span{float: left; margin-left: 2px; font-weight: 600;}
+    .dashboard_clinical .detail_box{font-size: 11px; margin-bottom: 20px; float: left;}
+    .dashboard_clinical .title_box h3{font-size: 22px;}
+    .middle_ad_section .two_column_section li .browse_msg{margin-top:10px; margin-bottom: 30px;}
+    .middle_ad_section .two_column_section li:last-child .browse_msg{margin-bottom: 4px; margin-left: 0;}
+    /** Dashboard clinical page css end **/
+    
+    /** MODAL CSS START **/
+    ::ng-deep .dashboard_modal_section .modal .modal-dialog{margin:70px 25px 25px;}
+    ::ng-deep .dashboard_modal_section .modal .modal-content{padding:25px 15px 16px;}
+    ::ng-deep .dashboard_modal_section .modal .modal-content .modal-header h4{font-size:16px; line-height: 24px;}
+    ::ng-deep .dashboard_modal_section .modal .modal-content .modal-body{font-size:13px; line-height: 22px;}
+    ::ng-deep .dashboard_modal_section .modal .modal-content .modal-footer .btn-success{font-size: 14px;}
+    /** MODAL CSS END **/
+}

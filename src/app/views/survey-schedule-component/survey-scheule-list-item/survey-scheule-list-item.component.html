@@ -1,0 +1,56 @@
+<div class="horizontal_list">
+  <div class="col-md-6 col-sm-12 col-xs-12">
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" *ngIf="isCheckBox()" [checked]="surveySchedule.isSelected"
+          (change)="check()">
+        <div class="disabled_chkbox" *ngIf="!isCheckBox()"></div>
+        <div class="column">
+          <div class="icon">
+            <img src="assets/img/star.png" *ngIf="surveySchedule.survey.isPriority" content="origin" alt="" />
+            <!--<img src="assets/img/date.png" *ngIf="!surveySchedule.survey.isPriority"/>-->
+            <div class="sub_title">{{surveySchedule.survey.name}}</div>
+            <div [ngClass]="{detail: !surveySchedule.survey.isPriority}">
+              <span>{{content?.dashboard[26]}} {{localEndTime | date:'MMM d, y, h:mm:ss a'}}</span>
+            </div>   
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-12 col-xs-12">
+    <div class="precent_detail" *ngIf="surveySchedule && surveySchedule.userSession && surveySchedule.userSession.percentageCompleted < 100 && surveySchedule.userSession.isDeclined==false && surveySchedule.userSession.progressStatus == 'STARTED'">
+      <div class="text">{{surveySchedule.userSession.percentageCompleted}}% Completed</div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" [attr.aria-valuenow]="surveySchedule.userSession.percentageCompleted"
+          aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width' : getPercent(surveySchedule.userSession.percentageCompleted)}">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-12 col-xs-12">
+    <div class="btn" *ngIf="isEnable() && surveySchedule && surveySchedule.userSession && surveySchedule.userSession.percentageCompleted==0 && surveySchedule.userSession.progressStatus == 'NOT_STARTED' && !surveySchedule.userSession.isDeclined"
+      [ngClass]="{'start': surveySchedule.userSession.percentageCompleted==0 }" (click)="goToSurvey(surveySchedule.userSession.id)">
+      <a>{{content?.survey_schedule[38]}}</a>
+    </div>
+
+    <div class="btn" *ngIf="surveySchedule && surveySchedule.userSession && !surveySchedule.userSession.isDeclined && surveySchedule.userSession.percentageCompleted < 100 && surveySchedule.userSession.progressStatus == 'STARTED'"
+      (click)="goToSurvey(surveySchedule.userSession.id)">
+      <a>{{content?.survey_schedule[39]}}</a>
+    </div>
+
+    <div class="btn start btn_compl" *ngIf="surveySchedule && surveySchedule.userSession && !surveySchedule.userSession.isDeclined && surveySchedule.userSession.progressStatus=='COMPLETED' && surveySchedule.userSession.percentageCompleted == 100">
+      <a class="completed" referrerpolicy="origin">{{content?.view_dro[22]}}</a>
+    </div>
+
+    <div class="btn start btn_decl" *ngIf="surveySchedule && surveySchedule.userSession && surveySchedule.userSession.progressStatus !== 'EXPIRED' && surveySchedule.userSession.isDeclined && surveySchedule.userSession.progressStatus !== 'COMPLETED' && surveySchedule.userSession.percentageCompleted !== 100">
+      <a>{{content?.view_dro[23]}}</a>
+    </div>
+
+    <div class="btn start btn_expr disabled" *ngIf="isExpired()">
+      <a class="expired" referrerpolicy="origin">{{content?.view_dro[24]}}</a>
+    </div>
+  </div>
+</div>

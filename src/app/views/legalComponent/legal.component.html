@@ -1,0 +1,74 @@
+<div class="legal_container">
+<div class="header-section">
+  <div class="print_section">
+    <div class="container">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="section" *ngIf="!authenticated" id="backdash">
+          <a (click)="goToWelcome()" referrerpolicy="origin">
+            <img src="assets/img/back-arrow.png" content="origin" alt="" /> {{legalBodyContent[8]}}</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <ul class="save_print">
+          <li>
+            <a (click)="downloadPDF()" referrerpolicy="origin">
+              <img src="assets/img/save.png" content="origin" alt="" /> {{legalBodyContent[1]}}</a>
+          </li>
+
+          <li>
+            <a (click)="print()" referrerpolicy="origin">
+              <img src="assets/img/print.png" content="origin" alt="" /> {{legalBodyContent[2]}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- success modal after sending email -->
+<div *ngIf="submitSuccessModal" class="modal fade show in danger" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>{{legalBodyContent[3]}}</h4>
+        <!--<button  data-dismiss="modal" aria-label="Close" class="close pull-right" type="button">
+            <span class="cross"><img src="assets/img/close.png"></span>
+        </button>-->
+      </div>
+      <div class="modal-body">
+        <p>{{legalBodyContent[4]}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" (click)="close()">{{legalBodyContent[6]}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="content" #content>
+  <article class="forgot-password study-information  terms-conditions  disclaimer legal_statment defaul-page">
+    <!-- Article section start -->
+    <div class="container">
+      <div class="row">
+        <div class="heading_section">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <h1 class="medium-title">{{ legalStatement.name }}</h1>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="ls-email" *ngIf="authenticated" id="backdash">
+              <a (click)="sendMail()" referrerpolicy="origin">
+                <i class="fa fa-envelope" aria-hidden="true"></i> {{legalBodyContent[5]}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <app-header-paragraph [fields]="legalStatement.fields"></app-header-paragraph>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+</div>

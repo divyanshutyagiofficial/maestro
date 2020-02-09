@@ -1,0 +1,54 @@
+<div class="login_container">
+  <article class="article-section" id="article-section">
+    <!-- Article section start -->
+    <div class="container">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="login-form-section">
+          <ul>
+            <li>
+              <div class="form-column">
+                <div class="shadow-text">
+                  <div class="signin-title">{{loginContent[5]}}
+                    <span class="border-bottom"></span>
+                  </div>
+                </div>
+                <div class="form-box">
+                  <form id="contact-form" role="form" (submit)="login()">
+                    <div class="messages"></div>
+                    <div class="controls">
+                      <!-- <div class="row"> -->
+                      <dynamic-layout [fields]="content?.fields" [notify]="notify"></dynamic-layout>
+                      <div *ngIf="errorMessage" class="error_message alert alert-danger">{{errorMessage}}</div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <!-- Replace data-sitekey with your own one, generated at https://www.google.com/recaptcha/admin -->
+                            <div class="g-recaptcha" data-sitekey="6Lec4EoUAAAAAJ0wnjVzHhAJLx4sHg9FYKuBFRok"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div *ngIf="orgExist" class="modal fade show in danger" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p>{{welcomeContent[9]}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" (click)="closeModal()" class="btn">{{welcomeContent[5]}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+<!-- Article section end -->

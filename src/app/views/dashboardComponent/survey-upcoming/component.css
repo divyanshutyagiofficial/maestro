@@ -1,0 +1,44 @@
+.dashboard_clinical .left_sidebar .no-schedule{text-align: center; margin:68px 0 35px;}
+.dashboard_clinical .left_sidebar .no-schedule img{max-width: 100%; height: 280px;}
+.dashboard_clinical .left_sidebar .spinner img {
+    max-width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+.dashboard_clinical .left_sidebar .horizontal_list .sub_title .optional {
+    float: left;
+    margin-left: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 2px;
+}
+.dashboard_clinical .left_sidebar .horizontal_list .sub_title .survey-name {
+    float: left;
+    margin-right:5px;
+}
+
+@media (min-width: 1200px) { }
+
+@media (min-width: 992px) and (max-width: 1199px){
+.dashboard_clinical .left_sidebar .no-schedule{margin:35px 0;}
+.dashboard_clinical .left_sidebar .no-schedule img{height: auto;}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+.dashboard_clinical .left_sidebar .horizontal_list .sub_title .survey-name{font-size: 14px; margin-bottom:2px;}
+.dashboard_clinical .left_sidebar .no-schedule{margin:35px 0;}
+.dashboard_clinical .left_sidebar .no-schedule img{height: auto;}
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+.dashboard_clinical .left_sidebar .horizontal_list .sub_title .survey-name{font-size: 14px; margin-bottom:2px;}
+.dashboard_clinical .left_sidebar .no-schedule{margin:35px 0;}
+.dashboard_clinical .left_sidebar .no-schedule img{height: auto;}
+}
+
+@media (min-width: 300px) and (max-width: 479px) {
+.dashboard_clinical .left_sidebar .horizontal_list .sub_title .survey-name{font-size: 14px; margin-bottom:2px;}
+.dashboard_clinical .left_sidebar .no-schedule{margin:35px 0;}
+.dashboard_clinical .left_sidebar .no-schedule img{height: auto;}
+}

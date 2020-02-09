@@ -1,0 +1,111 @@
+<div class="five_box_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="report_date">{{languageContent?.dashboard[27]}}
+          <span>{{summary?.fromDate | date: 'yMMMMd'}} - {{languageContent?.dashboard[34]}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="box_section">
+        <div id="column" *ngIf="showFiveBox == true">
+          <div class="col-xs-12 col-sm-6 col-md-2 padding-right">
+            <div class="box">
+              <div class="icon blue">
+                <img src="assets/img/assigned.png" alt="alternative text" content="origin" />
+              </div>
+
+              <div class="detail">
+                <div class="heading">{{languageContent?.dashboard[22]}}</div>
+                <div class="info">{{summary?.assigned}}
+                  <span>
+                    <img src="assets/img/information.png" popover="{{languageContent?.dashboard[41]}}"
+                      [popoverCloseOnClickOutside]="true" content="origin" alt="" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-2 padding-left">
+            <div class="box">
+              <div class="icon green">
+                <img src="assets/img/completed.png" alt="alternative text" content="origin" />
+              </div>
+
+              <div class="detail">
+                <div class="heading">{{languageContent?.dashboard[21]}}</div>
+                <div class="info">{{summary?.completed}}
+                  <span>
+                    <img src="assets/img/information.png" popover="{{languageContent?.dashboard[42]}}" [popoverCloseOnClickOutside]="true" content="origin" alt=""
+                    />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-2 padding-right">
+            <div class="box">
+              <div class="icon orange">
+
+                <img src="assets/img/active.png" alt="alternative text" content="origin"  />
+              </div>
+
+              <div class="detail">
+                <div class="heading">{{languageContent?.dashboard[37]}}</div>
+                <div class="info">{{summary?.active}}
+                  <span>
+                    <img src="assets/img/information.png" popover="{{languageContent?.dashboard[43]}}"
+                      [popoverCloseOnClickOutside]="true" content="origin" alt="" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-2 padding-left">
+            <div class="box">
+              <div class="icon red">
+
+                <img src="assets/img/declined.png" alt="alternative text" content="origin" />
+              </div>
+
+              <div class="detail">
+                <div class="heading">{{languageContent?.view_dro[23]}}</div>
+                <div class="info">{{summary?.declined}}
+                  <span>
+                    <img src="assets/img/information.png" popover="{{languageContent?.dashboard[44]}}" [popoverCloseOnClickOutside]="true"
+                    content="origin" alt="" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-2 padding-right">
+            <div class="box">
+              <div class="icon magenta">
+
+                <img src="assets/img/expired.png" alt="alternative text" content="origin" />
+              </div>
+
+              <div class="detail">
+                <div class="heading">{{languageContent?.dashboard[38]}}</div>
+                <div class="info">{{summary?.expired}}
+                  <span>
+                    <img src="assets/img/information.png" popover="{{languageContent?.dashboard[45]}}"
+                      [popoverCloseOnClickOutside]="true" content="origin" alt="" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn_sec top_arrow" [ngClass]="{'down_arrow':showFiveBox}" (click)="toggleBox()"></div>
+      </div>
+    </div>
+  </div>
+</div>

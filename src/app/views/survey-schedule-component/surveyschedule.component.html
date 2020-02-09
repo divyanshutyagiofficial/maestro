@@ -1,0 +1,118 @@
+<div class="surveryschedule_container">
+<div class="skeleton" *ngIf="!loaded && !this._restApiService.getNoDataErrorFlag()" style="text-align:center">
+  <a>
+    <img src="assets/schedule_skeleton.png" content="origin" alt="" />
+  </a>
+</div>
+<article class="dros_schedule" *ngIf="loaded">
+  <!-- Article section start -->
+  <div class="container">
+    <div class="row">
+      <ng-container *ngIf="!!calenderSchedule">
+        <app-calender [content]="surveyScheduleContent" [calendarData]="calenderSchedule" (notify)="selectedDateModal($event)" (selectToday)="loadDefault()"
+          (selectedWeek)="populateSchedule($event)" (page)="getCurrentPage($event)"></app-calender>
+      </ng-container>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="title_box" *ngIf="storage">
+          <h3>{{selectedDateDroCount}} {{surveyScheduleContent[15]}} {{utcDay}}</h3>
+        </div>
+        <div class="title_box" *ngIf="!storage">
+          <h3>{{surveyScheduleContent[40]}}</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="title_section" id="selectAll">
+          <h4>
+            <div class="form-check">
+              <label class="form-check-label" *ngIf="showSelect()">
+                <input #selectAll type="checkbox" id="selectAll" class="form-check-input" (change)="checkUnCheckAll($event)"> {{surveyScheduleContent[16]}}
+              </label>
+            </div>
+          </h4>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="date_rate_section" *ngIf="storage">
+          <ul class="dr">
+            <!--<li>
+              <img src="assets/img/date.png" /> {{surveyScheduleContent[17]}}</li>-->
+            <li>
+              <img src="assets/img/star.png" content="origin" alt="" /> {{surveyScheduleContent[18]}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <ng-container *ngIf="selectedSurveys && selectedSurveys.length">
+      <app-survey-scheule-list [content]="content" [surveySchedules]="selectedSurveys" (onSelect)="checkOne($event)"></app-survey-scheule-list>
+    </ng-container>
+
+    <div class="row" *ngIf="selectedSurveys && selectedSurveys.length && showDecline()">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="btn_column">
+          <a (click)="declineModal()" [ngClass]="{'disabled':isDisabled}" id="decline_btn" referrerpolicy="origin">{{surveyScheduleContent[19]}}</a>
+          <span id="decline_span" [ngClass]="{'span_disabled':isDisabled, 'span_enabled': !isDisabled}" >{{surveyScheduleContent[20]}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="declineConfirm" class="modal fade show in danger schedule_popup" id="myModal" role="dialog">
+      <div class="modal-dialog popup-box">
+        <div class="modal-content">
+          <div class="modal-body">
+            <a (click)="cross()" class="close" referrerpolicy="origin">
+              <span class="cross">
+                <img src="assets/img/close.png" content="origin" alt="" />
+              </span>
+            </a>
+            <h1 class="medium-title">{{surveyScheduleContent[21]}}</h1>
+            <p>{{surveyScheduleContent[22]}}</p>
+            <ol class="order" type="1">
+              <li *ngFor="let item of declineSchedule">
+                {{item.survey.name}}
+              </li>
+            </ol>
+            <select #reason class="custom-select glyphicon glyphicon-play">
+              <option [value]="reason.declineReasonId" *ngFor="let reason of declineReasonlist">
+                {{reason.declineReason}}
+              </option>
+            </select>
+
+            <div class="btn">
+              <a referrerpolicy="origin" (click)="DeclineConfirm(reason.value)" skipLocationChange>{{surveyScheduleContent[37]}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="ConfirmDecline" class="modal fade show in danger schedule_popup" id="myModal2" role="dialog">
+      <div class="modal-dialog popup-box schedule_popup_confirom">
+        <div class="modal-content">
+          <div class="modal-body">
+            <a (click)="close()" class="close" referrerpolicy="origin">
+              <span class="cross">
+                <img src="assets/img/close.png" content="origin" alt="" />
+              </span>
+            </a>
+            <h1 class="medium-title confirm_title">{{surveyScheduleContent[23]}}</h1>
+          </div>
+          <div class="btn_column">
+            <button type="button" class="not_confirm" (click)="close()">{{dashboardContent[17]}}</button>
+            <button type="button" class="confirm" (click)="confirm()">{{dashboardContent[16]}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>
+<!-- Article section end -->
+</div>

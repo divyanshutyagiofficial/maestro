@@ -1,0 +1,308 @@
+/**** SIGN IN PAGE CSS START *****/
+/** Sign in css start **/
+.error_message{
+	text-align:center;
+	width:auto;
+}
+
+::ng-deep .login_container{
+    min-height: 91vh;
+    display: grid;
+    overflow: hidden;
+}
+.article-section {
+    background: #dff4f8 url('../../../assets/img/home-bg-img.png') no-repeat center -150px;
+	background-size:cover;
+    padding:55px 0;
+}
+.article-section .login-form-section {
+    box-shadow:0 0 65px rgba(34, 39, 49, 0.4);
+    width: 82%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.article-section .login-form-section ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.article-section .login-form-section ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/** FIRST CHILD START **/
+.article-section .login-form-section ul li:first-child {
+    background: #fff8ef;
+    width: 45%;
+    float: left;
+    margin: 0;
+    padding:26px 22px;
+	height:549px;
+	border-radius: 4px;
+}
+.article-section .login-form-section ul li:first-child .fa {
+    float: left;
+    color: #009cde;
+    margin: 0 8px 0 0;
+    font-size: 29px;
+    font-weight: 600;
+}
+.article-section .login-form-section ul li:first-child a span {
+    float: left;
+    margin: 0;
+    padding: 0;
+    color: #232732;
+    font-size: 23px;
+    font-family: 'LatoWebSemibold';
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.article-section .login-form-section ul li:first-child .img-column {
+    clear: both;
+    margin: 0;
+    padding: 90px 0 0 0;
+    text-align: center;
+}
+.article-section .login-form-section ul li:first-child .img-column img {
+    height: 150px;
+}
+.article-section .login-form-section ul li:first-child .email-detail-section {
+    clear: both;
+    margin:25px 0 0 0;
+    padding: 0;
+}
+.article-section .login-form-section ul li:first-child .email-detail-section .check-mail {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.article-section .login-form-section ul li:first-child .email-detail-section .check-mail li {
+    float: none;
+    display: block;
+    width: auto;
+    margin: 0 0 20px 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #232732;
+	height:auto;
+}
+.article-section .login-form-section ul li:first-child .email-detail-section .check-mail li span{color:#888b8d;}
+/** LAST FIRST END **/
+
+/** LAST CHILD START **/
+.article-section .login-form-section ul li:last-child{
+    width: 55%;
+    float: none;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    padding:28px 52px;
+	height:517px;
+    border-radius: 4px;
+}
+.article-section .login-form-section ul li:last-child .form-column {
+    margin: 0;
+    padding: 0;
+}
+.article-section .login-form-section ul li:last-child .form-column .shadow-text {
+    margin: 0 0 0px 0;
+    padding: 0;
+    color: #f6f9f9;
+    position: relative;
+    font-size: 100px;
+    text-transform: uppercase;
+    font-family:"Montserrat";
+    font-weight: 600;
+    line-height: 110px;
+}
+.article-section .login-form-section ul li:last-child .form-column .shadow-text .signin-title {
+    margin: 0;
+    padding: 0;
+    color: #232732;
+    font-size: 22px;
+    position: absolute;
+    top: 33px;
+    font-family:'LatoWebMedium';
+    font-weight: 600;
+    left: 9px;
+    line-height: 22px;
+}
+.article-section .login-form-section ul li:last-child .form-column .shadow-text .signin-title .border-bottom {
+    height: 4px;
+    background: #ff0000;
+    width: 36px;
+    display: block;
+    margin: 5px 0 0 0;
+}
+
+:host ::ng-deep .article-section .login-form-section ul li:last-child .form-column .shadow-text {
+    margin: 0 0 16px 0;
+    padding: 0;
+    position: relative;
+    background: url(../../../assets/img/sign_in.png) no-repeat left 20px;
+    background-size: 100% auto;
+    display: block;
+    height: 98px;
+}
+:host ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box label{color:#888b8d; font-size:13px; font-family:"Montserrat"; font-weight:500; margin-bottom:10px;}
+:host ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box input{color: #232732; font-size: 13px; font-family:"Montserrat"; font-weight: 500; background: #fff; border: 1px solid #d4dbe3; padding: 5px 8px; height: 45px; box-shadow: none; margin:0;}
+:host ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .forgot-password{text-align:right; margin-bottom:11px;}
+:host ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-group{padding:0; overflow:hidden; position: relative; margin-bottom: 13px;}
+:host ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-group img {
+    right: 15px;
+    top: 43px;
+    position: absolute;
+    margin: 0;
+    height: 20px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+:host ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .forgot-password a{color:#02aaf1; font-size:13px; font-family:"Montserrat"; text-decoration:none; border-bottom:1px solid #02aaf1; padding-bottom:2px; font-weight:600;}
+
+:host ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box iframe{width:100% !important; margin:8px 0; display:block;}
+:host ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .btn-send{background: #02a9f0; color: #fff; width: 100%; font-size: 15px; font-weight: 600; margin:10px 0 0 0; border:none; transition:all 0.4s ease-in-out;}
+:host ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .btn-send:hover{background:#18d14f;}
+
+::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box {margin: 1px 0 0 0; padding: 0; position: relative;}
+::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .controls .row:first-child{margin:0 0 4px 0;}
+::nd-deep .article-section .login-form-section ul li:last-child .form-column .form-box .controls .row:first-child p{font-weight: 600; font-size: 13px;}
+::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .controls .with-errors{margin:2px 0 0 0;}
+::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .controls .error{color:#ff0000; font-weight:500; font-size: 12px;}
+::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .error_message{
+	padding: 0;
+    color: #ff0000;
+    background: rgba(0,0,0,0.0);
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    bottom:0;
+    left: 0;
+    position: relative;
+    margin: 0;
+    text-align: left;
+}
+/** LAST CHILD END **/
+
+::ng-deep input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{background-color:#ffffff !important; box-shadow:100vw 0px 0 #fff inset !important;}
+::ng-deep input:-o-autofill, textarea:-o-autofill, select:-o-autofill{background-color:#ffffff !important; box-shadow:100vw 0px 0 #fff inset !important;}
+::ng-deep input:-moz-autofill, textarea:-moz-autofill, select:-moz-autofill{background-color:#ffffff !important; box-shadow:100vw 0px 0 #fff inset !important;}
+
+/** Sign in css end **/
+
+@media (min-width: 992px) and (max-width: 1199px){	
+    /** article section css start **/
+	.article-section .content-column ul li{margin:0 0 25px 0; float: none; width:100%; display: block;}
+    .article-section .content-column ul li a{display: table; margin: 0 auto; padding:15px;}
+	.article-section .content-column .loggedin_user li:first-child{margin-bottom:30px;}
+	/** article section css end **/
+	
+	/** sign in page css start **/
+	.article-section .col-md-12.col-sm-12.col-xs-12{padding:0;}
+	.article-section .login-form-section{width:100%;}
+	.article-section .login-form-section ul li:first-child .fa{margin-top:1px;}
+	.article-section .login-form-section ul li:first-child .img-column{padding-top:40px;}
+	.article-section .login-form-section ul li:first-child{height: auto;}
+	.article-section .login-form-section ul li:last-child .form-column .shadow-text{background-size:100% auto;}
+	.article-section .login-form-section ul li:last-child .form-column .shadow-text .signin-title{top:28px;}
+	.article-section .login-form-section ul li:last-child .form-column .form-box{margin-top:8px;}
+	/** sign in page css end **/
+}
+
+@media (min-width: 768px) and (max-width: 991px) {	
+    /** article section css start **/
+	.article-section{padding:20px 0;}
+    .article-section .img-column{text-align: center;}
+    .article-section .img-column img {width: 160px; height: auto;}
+    .article-section .content-column{margin:50px 0 0 0; text-align: center; padding:0;}
+    .article-section .content-column ul li{margin:0 0 25px 0; float: none; width:100%; display: block;}
+    .article-section .content-column ul li a{display: table; margin: 0 auto; font-size: 15px; padding:15px;}
+	/*.article-section .content-column ul li a .icon {float: left; margin: 0px 4px 0 0; font-size: 28px; line-height: 26px; color: #009cde; width: 20px; height: auto;}*/
+	.article-section .content-column .loggedin_user li:first-child{margin-bottom:30px;}
+	/** article section css end **/
+	
+	/** sign in page css start **/
+	.article-section .col-md-12.col-sm-12.col-xs-12{padding:0;}
+	.article-section .login-form-section{width:100%;}
+	.article-section .login-form-section ul li:first-child .fa{font-size:22px; margin:0 12px 0 0;}
+	.article-section .login-form-section ul li:first-child a span{font-size:16px;}
+	.article-section .login-form-section ul li:first-child .img-column{padding-top:40px;}
+	.article-section .login-form-section ul li:first-child{float:none; width:100%; padding:15px; height:auto;}
+	.article-section .login-form-section ul li:last-child{float:none; width:100%; padding:8px 15px 15px; height:auto;}
+	.article-section .login-form-section ul li:last-child .form-column .shadow-text{font-size:48px; line-height:80px; background-size:55% auto; height:92px;}
+	.article-section .login-form-section ul li:last-child .form-column .shadow-text .signin-title{top:28px; font-size: 18px;}
+	.article-section .login-form-section ul li:last-child .form-column p{display:none;}
+    .article-section .login-form-section ul li:last-child .form-column .form-box{margin-top:0px;}
+    .article-section .content-column ul li:first-child a span{margin-top:0.1px;}
+    ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .controls .row:first-child{margin:0;}
+    ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box p{display: none;}
+    ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .error_message{position: inherit; bottom:0;}
+	/** sign in page css end **/
+}
+
+@media (min-width: 480px) and (max-width: 767px) {	
+    /** article section css start **/
+	.article-section{padding:20px 0;}
+    .article-section .img-column{text-align: center;}
+    .article-section .img-column img {width: 160px; height: auto;}
+    .article-section .content-column{margin:50px 0 0 0; text-align: center; padding:0;}
+    .article-section .content-column ul li{margin:0 0 25px 0; float: none; width:100%; display: block;}
+    .article-section .content-column ul li a{display: table; margin: 0 auto; font-size: 15px; padding:15px;}
+	/*.article-section .content-column ul li a .icon {float: left; margin: 0px 4px 0 0; font-size: 28px; line-height: 26px; color: #009cde; width: 20px; height: auto;}*/
+	.article-section .content-column .loggedin_user li:first-child{margin-bottom:30px;}
+	/** article section css end **/
+	
+	/** sign in page css start **/
+	.article-section .col-md-12.col-sm-12.col-xs-12{padding:0;}
+	.article-section .login-form-section{width:100%;}
+	.article-section .login-form-section ul li:first-child .fa{font-size:22px; margin:0 12px 0 0;}
+	.article-section .login-form-section ul li:first-child a span{font-size:16px;}
+	.article-section .login-form-section ul li:first-child .img-column{padding-top:40px;}
+	.article-section .login-form-section ul li:first-child{float:none; width:100%; padding:15px; height:auto;}
+	.article-section .login-form-section ul li:last-child{float:none; width:100%; padding:8px 15px 15px; height:auto;}
+	.article-section .login-form-section ul li:last-child .form-column .shadow-text{font-size:48px; line-height:80px; background-size:50% auto; height:92px;}
+	.article-section .login-form-section ul li:last-child .form-column .shadow-text .signin-title{top:28px; font-size: 18px;}
+	.article-section .login-form-section ul li:last-child .form-column p{display:none;}
+    .article-section .login-form-section ul li:last-child .form-column .form-box{margin-top:0px;}
+    .article-section .content-column ul li:first-child a span{margin-top:0.1px;}
+    ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .controls .row:first-child{margin:0;}
+    ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box p{display: none;}
+    ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .error_message{position: inherit; bottom:0;}
+	/** sign in page css end **/
+}
+
+@media (min-width: 300px) and (max-width: 479px) {	
+    /** article section css start **/
+    ::ng-deep .login_container{min-height: 100%; overflow: inherit; display: block; background-color: #dff4f8;}	
+	.article-section{padding:20px 0;}
+    .article-section .img-column{text-align: center;}
+    .article-section .img-column img {width: 160px; height: auto;}
+    .article-section .content-column{margin:50px 0 0 0; text-align: center; padding:0;}
+    .article-section .content-column ul li{margin:0 0 25px 0; float: none; width:100%; display: block;}
+    .article-section .content-column ul li a{display: table; margin: 0 auto; font-size: 15px; padding:15px;}
+	/*.article-section .content-column ul li a .icon {float: left; margin: 0px 4px 0 0; font-size: 28px; line-height: 26px; color: #009cde; width: 20px; height: auto;}*/
+	.article-section .content-column .loggedin_user li:first-child{margin-bottom:30px;}
+	/** article section css end **/
+	
+	/** sign in page css start **/
+	.article-section .col-md-12.col-sm-12.col-xs-12{padding:0;}
+	.article-section .login-form-section{width:100%;}
+	.article-section .login-form-section ul li:first-child .fa{font-size:22px; margin:0 12px 0 0;}
+	.article-section .login-form-section ul li:first-child a span{font-size:16px;}
+	.article-section .login-form-section ul li:first-child .img-column{padding-top:40px;}
+	.article-section .login-form-section ul li:first-child{float:none; width:100%; padding:15px; height:auto;}
+	.article-section .login-form-section ul li:last-child{float:none; width:100%; padding:8px 15px 15px; height:auto;}
+	.article-section .login-form-section ul li:last-child .form-column .shadow-text{font-size:48px; line-height:80px; background-size:100% auto; height:92px;}
+	.article-section .login-form-section ul li:last-child .form-column .shadow-text .signin-title{top:28px; font-size: 18px;}
+	.article-section .login-form-section ul li:last-child .form-column p{display:none;}
+    .article-section .login-form-section ul li:last-child .form-column .form-box{margin-top:0px;}
+    .article-section .content-column ul li:first-child a span{margin-top:0.1px;}
+    ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .controls .row:first-child{margin:0;}
+    ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box p{display: none;}
+    ::ng-deep .article-section .login-form-section ul li:last-child .form-column .form-box .error_message{position: inherit; bottom:0;}
+	/** sign in page css end **/
+}

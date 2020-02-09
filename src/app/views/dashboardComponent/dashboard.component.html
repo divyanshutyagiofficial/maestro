@@ -1,0 +1,266 @@
+<div class="skeleton" *ngIf="!dashboardDetails; else data" style="text-align:center">
+  <a>
+    <img src="assets/dashboard_skeleton.png" content="origin" alt="" />
+  </a>
+</div>
+<ng-template #data>
+  <div>
+    <!-- five_box_section start -->
+    <ng-container *ngIf="dashboardDetails && dashboardDetails.userSurveySummary &&loaded">
+      <app-fivebox-section [summary]="dashboardDetails.userSurveySummary" [languageContent]="languageContent"></app-fivebox-section>
+    </ng-container>
+    <div class="medal_section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="medal-box">
+              <ul class="medal">
+                <li>
+                  <img src="assets/img/medal.png" content="origin" alt="" />
+                </li>
+                <li>{{dashboardContent[1]}}
+                  <span>{{complianceLevel || 0 | number:'1.0-1'}}%</span>
+                </li>
+                <li>
+                  <a title="compliance level is a measure of completed DRO  by number of DRO assigned " (click)="openModal()" referrerpolicy="origin">
+                    <img src="assets/img/information.png" content="origin" alt="" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="heading_title">
+              <span>{{dashboardDetails?.userInfo?.programInfo?.programName}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article section start -->
+    <article class="dashboard_clinical">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="title_box">
+              <h3>{{dashboardContent[5]}}
+                <span>{{dashboardDetails?.userInfo?.firstName}} {{dashboardDetails?.userInfo?.lastName}}</span>
+              </h3>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="detail_box">
+              <div class="visi_time">{{dashboardContent[4]}}</div>
+              <span>{{dashboardDetails?.userInfo?.lastVisitedDate | date:'EEEE, MMMM d, y'}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12" *ngFor="let survey of bannerSurveys">
+            <div class="calendar_section">
+              <div class="icon">
+                <img src="assets/img/calendar.png" content="origin" alt="" />
+              </div>
+              <div>
+                <div class="content">
+                  <p>
+                    "{{survey.surveyName}}" {{dashboardContent[7]}} {{survey.surveySessionInfo.percentageCompleted}}%
+                    {{dashboardContent[6]}}
+                  </p>
+                  <div class="detail">
+                    {{dashboardContent[8]}}
+                    <div (click)="dueToday(survey.surveySessionInfo.userSurveySessionId, survey.surveySessionInfo.progressStatus)"
+                      class="arrow_icon" style="cursor:pointer">
+                      <img src="assets/img/right-arrow.png" content="origin" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail mobile_view_details">
+                  <div class="text_data">{{dashboardContent[8]}}</div>
+                  <div (click)="dueToday(survey.surveySessionInfo.userSurveySessionId, survey.surveySessionInfo.progressStatus)"
+                    class="arrow_icon" style="cursor:pointer">
+                    <img src="assets/img/right-arrow.png" content="origin" alt="" />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+          <ng-container *ngIf="dashboardDetails && dashboardDetails.userSurveySessions">
+            <app-survey-upcoming [surveys]="dashboardDetails?.userSurveySessions" [languageContent]='dashboardContent'
+              (onclick)="goToSurvey($event)"></app-survey-upcoming>
+          </ng-container>
+
+          
+    <div class="middle_ad_section">
+        <!-- Middle section start -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <!--<div class="left_sidebar">
+                <div class="bottom_img_one">
+                  <img src="{{adDetails.addLinks[0].value}}" />
+                </div>
+              </div>-->
+  
+              <ul class="two_column_section">
+                <li>
+                  <div class="heading">{{dashboardContent[9]}}</div>
+  
+                  <div id="myCarousel" class="carousel msgslider slide" data-ride="carousel">
+                    <div *ngIf="unreadMessages.length ==0" class="info no_new_message">
+                      <div>
+                        <img src="assets/img/no_new_messages.png" content="origin" alt="" />
+                      </div>
+                      <h3>{{dashboardContent[10]}}</h3>
+                    </div>
+                    <!-- Indicators -->
+                    <div class="indicator" *ngIf="unreadMessages.length > 1">
+                      <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2" *ngIf="unreadMessages.length > 2"></li>
+                      </ol>
+                    </div>
+  
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" *ngIf="unreadMessages.length != 0">
+                      <div class="item" *ngFor="let message of unreadMessages; let i=index;" [ngClass]="(i == 0)?'active':''">
+  
+                        <div class="section">
+                          <div class="box">
+                            <div class="icon">
+                              <img src="assets/img/email.png" />
+                            </div>
+                            <div class="sub_title" *ngIf="message.messageTile">{{message.messageTile}}</div>
+                            <div class="sub_title" *ngIf="message.messageTile==null">{{dashboardContent[46]}}
+                              {{0+unreadMessages.length}} {{dashboardContent[47]}}</div>
+                            <div class="small_title">{{message.senderName}}</div>
+                            <div [innerHTML]="message.textMessage"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                  </div>
+                  <div class="browse_msg">
+                    <a (click)="goToViewMsgs()" referrerpolicy="origin">{{dashboardContent[12]}}</a>
+                  </div>
+                  <!-- <div class="browse_msg"><a [routerLink]="['/auth/messages']">Browse all Message</a></div> -->
+                </li>
+  
+                <li>
+                  <div class="heading">{{dashboardContent[13]}}</div>
+                  <div class="right_box">
+                    <div *ngFor="let study of studyInfo?.fields; let i=index;">
+                      <div class="column" *ngIf="i<1">
+                        <div class="icon">
+                          <img src="assets/img/note.png" content="origin" alt="" />
+                        </div>
+                        <div class="detail">{{study.masterBank.description}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="browse_msg">
+                    <a (click)="goToStudyInfo()" referrerpolicy="origin">{{dashboardContent[15]}}</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+  
+            <!--<div class="col-md-4 col-sm-12 col-xs-12">
+              <div class="right_sidebar">
+                <div class="bottom_img_one">
+                  <img src="{{adDetails.addLinks[1].value}}" />
+                </div>
+              </div>
+            </div>-->
+          </div>
+  
+          <!--<div class="row">
+            <div class="col-md-12">
+              <div class="ad_three">
+                <img src="{{adDetails.addLinks[2].value}}" />
+              </div>
+            </div>
+          </div>-->
+        </div>
+  
+      </div>
+        </div>
+          <div class="col-md-4 col-sm-12 col-xs-12">
+            <app-timeline [timelineData]="timelineData" [content]="dashboardContent" [showMore]="showMore" (onClick)="loadMore()"></app-timeline>
+          </div>
+        </div>
+        <!--<div class="row">
+      <div class="col-md-8"></div>
+      <div class="col-md-4">
+        <a *ngIf="showMore" class="load_more" (click)="loadMore()">{{dashboardContent[40]}}</a>
+      </div>
+    </div>-->
+      </div>
+    </article>
+    <!-- Article section end -->
+
+    <!-- Popup end -->
+    <app-modal *ngIf="showModal" [content]="content" [notify]="notify"> </app-modal>
+
+    <div class="req_error" *ngIf="errorFlag">
+      <div class="modal fade show in danger" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <button class="close_button" (click)="errorFlag = false; _restApiService.setErrorFlag(false);">
+            <i class="material-icons close">close</i>
+          </button>
+          <div class="modal-content">
+            <div class="modal-body">
+              <i class="material-icons">warning</i>
+              <h2 class="heading">Whoops, something went wrong...</h2>
+              <p class="text">The Survey was not submitted successfully due to some technical issues. Please contact
+                the customer support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="req_error" *ngIf="noticeFlag">
+      <div class="modal fade show in danger" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <button class="close_button" (click)="noticeFlag = false; _programService.setNoticeFlag(false);">
+            <i class="material-icons close">close</i>
+          </button>
+          <div class="modal-content">
+            <div class="modal-body">
+              <i class="material-icons">info</i>
+              <h4 class="heading">Some surveys might not be available in selected language.</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+

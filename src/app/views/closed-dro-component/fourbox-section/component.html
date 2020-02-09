@@ -1,0 +1,127 @@
+<div class="view_dro_status">
+  <div class="five_box_section view_dro">
+    <!-- four_box_section start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="report_date">{{content?.dashboard[27]}}:
+            <span>{{fromDate | date: 'dd MMM yyyy'}} - {{content?.survey_schedule[1]}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="box_section">
+          <div id="column" *ngIf="showFourBox">
+            <div class="col-xs-6 col-sm-6 col-md-3 padding-right">
+              <div class="box">
+                <div class="icon green">
+                  <img src="assets/img/completed.png" title="{{completed}} {{content?.survey_schedule[3]}}" content="origin" alt="" />
+                </div>
+
+                <div class="detail">
+                  <div class="heading">{{content?.view_dro[22]}}</div>
+                  <div class="info">{{completed}}
+                    <span>
+                      <img src="assets/img/information.png" title="{{completed}} {{content?.survey_schedule[3]}}" popover="{{completed}} {{content?.survey_schedule[3]}}" [popoverCloseOnClickOutside]="true" content="origin" alt="" />
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-3 padding-left">
+              <div class="box">
+                <div class="icon red">
+                  <img src="assets/img/declined.png" title="{{declined}} {{content?.survey_schedule[6]}}" content="origin" alt="" />
+                </div>
+
+                <div class="detail">
+                  <div class="heading">{{content?.view_dro[23]}}</div>
+                  <div class="info">{{declined}}
+                    <span>
+                      <img src="assets/img/information.png" title="{{declined}} {{content?.survey_schedule[6]}}" popover="{{declined}} {{content?.survey_schedule[6]}}" [popoverCloseOnClickOutside]="true" content="origin" alt="" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-3 padding-right">
+              <div class="box">
+                <div class="icon magenta">
+                  <img src="assets/img/expired.png" title="{{expire}} DROs expired" content="origin" alt="" />
+                </div>
+
+                <div class="detail">
+                  <div class="heading">{{content?.view_dro[24]}}</div>
+                  <div class="info">{{expire}}
+                    <span>
+                      <img src="assets/img/information.png" title="{{expire}} {{content?.survey_schedule[9]}}" popover="{{expire}} {{content?.survey_schedule[9]}}" [popoverCloseOnClickOutside]="true" content="origin" alt="" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-3 padding-left">
+              <div class="box">
+                <div class="icon blue">
+                  <img src="assets/img/assigned.png" title="0 Avg DROs" content="origin" alt="" />
+                </div>
+
+                <div class="detail">
+                  <div class="heading">{{content?.view_dro[19]}}</div>
+                  <div class="info">{{avgdro}}
+                    <span>
+                      <img src="assets/img/information.png" title="{{avgdro}} {{content?.view_dro[25]}} " popover="{{avgdro}} {{content?.view_dro[25]}}" [popoverCloseOnClickOutside]="true" content="origin" alt="" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cmw">{{content?.view_dro[20]}}</div>
+          </div>
+
+          <div id="arrow" class="btn_sec top_arrow" [ngClass]="{'down_arrow':showFourBox}" (click)="toggleBox()"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- four_box_section end -->
+</div>
+
+<style>
+  .view_dro .box_section .btn_sec {
+    right: -20px !important;
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .view_dro_status .view_dro .box_section .btn_sec {
+      right: -8px !important;
+      background-size: auto 80% !important;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .view_dro_status .view_dro .box_section .btn_sec {
+      right: 18px !important;
+      bottom: -15px;
+    }
+  }
+
+  @media (min-width: 480px) and (max-width: 767px) {
+    .view_dro_status .view_dro .box_section .btn_sec {
+      right: 18px !important;
+      bottom: -15px;
+    }
+  }
+
+  @media (min-width: 300px) and (max-width: 479px) {
+    .view_dro_status .view_dro .box_section .btn_sec {
+      right: 18px !important;
+      bottom: -15px;
+    }
+  }
+
+</style>

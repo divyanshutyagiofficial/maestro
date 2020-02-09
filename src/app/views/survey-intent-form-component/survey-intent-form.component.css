@@ -1,0 +1,569 @@
+/** DRO Home page css start **/
+.dro_home{margin:0; padding:0px 0 45px 0; min-height:70vh;}
+.dro_home .title_with_breadcrum_section {
+    margin: 0 0 37px 0;
+    padding: 35px 0;
+	overflow: hidden;
+    border-left: 1px solid #d4dbe3;
+    border-right: 1px solid #d4dbe3;
+    border-bottom: 1px solid #d4dbe3;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+	-moz-border-bottom-right-radius: 3px;
+    -moz-border-bottom-left-radius: 3px;
+	-o-border-bottom-right-radius: 3px;
+    -o-border-bottom-left-radius: 3px;
+}
+.dro_home .title_with_breadcrum_section .title{margin:0; padding:0;}
+.dro_home .title_with_breadcrum_section .title h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: #232732;
+}
+.dro_home .title_with_breadcrum_section .title p {
+    margin: 8px 0 0 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #a9aaac;
+}
+.dro_home .title_with_breadcrum_section .title p span{font-weight:600; color:#232732;}
+
+.dro_home .title_with_breadcrum_section .sub_title{margin:0; padding:0; text-align:right;}
+.dro_home .title_with_breadcrum_section .sub_title h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #232732;
+}
+.dro_home .title_with_breadcrum_section .sub_title p {
+    margin: 8px 0 0 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #a9aaac;
+}
+.dro_home .title_with_breadcrum_section .sub_title p span{color:#232732; font-weight: 600;}
+
+
+.dro_home .discription{margin:0 0 26px 0; padding:0;}
+.dro_home .discription p{padding:0; color:#222731; font-size:16px; line-height:24px; font-weight:500;}
+.dro_home .medium-title{margin:0 0 10px 0; font-weight:600;}
+
+:host ::ng-deep .dro_home .section {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #d4dbe3;
+    border-radius: 2px;
+    margin: 0 0 18px 0;
+    padding:30px 22px 0;
+	text-align:center;
+	transition:all 0.4s ease-in-out;
+}
+:host ::ng-deep .dro_home .section:hover{
+    border: 1px solid #3bbcf2;
+    box-shadow:10px 5px 15px rgba(0, 0, 0, 0.10) !important;
+}
+:host ::ng-deep .dro_home .section .icon{margin:0 0 15px 0; padding:0;}
+:host ::ng-deep .dro_home .section .icon img{height:70px;}
+:host ::ng-deep .dro_home .section .detail{margin:0; padding:0; color:#222731; font-size:12px; line-height:18px; font-weight:500; height:35px; overflow: hidden; transition:all 0.4s ease-in-out;}
+:host ::ng-deep .dro_home .height_auto{height: auto !important; padding-bottom:15px;}
+:host ::ng-deep .dro_home .section .read-more{color:#02a9f0; font-size: 12px; font-weight: 500; margin: 9px 0 0 0; text-transform: capitalize; display: inline-block; cursor: pointer;}
+
+
+.dro_home .btn_section{margin:35px 0 0 0; padding:0; overflow:hidden;}
+.dro_home .btn_section ul{margin:0; padding:0; float:right;}
+.dro_home .btn_section ul li{margin:0 0 0 15px; padding:0; float:left; list-style:none; transition:all 0.4s ease-in-out; border-radius:3px;}
+.dro_home .btn_section ul li:first-child{background:#fd3737;}
+.dro_home .btn_section ul li:last-child{background:#ff7d36;}
+.dro_home .btn_section ul li:hover{background:#0fc445;}
+.dro_home .btn_section ul li a{font-size:16px; font-weight:600; color:#fff; text-decoration:none; padding:12px 25px; display:block}
+.dro_home .btn_section ul li:hover a{text-decoration:none;}
+/** DRO Home page css end **/
+
+
+@media (min-width: 1200px) { }
+
+@media (min-width: 992px) and (max-width: 1199px){}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /** DRO Home page css start **/
+	.dro_home .title_with_breadcrum_section .title{margin:0 0 20px 0;}
+	.dro_home .title_with_breadcrum_section .sub_title h1{font-size:12px;}
+	.dro_home .title_with_breadcrum_section .sub_title p{font-size:12px; margin-top:5px;}
+	.dro_home .discription{margin-bottom:20px;}
+	.dro_home .discription p{font-size:12px; line-height:22px;}
+	.dro_home .section{height:auto; margin-bottom:15px; padding:25px 15px; text-align:left; overflow:hidden;}
+	.dro_home .section .icon{margin:0; float:left; /*width:20%;*/}
+	.dro_home .section .icon img{height:45px;}
+	.dro_home .section .detail{float:left; width:80%; padding:0 0 0 15px;}
+	.dro_home .btn_section{margin-top:10px;}
+	.dro_home .btn_section ul{float:none; text-align:center;}
+	.dro_home .btn_section ul li{margin:0 0 10px 0; width:100%;}
+    .dro_home .btn_section ul li:last-child{margin-bottom:0;}
+    
+    .dro_home .btn_section ul li a{padding-top:10px; padding-bottom:10px; font-size: 14px;}
+	/** DRO Home page css end **/
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    /** DRO Home page css start **/
+	.dro_home .title_with_breadcrum_section .title{margin:0 0 20px 0;}
+	.dro_home .title_with_breadcrum_section .sub_title{text-align:left;}
+	.dro_home .title_with_breadcrum_section .sub_title h1{font-size:12px;}
+	.dro_home .title_with_breadcrum_section .sub_title p{font-size:12px; margin-top:5px;}
+	.dro_home .discription{margin-bottom:20px;}
+	.dro_home .discription p{font-size:12px; line-height:22px;}
+	.dro_home .section{height:auto; margin-bottom:15px; padding:25px 15px; text-align:left; overflow:hidden;}
+	.dro_home .section .icon{margin:0; float:left; /*width:20%;*/}
+	.dro_home .section .icon img{height:45px;}
+	.dro_home .section .detail{float:left; width:80%; padding:0 0 0 15px;}
+	.dro_home .btn_section{margin-top:10px;}
+	.dro_home .btn_section ul{float:none; text-align:center;}
+	.dro_home .btn_section ul li{margin:0 0 10px 0; width:100%;}
+    .dro_home .btn_section ul li:last-child{margin-bottom:0;}
+    
+    .dro_home .btn_section ul li a{padding-top:10px; padding-bottom:10px; font-size: 14px;}
+	/** DRO Home page css end **/
+}
+
+@media (min-width: 300px) and (max-width: 479px) {
+    /** DRO Home page css start **/
+    .dro_home .title_with_breadcrum_section .col-md-6.col-sm-6.col-xs-12{padding:0;}
+	.dro_home .title_with_breadcrum_section .title{margin:0 0 20px 0;}
+	.dro_home .title_with_breadcrum_section .sub_title{text-align:left;}
+	.dro_home .title_with_breadcrum_section .sub_title h1{font-size:12px;}
+	.dro_home .title_with_breadcrum_section .sub_title p{font-size:12px; margin-top:5px;}
+	.dro_home .discription{margin-bottom:20px;}
+	.dro_home .discription p{font-size:12px; line-height:22px;}
+	.dro_home .section{height:auto; margin-bottom:15px; padding:25px 15px; text-align:left; overflow:hidden;}
+	.dro_home .section .icon{margin:0; float:left; /*width:20%;*/}
+	.dro_home .section .icon img{height:45px;}
+	.dro_home .section .detail{float:left; width:80%; padding:0 0 0 15px;}
+	.dro_home .btn_section{margin-top:10px;}
+	.dro_home .btn_section ul{float:none; text-align:center;}
+	.dro_home .btn_section ul li{margin:0 0 10px 0; width:100%;}
+    .dro_home .btn_section ul li:last-child{margin-bottom:0;}
+    
+    .dro_home .btn_section ul li a{padding-top:10px; padding-bottom:10px; font-size: 14px;}
+	/** DRO Home page css end **/
+}
+
+/** Decline page css start **/
+.decline-page {
+    /* background: url(rd-banner-img.4e19ec1….jpg) no-repeat center top; */
+    padding: 0;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 99;
+}
+
+.decline-page .transparent{
+	height: 100%;
+    width: 100%;
+    background: rgba(214, 229, 235, 0.3);
+    padding: 80px 0;
+}
+.decline-page .shadow-box {
+    width: 680px;
+    margin: 0 auto 38px;
+    box-shadow: 0px 0px 29px 11px rgba(0, 0, 0, 0.10) !important;
+    padding: 48px 51px;
+    border-radius: 4px;
+    position: relative;
+    background: #fff;
+    height:auto;
+    display: table;
+    transform:translate(0,30%);
+    -webkit-transform:translate(0,30%);
+    -o-transform:translate(0,30%);
+    -ms-transform:translate(0,30%);
+    -moz-transform:translate(0,30%);
+}
+.decline-page .transparent .medium-title {
+    font-size: 27px;
+    font-weight: 600;
+    text-transform: inherit;
+    margin-bottom: 17px;
+}
+.decline-page .shadow-box .medium-title{font-size: 27px;}
+.decline-page .shadow-box .close {
+    position: absolute;
+    background: #222731;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    display: block;
+    text-align: center;
+    top: -19px;
+    right: -17px;
+    border-radius: 100%;
+    font-weight: 600;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.decline-page .shadow-box .close .cross {margin:0; padding:0; vertical-align:middle; height:35px; width:35px; display:block; text-align:center; position:relative;}
+.decline-page .shadow-box .close .cross img{margin:auto; padding:0; width:19px; top:0px; bottom:0; left:0; right:0; position:absolute;}
+
+.decline-page .shadow-box .close:hover{background:rgb(252, 55, 55);}
+.decline-page .shadow-box p {
+    color: #888b8d;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+.decline-page .shadow-box .order {
+    margin: 28px auto;
+    padding: 0;
+    text-align: left;
+    display: table;
+}
+.decline-page .shadow-box .order li {
+    margin: 0 0 8px 0;
+    padding: 0;
+    font-size: 16px;
+    color: #222731;
+    font-weight: 500;
+}
+.decline-page .shadow-box select {
+    float: none;
+    clear: both;
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    height: 52px;
+    padding: 0 15px;
+    border-radius: 2px;
+    border: 2px solid #c5c9cc;
+    font-family:"Montserrat";
+    font-size: 14px;
+    background: url(../../../assets/img/arrow.png) no-repeat right center;
+    background-origin: content-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -o-border-radius:4px;
+}
+.decline-page .shadow-box .btn {
+    margin: 28px auto 0;
+    padding: 0;
+    display: block;
+    width: 70%;
+}
+.decline-page .shadow-box .btn a {
+    margin: 0px 0 0 0;
+    padding: 12px 28px;
+    background: #fc3737;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+    color: #fff;
+}
+.decline-page .shadow-box .btn a:hover {
+    background: #0fc445;
+}
+
+.active-dros .medium-title {
+    font-size: 28px;
+}
+/** Decline page css end **/
+
+/** POPUP CSS START **/
+::ng-deep .popup_section {
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    position: fixed;
+}
+::ng-deep .popup_section .popup-box {
+    background: #fff;
+    width: 680px;
+    text-align: center;
+    padding:32px 35px;
+    height: auto;
+    border-radius: 4px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    box-shadow: 0px 0px 29px 11px rgba(0, 0, 0, 0.10) !important;
+    display: table;
+    /*transform: translate(0,80%);
+    -webkit-transform: translate(0,80%) !important;
+    -moz-transform: translate(0,80%) !important;
+    -o-transform: translate(0,80%) !important;
+    -ms-transform: translate(0,80%) !important;*/
+    -moz-transform: translate(0%,60%) !important;
+}
+::ng-deep .popup_section .popup-box .modal-content {
+    border: none;
+    box-shadow: none !important;
+    text-align: left;
+    background: rgba(0,0,0,0.0);
+    padding:0;
+}
+::ng-deep .popup_section .popup-box .modal-content .modal-body{padding:0; position: relative;}
+::ng-deep .popup_section .popup-box .modal-content .modal-body .close {
+    position: absolute;
+    background: #222731;
+    width: 35px;
+    height: 35px;
+    display: block;
+    text-align: center;
+    top: -50px;
+    right: -50px;
+    border-radius: 100%;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+::ng-deep .popup_section .popup-box .modal-content .modal-body .close .cross {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    height: 35px;
+    width: 35px;
+    display: block;
+    text-align: center;
+    position: relative;
+}
+::ng-deep .popup_section .popup-box .modal-content .modal-body .close .cross img{
+    margin: auto;
+    padding: 0;
+    width: 19px;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+::ng-deep .popup_section .popup-box .modal-content .modal-body .close:hover{background:rgb(252, 55, 55);}
+::ng-deep .popup_section .popup-box .modal-content .modal-body .medium-title {
+    font-size: 18px !important;
+    font-weight: 600;
+    text-transform: inherit;
+    margin-bottom:0px;
+    color:#232732;
+}
+::ng-deep .popup_section .warning_popup .modal-content .modal-body .medium-title{color:#ff8038;}
+::ng-deep .popup_section .popup-box .modal-content .modal-body p {
+    color: #888b8d;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom:15px;
+}
+::ng-deep .popup_section .popup-box .modal-content .modal-body .order {
+    margin: 28px auto;
+    padding: 0;
+    text-align: left;
+    display: table;
+}
+::ng-deep .popup_section .popup-box .modal-content .modal-body .order li {
+    margin: 0 0 8px 0;
+    padding: 0;
+    font-size: 14px;
+    color: #222731;
+    font-weight: 600;
+    width:100%;
+}
+::ng-deep .popup_section .popup-box .modal-content .modal-body select {
+    float: none;
+    clear: both;
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    height: 45px;
+    padding: 0 15px;
+    border-radius: 2px;
+    border: 1px solid #c5c9cc;
+    font-family:"Montserrat";
+    font-size: 14px;
+    background: url(../../../assets/img/arrow.png) no-repeat right center;
+    background-origin: content-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+}
+::ng-deep .popup_section .popup-box .modal-content .modal-body .btn {
+    margin: 28px auto 0;
+    padding: 0;
+    display: block;
+    width: 70%;
+    overflow:hidden;
+}
+::ng-deep .popup_section .popup-box .modal-content .modal-body .btn a {
+    margin: 0px 0 0 0;
+    padding: 12px 28px;
+    background: #fc3737;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+    color: #fff;
+    float: none;
+    width:100%;
+}
+
+::ng-deep .popup_section .popup-box .modal-content .confirm_title{font-size: 23px !important;}
+::ng-deep .popup_section .popup-box .modal-content .btn_column{margin-top:47px; text-align: right;}
+::ng-deep .popup_section .warning_popup .modal-content .btn_column .confirm{
+    border: 1px solid #00b13f;
+    background: #00b13f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 38px;
+    margin-right: 0px;
+    border-radius: 3px;
+}
+::ng-deep .popup_section .warning_popup .modal-content .btn_column .not_confirm{
+    border:none;
+    background:rgba(0,0,0,0.0);
+    color: #232732;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 38px;
+    margin-right: 0px;
+    border-radius: 3px;
+}
+/** POPUP CSS END **/
+
+@media (min-width: 1200px) { }
+
+@media (min-width: 992px) and (max-width: 1199px){}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /** MODAL CSS START **/
+    .decline-page .shadow-box{width:88%; padding:25px 15px 16px; -moz-transform: translate(0%,10%) !important; -webkit-transform: translate(0%,10%) !important; -o-transform: translate(0%,10%) !important; transform: translate(0%,10%) !important;}
+    .dro_home .medium-title{font-size:16px !important; line-height: 24px !important;}
+    .decline-page .shadow-box p{font-size: 13px; line-height: 22px;}
+    .decline-page .shadow-box .order{margin-left: 15px;}
+	.decline-page .shadow-box select{width:100%; font-size:13px; height:42px; background-size:auto 20%;}
+    .decline-page .shadow-box .btn{width:100%; margin:30px auto 15px;}
+    .decline-page .shadow-box .btn a{font-size: 14px; padding-top:10px; padding-bottom:10px;}
+    .active-dros .medium-title{font-size:18px;}
+    /** MODAL CSS END **/
+
+    /** POPUP CSS START **/
+    ::ng-deep .popup_section .popup-box{width:88%; padding:25px 15px 16px; -moz-transform: translate(0%,10%) !important;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body .medium-title{font-size: 20px; line-height:28px;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body .order{margin-left: 15px;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body select{width:100%;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body .btn{width:100%;}
+    ::ng-deep .popup_section .popup-box .modal-content .confirm_title{font-size: 20px !important; line-height: 28px;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body .close{top:-40px; right: -30px;}
+    /** POPUP CSS END **/
+}
+
+@media (min-width: 480px) and (max-width: 767px) {	
+	/** Default pages css start **/
+	.defaul-page iframe{width:100%;}
+	.forgot-password .medium-title{font-size:18px;}
+	.header-section .print_section .save_print{text-align:left; margin-top:0px;}
+	.header-section .print_section .save_print li{display:block; margin:0 0 10px; padding:0; border-right:none;}
+	.decline-page .transparent .medium-title{margin:8px 0 0 0; font-size:20px; line-height:30px;}
+	.decline-page .shadow-box select{width:100%; font-size:13px;}
+	.decline-page .shadow-box .btn{width:100%; margin:18px auto 5px;}
+	.active-dros .medium-title{font-size:18px;}
+    /** Default pages css end **/
+    
+    /** MODAL CSS START **/
+    .decline-page .shadow-box{width:88%; padding:25px 15px 16px; -moz-transform: translate(0%,10%) !important; -webkit-transform: translate(0%,10%) !important; -o-transform: translate(0%,10%) !important; transform: translate(0%,10%) !important;}
+    .dro_home .medium-title{font-size:16px !important; line-height: 24px !important;}
+    .decline-page .shadow-box p{font-size: 13px; line-height: 22px;}
+    .decline-page .shadow-box .order{margin-left: 15px;}
+	.decline-page .shadow-box select{width:100%; font-size:13px; height:42px; background-size:auto 20%;}
+    .decline-page .shadow-box .btn{width:100%; margin:30px auto 15px;}
+    .decline-page .shadow-box .btn a{font-size: 14px; padding-top:10px; padding-bottom:10px;}
+    .active-dros .medium-title{font-size:18px;}
+    /** MODAL CSS END **/
+
+    /** POPUP CSS START **/
+    ::ng-deep .popup_section .popup-box{width:88%; padding:25px 15px 16px; -moz-transform: translate(0%,10%) !important;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body .medium-title{font-size: 20px; line-height:28px; text-align: center;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body .order{margin-left: 15px;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body select{width:100%;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body .btn{width:100%;}
+    ::ng-deep .popup_section .popup-box .modal-content .confirm_title{font-size: 20px !important; line-height: 28px;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body .close{top:-40px; right: -30px;}
+    ::ng-deep .popup_section .warning_popup .modal-content .btn_column{text-align: center; margin-top:25px;}
+    ::ng-deep .popup_section .warning_popup .modal-content .btn_column .not_confirm{display: table; margin: 0 auto 10px;}
+    ::ng-deep .popup_section .warning_popup .modal-content .btn_column .confirm{display: table; margin: 0 auto 16px;}
+    ::ng-deep .popup_section .warning_popup .modal-content .modal-body .medium-title{font-size: 16px !important;}
+    /** POPUP CSS END **/
+}
+
+@media (min-width: 300px) and (max-width: 479px) {	
+	/** Default pages css start **/
+	.defaul-page iframe{width:100%; height:auto;}
+	.new-password .medium-title{text-align:left; font-size:26px;}
+	.disclaimer img{height:auto;}
+	.legal_statment .heading_section .ls-email {text-align: left; margin: 0px 0 18px 0; padding: 0;}
+	.legal_statment .sub-header h2{font-size:18px;}
+	.header-section .print_section .save_print{text-align:left; margin-top:0px;}
+	.header-section .print_section .save_print li{display:block; margin:0 0 10px; padding:0; border-right:none;}
+    .decline-page .transparent .medium-title{margin:8px 0 0 0; font-size:20px; line-height:30px;}
+    
+    .dro_home{padding-top:8px;}
+    .dro_home .title_with_breadcrum_section{border-left:none; border-right:none; border-radius:0; padding:20px 0 14px; margin-bottom:20px;}
+    .dro_home .title_with_breadcrum_section .title h1{font-size: 22px; line-height: 30px; margin-bottom:9px;}
+    .dro_home .title_with_breadcrum_section .title p{font-size:13px; margin-top:5px;}
+    /** Default pages css end **/
+
+    /** MODAL CSS START **/
+    .decline-page .shadow-box{width:88%; padding:25px 15px 16px; -moz-transform: translate(0%,10%) !important; -webkit-transform: translate(0%,10%) !important; -o-transform: translate(0%,10%) !important; transform: translate(0%,10%) !important;}
+    .dro_home .medium-title{font-size:16px !important; line-height: 24px !important;}
+    .decline-page .shadow-box p{font-size: 13px; line-height: 22px;}
+    .decline-page .shadow-box .order{margin-left: 15px;}
+	.decline-page .shadow-box select{width:100%; font-size:13px; height:42px; background-size:auto 20%;}
+    .decline-page .shadow-box .btn{width:100%; margin:30px auto 15px;}
+    .decline-page .shadow-box .btn a{font-size: 14px; padding-top:10px; padding-bottom:10px;}
+    .active-dros .medium-title{font-size:18px;}
+    /** MODAL CSS END **/
+
+    /** POPUP CSS START **/
+    ::ng-deep .popup_section .popup-box{width:88%; padding:25px 15px 16px; -moz-transform: translate(0%,10%) !important;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body .medium-title{font-size: 20px; line-height:28px; text-align: center;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body .order{margin-left: 15px;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body select{width:100%;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body .btn{width:100%;}
+    ::ng-deep .popup_section .popup-box .modal-content .confirm_title{font-size: 20px !important; line-height: 28px;}
+    ::ng-deep .popup_section .popup-box .modal-content .modal-body .close{top:-40px; right: -30px;}
+    ::ng-deep .popup_section .warning_popup .modal-content .btn_column{text-align: center; margin-top:25px;}
+    ::ng-deep .popup_section .warning_popup .modal-content .btn_column .not_confirm{display: table; margin: 0 auto 10px;}
+    ::ng-deep .popup_section .warning_popup .modal-content .btn_column .confirm{display: table; margin: 0 auto 16px;}
+    ::ng-deep .popup_section .warning_popup .modal-content .modal-body .medium-title{font-size: 16px !important;}
+    /** POPUP CSS END **/
+}

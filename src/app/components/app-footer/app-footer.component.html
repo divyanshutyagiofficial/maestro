@@ -1,0 +1,39 @@
+<div class="footer" id="footer">
+  <!-- Footer section start -->
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="footer-logo">
+          <img src="{{logo || 'assets/img/logo.png'}}" alt="logo" height="45" content="origin" />
+        </div>
+      </div>
+
+      <div class="col-md-9 col-sm-9 col-xs-12 mbv-bottom">
+        <div class="footer-menu-column">
+          <ul class="nav">
+            <li>
+              <a (click) = "navigate('legal')" referrerpolicy="origin">{{content[5]}}</a>
+            </li>
+            <li>
+              <a (click) = "navigate('termsandconditions')" referrerpolicy="origin">{{content[6]}}</a>
+            </li>
+            <li>
+              <a (click) = "navigate('disclaimer')" referrerpolicy="origin">{{content[7]}}</a>
+            </li>
+            <li>
+              <a (click) = "navigate('privacy')" referrerpolicy="origin">{{content[8]}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-column">
+        <div class="copyright">
+          <p>©{{date}} {{content[1]}}</p>
+          <p>{{content[2]}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer section end -->

@@ -1,0 +1,787 @@
+/** Dashboard clinical page css start **/
+
+@import '../../../../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
+
+.view_dro_status .view_dro{margin:0; padding:0 0 21px 0; min-height:100%;}
+.suggestion {
+    background: whitesmoke;
+    font-size: 12px;
+    position: absolute;
+    width:100%;
+    height: auto;
+    min-height: 35px;
+    box-shadow: 0px 8px 47px rgba(0,0,0,0.1) !important;
+    border: 1px solid #d4e0d7;
+    padding: 5px;
+    font-weight: 600;
+    color: #3a464e;
+    z-index: 99;
+    word-wrap: break-word;
+}
+.one {
+    display: inline-block;
+}
+.nil {
+    text-align: center;
+}
+.view_dro .search_form_section .form-group{position:relative;}
+
+
+/** FOUR BOX SECTION START **/
+
+.view_dro_status .five_box_section .report_date {
+    text-align: right;
+    margin: 0;
+    padding: 15px 0;
+    color: #222731;
+    font-size: 12px;
+    font-weight: 600;
+    color:rgba(34,39,49,0.8);
+}
+.view_dro_status .five_box_section .report_date span{font-weight:700; color:rgba(34,39,49,1);}
+.view_dro_status .five_box_section .box_section #column .box .detail .info .popover{
+    box-shadow:0px 0px 18px 0px rgba(0,0,0,0.1) !important;
+    left: 0 !important;
+    right: 0 !important;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+.view_dro_status .five_box_section .box_section {
+    margin: 0;
+    padding: 0;
+    position:relative;
+    transition: all 0.4s ease-in-out;
+}
+.view_dro_status .five_box_section .box_section #column {
+    margin: 0;
+    padding: 0;
+    width:100%;
+    display: table;
+}
+/*.view_dro_status .five_box_section .box_section #column .col-md-2 {width: 19.7%;}*/
+.view_dro_status .five_box_section .box_section #column .box {
+    background: #fafaff;
+    border: 1px solid #d4dbe3;
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    display: table;
+    transition: all 0.4s ease-in-out;
+    box-shadow:10px 5px 15px rgba(0, 0, 0, 0.0) !important;
+}
+.view_dro_status .five_box_section .box_section #column .box:hover{border:1px solid #3bbcf2; box-shadow:10px 5px 15px rgba(0, 0, 0, 0.10) !important;}
+.view_dro_status .five_box_section .box_section #column .box .icon {
+    width: 35%;
+    height: 80px;
+    float: left;
+    margin: 0;
+    padding: 0;
+	text-align:center;
+    line-height:80px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-top-left-radius: 3px;
+    -moz-border-bottom-left-radius: 3px;
+    -o-border-top-left-radius: 3px;
+    -o-border-bottom-left-radius: 3px;
+}
+.view_dro_status .five_box_section .box_section #column .box .icon img {
+    height: 35px;
+    margin: 0;
+}
+.view_dro_status .five_box_section .box_section #column .box .detail {
+    margin: 0;
+    padding: 0;
+    float: left;
+	width:65%;
+	text-align:center;
+}
+.view_dro_status .five_box_section .box_section #column .box .detail .heading {
+    color: #888b8d;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 7px 0 2px 0;
+    padding: 0;
+}
+.view_dro_status .five_box_section .box_section #column .box .detail .info {
+    font-size: 28px;
+    font-weight: 500;
+    color: #222731;
+    position: relative;
+}
+.view_dro_status .five_box_section .box_section #column .box .detail .info span img {
+    height: 15px;
+}
+.view_dro_status .five_box_section .box_section #column .box .blue{background:#2883ff;}
+.view_dro_status .five_box_section .box_section #column .box .green{background:#3bc440;}
+.view_dro_status .five_box_section .box_section #column .box .orange{background:#fb7419;}
+.view_dro_status .five_box_section .box_section #column .box .red{background:#fb3c45;}
+.view_dro_status .five_box_section .box_section #column .box .magenta{background:#a170df;}
+
+.view_dro_status .five_box_section .box_section .btn_sec {
+    margin: 0;
+    padding: 0;
+    height: 26px;
+    width: 26px;
+    border-radius: 0;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+	z-index:1;
+}
+.view_dro .box_section .top_arrow {
+    background: url('../../../assets/img/bottom_arrow.png') no-repeat center right !important;
+    background-size: contain !important;
+    cursor: pointer;
+}
+.view_dro .box_section .down_arrow {
+    background: url('../../../assets/img/top_arrow.png') no-repeat center right !important;
+    background-size: contain !important;
+    cursor: pointer;
+}
+/** FOUR BOX SECTION END **/
+
+.view_dro{padding-bottom:0px; min-height: 63vh;}
+.dashboard_clinical {
+    margin: 0;
+    padding: 0;
+    background: #fbfcfd;
+}
+.dashboard_clinical .title_box{
+	margin:0 0 25px 0;
+	padding:0;
+}
+.dashboard_clinical .title_box h3 {
+    margin: 0 0 20px 0;
+    padding: 0;
+    font-size: 28px;
+    font-weight: 600;
+    font-family:"Montserrat";
+    color: #222731;
+}
+.dashboard_clinical .title_box h3 span{font-weight:700;}
+.dashboard_clinical .detail_box {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+	font-size:14px;
+	font-weight:500;
+}
+.dashboard_clinical .detail_box .visi_time {color: #888b8d;}
+.dashboard_clinical .detail_box span {color: #222731;}
+.dashboard_clinical .detail_box span span{color: #888b8d;}
+
+.dashboard_clinical .calendar_section{
+	margin: 0 0 35px 0;
+    padding: 0 18px;
+    background: #003056 url('../../../assets/img/pattern.png') no-repeat center top;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.dashboard_clinical .calendar_section .icon {
+    float: left;
+    margin: 16px 0 0 0;
+    padding: 0;
+    width: 5%;
+}
+.dashboard_clinical .calendar_section .content {
+    float: left;
+    margin: 18px 0 0 0;
+    padding: 0 0 0 18px;
+    width: 92%;
+}
+.dashboard_clinical .calendar_section .content .column {
+    color: #fff;
+    margin: 0px 0 0 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.dashboard_clinical .calendar_section .content .column .detail {
+    font-size: 14px;
+    font-weight: 400;
+	position:relative;
+}
+.dashboard_clinical .calendar_section .content .column .arrow_icon{
+	width: 3%;
+    margin: 0px 0 0 0;
+    padding: 0;
+    top: -18px;
+    right: -31px;
+    position: absolute;
+}
+.dashboard_clinical .calendar_section .content .column .arrow_icon {
+    height: 30px;
+}
+
+.dashboard_clinical .left_sidebar {
+    margin: 0;
+    padding: 0;
+}
+.dashboard_clinical .left_sidebar .title_section {
+    clear: both;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+.dashboard_clinical .left_sidebar .title_section h4{
+	font-size: 20px;
+    color: #222731;
+    font-weight: 600;
+	margin: 0;
+    padding: 0;
+}
+.dashboard_clinical .left_sidebar .horizontal_list {
+    border: 1px solid #d4dbe3;
+    overflow: hidden;
+    clear: both;
+    border-radius: 2px;
+    margin: 0px 0 15px 0;
+    background: #fff;
+	padding:12px 0;
+	transition:all 0.4s ease-in-out;
+}
+.dashboard_clinical .left_sidebar .horizontal_list:hover{border:1px solid #3bbcf2; box-shadow:10px 5px 15px rgba(0, 0, 0, 0.10) !important;}
+.dashboard_clinical .left_sidebar .horizontal_list .sub_title {
+    font-size: 18px;
+    color: #222731;
+    font-weight: 600;
+}
+.dashboard_clinical .left_sidebar .horizontal_list span {
+    font-size: 14px;
+    color: #888b8d;
+    margin: 2px 0 0 0;
+    padding: 0;
+    display: block;
+}
+.dashboard_clinical .left_sidebar .horizontal_list .precent_detail {
+    margin: 5px 0 0 0;
+    padding: 0;
+    height: 35px;
+}
+.dashboard_clinical .left_sidebar .horizontal_list .precent_detail .text {
+    font-size: 14px;
+    color: #222731;
+    font-weight: 500;
+    margin: 0 0px 5px 0;
+}
+.dashboard_clinical .left_sidebar .horizontal_list .precent_detail .progress {
+    background: #e7ebf1;
+    border: none;
+    border-radius: 2px;
+    height: 8px;
+}
+.dashboard_clinical .left_sidebar .horizontal_list .precent_detail .progress .progress-bar-success {
+    background: #3bc440;
+}
+.dashboard_clinical .left_sidebar .btn {
+    width: 100%;
+}
+.dashboard_clinical .left_sidebar .btn:focus,
+.dashboard_clinical .left_sidebar .btn:hover{text-shadow:none; box-shadow:none;}
+.dashboard_clinical .left_sidebar .btn a {
+    background: #ff7733;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 7px 22px;
+    margin: 0 auto;
+    width: 122px;
+    display: block;
+    border-radius: 2px;
+    text-decoration: none;
+}
+.dashboard_clinical .left_sidebar .start a{background:#01a7ed;}
+.dashboard_clinical .left_sidebar .btn a:focus,
+.dashboard_clinical .left_sidebar .btn a:hover{text-decoration:none;}
+
+
+.dashboard_clinical .right_sidebar {
+    margin: 0;
+    padding: 0;
+}
+/*.dashboard_clinical .right_sidebar::before {
+    content: "";
+    width: 3px;
+    height: 400px;
+    left: 26px;
+    top: 46px;
+    position: absolute;
+    background: #afbdc2;
+    border-radius: 1px;
+    display: block;
+}*/
+.dashboard_clinical .right_sidebar .title_section {
+    clear: both;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+.dashboard_clinical .right_sidebar .title_section h4 {
+    font-size: 20px;
+    color: #222731;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+/** View DRO page css start **/
+.view_dro .cmw {text-align: right; padding:5px 15px 0 0; margin: 0; font-size: 14px; font-weight: 500; color: #888b8d; clear: both;}
+.view_dro_title_column .welcome_title_section{margin-top:0; padding-top:0; border:none;}
+.view_dro_title_column .welcome_title_section .title_box{margin:0px 0 0px 0;}
+
+
+.view_dro .table_section{border:1px solid #d4dbe3; margin:0; padding:0; overflow:hidden;}
+.view_dro .table_section .thead{background:#e5e9eb; overflow:hidden; margin:0; padding:12px 8px; border-bottom:1px solid #d4dbe3;}
+.view_dro .table_section .thead .col-md-4.col-sm-4.col-xs-12{padding-left: 6px;}
+.view_dro .table_section .thead .title {
+    color: #232732;
+    font-size: 14px;
+	font-weight:600;
+    font-family:"Montserrat";
+	float:left;
+	margin:0 0px 0 0;
+}
+.view_dro .table_section .thead .col-md-3.col-sm-3.col-xs-12:nth-child(2) .title .fa{margin-left: 27px;}
+.view_dro .table_section .thead .col-md-3.col-sm-3.col-xs-12:nth-child(3) .title .fa{margin-left: 27px;}
+.view_dro .table_section .thead .title .fa{cursor:pointer; margin-left: 5px; color: rgba(0,0,0,0.4);}
+.view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12 .box{
+    float: right;
+	margin:0 0px 0 0;
+}
+.view_dro .table_section .thead .box span{font-weight:500; color:rgba(35, 39, 50, 0.7); display:none;}
+.view_dro .table_section .thead ul {
+    margin: 3px 0 0 0;
+    padding: 0;
+    float: left;
+}
+.view_dro .table_section .thead ul li {
+    list-style: none;
+    margin: 0 0 4px 0;
+    padding: 0;
+    height: 3px;
+    line-height: 3px;
+    cursor: pointer;
+}
+.view_dro .table_section .thead ul li img {
+    height: 6px;
+    opacity: 0.50;
+}
+.view_dro .table_section .tbody {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.view_dro .table_section .tbody .list_column {
+    border-bottom: 1px solid #d4dbe3;
+	background:#fff;
+    clear: both;
+    border-radius: 2px;
+    margin: 0px 0 0px 0;
+	overflow:hidden;
+    padding: 12px 0;
+	font-size:12px;
+	color:rgba(35, 39, 50, 0.7);
+	font-weight:500;
+}
+
+.view_dro .table_section .tbody .list_column .card{margin:0; padding:0; overflow:hidden;}
+.view_dro .table_section .tbody .list_column .card .text{margin:0; padding:0; float:left; width:90px;}
+.view_dro .table_section .tbody .list_column .card .img_icon{margin:0; padding:0; float:left;}
+.view_dro .table_section .tbody .list_column img {height: 18px; margin: 0 0 0 0px;}
+
+.view_dro .table_section .tbody .list_column .title {
+    color: #222731;
+    font-weight: 600;
+    font-family:"Montserrat";
+}
+.view_dro .table_section .tbody .list_column .time-spent{padding-left: 40px;}
+
+.list_column .padding-left{padding-left:5px;}
+.view_dro .table_section .tbody .list_column .col-md-8.col-sm-12.col-xs-12.padding-left .col-md-5.col-sm-5.col-xs-5{text-align:right;}
+.view_dro .table_section .tbody .list_column:last-child{border-bottom:none;}
+
+.view_dro .pagination_section{clear:both; overflow:hidden;}
+.view_dro .no-padding{padding:0;}
+.view_dro .showing{margin:34px 0 0 0; padding:0; overflow:hidden;}
+.view_dro .showing ul{margin:0; padding:0;}
+.view_dro .showing ul li{margin:0 5px; padding:0; list-style:none; float:left; color:rgba(35, 39, 50, 0.7); font-size:14px; font-weight:500;}
+.view_dro .showing ul li span{color:#222731; float: left;}
+.view_dro .showing ul li span div{float: right;}
+.view_dro .controls{text-align:right; margin-top:5px;}
+.view_dro .controls .pagination > li a{background:transparent; color:#222731; font-weight:600; border-color:#ddd;}
+
+.view_dro .search_form_section{background:#fff; border:1px solid #d4dbe3; margin:0 0 35px 0; padding:15px; overflow: hidden; width:100%;}
+.view_dro .search_form_section .form_title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #232732;
+    font-family:"Montserrat";
+    margin: 0 0 8px 0;
+    padding: 0;
+}
+.view_dro .search_form_section input {
+    border: 1px solid #e1e9f3;
+    height: 35px;
+    font-size: 14px;
+    color: #888b8d;
+    padding: 0 15px;
+    width:100%;
+    font-weight:500;
+}
+.view_dro .search_form_section select {
+    border: 1px solid #e1e9f3;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #232732;
+    padding: 0 15px;
+	width:100%;
+	background:url('../../../assets/img/arrow.png') no-repeat right center;
+	background-origin:content-box;
+	background-size:auto 23%;
+	appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+}
+.view_dro .search_form_section select option{color: #888b8d;}
+.view_dro .search_form_section .picker_section .picker_title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #232732;
+    font-family:"Montserrat";
+    margin: 8px 0 8px 0;
+    padding: 0;
+	display:inline-block;
+}
+.view_dro .search_form_section .picker_section input {
+    border: 1px solid #e1e9f3;
+    height: 35px;
+    font-size: 14px;
+    color: #888b8d;
+    font-weight: 500;
+    padding: 0 15px 0 10px;
+    width: 100%;
+    background: url(../../../assets/img/cld.png) no-repeat left center;
+    background-origin: content-box;
+    background-size: auto 55%;
+    text-indent: 22px;
+	box-shadow:none;
+    border-radius:0;
+    cursor:pointer;
+}
+.view_dro .search_form_section .error{font-size: 12px; color:#ff3737; font-weight: 500; padding:0; margin: -7px 0 15px 0;}
+.view_dro .search-controls{margin:0; padding:11px 0 9px 0; overflow:hidden;}
+.view_dro .search-controls ul{margin:0; padding:0;}
+.view_dro .search-controls ul li{margin:0; padding:0; width:50%; float:left; list-style:none;}
+.view_dro .search-controls ul li:first-child{margin:8px 0 0 0;}
+.view_dro .search-controls ul li a{text-decoration:underline; color:#02abf3; font-weight:500; font-size:14px;}
+.view_dro .search-controls ul li .btn {
+    color: #fff;
+    background: #02abf3;
+    font-weight: 500;
+    border: none;
+    border-radius: 3px;
+    padding: 7px 25px;
+    float:right;
+    font-size: 14px;
+}
+/** View DRO page css end **/
+
+/** pagination css start **/
+.view_dro .pagination .ngx-pagination{margin:0; padding:0;}
+.view_dro .pagination .ngx-pagination li{
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: left;
+    cursor: pointer;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.view_dro .pagination .ngx-pagination li:first-child{border-left: 1px solid #ddd;}
+.view_dro .pagination .ngx-pagination li a{padding:6px 7px; display: block;}
+.view_dro .pagination .ngx-pagination li a:hover{background:rgba(0,0,0,0.0);}
+.view_dro .pagination .ngx-pagination li.pagination-previous{font-weight: 600;}
+.view_dro .pagination .ngx-pagination li.pagination-previous.disabled {
+    background: #fff;
+    color: #777;
+    font-weight: 500;
+    margin: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-top-left-radius: 4px;
+    -moz-border-bottom-left-radius: 4px;
+    -o-border-top-left-radius: 4px;
+    -o-border-bottom-left-radius: 4px;
+}
+.view_dro .pagination .ngx-pagination li.disabled{padding:6px 12px;}
+.view_dro .pagination .ngx-pagination li.current{background:rgba(212,219,227,0.4);}
+.view_dro .pagination .ngx-pagination li.current div{padding:6px 7px; display: block;}
+.view_dro .pagination .ngx-pagination li.current .show-for-sr{display: none;}
+.view_dro .pagination .ngx-pagination li.current span{color:#222731; font-weight: 600;}
+.view_dro .pagination .ngx-pagination li.pagination-next {
+    /*background: #eee;*/
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left:none;
+    color: #222731;
+    font-weight: 600;
+    margin: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-top-right-radius: 4px;
+    -moz-border-bottom-right-radius: 4px;
+    -o-border-top-right-radius: 4px;
+    -o-border-bottom-right-radius: 4px;
+}
+
+/** pagination css end **/
+
+@media (min-width: 1200px) { }
+
+@media (min-width: 992px) and (max-width: 1199px){
+    /** View DRO page css start **/
+    .view_dro{padding-bottom:0;}
+    .view_dro_status .view_dro{padding-bottom:35px;}
+    .view_dro_status .five_box_section .box_section #column .box .icon img{width:30px; height:auto;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .heading{font-size:14px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .info{font-size: 25px;}
+
+    .view_dro .cmw{margin:0 35px 0 0;}
+    .dashboard_clinical .title_box h3{margin-bottom: 0;}
+	.view_dro_title_column{padding-top:0; padding-bottom:14px;}
+	.view_dro .table_section{margin-bottom:15px;}
+	.view_dro_title_column .welcome_title_section .title_box{margin-top:0;}
+    .view_dro .table_section .tbody .list_column .padding-right{padding-left:5px;}
+    .view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12{width:100%; padding-right: 0;}
+	.view_dro .table_section .thead .col-md-4.col-sm-4.col-xs-12:nth-child(1){display:none;}
+	.view_dro .table_section .thead .col-md-3.col-sm-3.col-xs-12:nth-child(2){display:none;}
+    .view_dro .table_section .thead .col-md-3.col-sm-3.col-xs-12:nth-child(3){display:none;}
+    .view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12 .box{margin:0;}
+	.view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12 .box span{float:left; margin:0 10px 0 0; display:block;}
+    .view_dro .table_section .tbody .list_column{padding:9px 5px;}
+    .view_dro .table_section .tbody .list_column .title{margin-bottom:6px;}
+	.view_dro .table_section .tbody .list_column .col-md-4.col-sm-4.col-xs-4{padding:0;}
+	.view_dro .table_section .tbody .list_column .col-md-3.col-sm-3.col-xs-3{padding:0;}
+	.view_dro .table_section .tbody .list_column .col-md-5.col-sm-5.col-xs-5{padding:0;}
+	.view_dro .table_section .tbody .list_column img{height:10px;}
+	.list_column .padding-left{padding-right:5px;}
+	.view_dro .showing{margin:0;}
+	.view_dro .showing ul{margin:13px 0 0 0; display:table;}
+	.view_dro .controls{text-align:right;}
+	.view_dro .controls .pagination{margin:13px 0 45px; display: table; text-align: center; float: right;}
+    .view_dro .pagination .ngx-pagination li.disabled{padding:2px 8px; font-size: 13px;}
+    .view_dro .pagination .ngx-pagination li.current div{padding:1px 8px;}
+    .view_dro .pagination .ngx-pagination li.current span{font-size: 11px;}
+    .view_dro .pagination .ngx-pagination li a{font-size: 12px; padding:2px 8px 3.3px;}
+    .view_dro .pagination .ngx-pagination li a span{font-weight: 400; font-size: 11px;}
+    .view_dro .table_section .tbody .list_column .card .text{margin:0 5px 0 0; width:auto;}
+    
+    .view_dro .table_section .thead{padding-top:9px; padding-bottom:9px;}
+    .view_dro .search_form_section{margin-bottom:38px;}
+	/** View DRO page css end **/
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /** Dashboard clinical page css start **/
+    .view_dro{min-height: 100%;}
+    .view_dro_status .view_dro{padding-bottom:35px;}
+    .view_dro_status .five_box_section .box_section #column .col-md-2{width:50%;}
+    .view_dro_status .five_box_section .box_section #column .padding-right{padding-right:5px;}
+    .view_dro_status .five_box_section .box_section #column .padding-left{padding-left: 5px;}
+    .view_dro_status .five_box_section .box_section #column .box .icon{height:67px; line-height: 67px; width:23%;}
+    .view_dro_status .five_box_section .box_section #column .box .icon img{height: 32px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail{width:77%;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .info{text-align: left; padding:0 10px;font-size:25px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .info span{float:right;}
+	.view_dro_status .five_box_section .box_section #column .box{margin-bottom:12px;}
+    .view_dro_status .five_box_section .box_section .btn_sec{bottom:-15px; top:inherit; right:15px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .heading{font-size:14px; text-align: left; padding-left:8px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .info .popover .popover-content{padding:5px;}
+    
+	.dashboard_clinical .calendar_section{height:140px; background-image:none; background:#232732;}
+	.dashboard_clinical .calendar_section .icon{width:10%;}
+	.dashboard_clinical .calendar_section .content{width:82%;}
+	.dashboard_clinical .calendar_section .arrow_icon{width:7%; margin-top:85px;}
+	.dashboard_clinical .detail_box{margin-bottom:12px;}
+	.dashboard_clinical .calendar_section .content .column .detail{font-size:12px; margin:18px 0 0 0;}
+	.dashboard_clinical .left_sidebar .btn{padding:0; margin:10px 0 0 0;}
+	.dashboard_clinical .left_sidebar .btn a{width:100%;}
+	/** Dashboard clinical page css end **/
+	
+    /** View DRO page css start **/
+    .view_dro{padding-bottom:0;}
+    .view_dro .cmw{margin:0 35px 0 0;}
+    .dashboard_clinical .title_box h3{margin-bottom: 0;}
+	.view_dro_title_column{padding-top:0; padding-bottom:14px;}
+	.view_dro .table_section{margin-bottom:15px;}
+	.view_dro_title_column .welcome_title_section .title_box{margin-top:0;}
+    .view_dro .table_section .tbody .list_column .padding-right{padding-left:5px;}
+    .view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12{width:100%; padding-right: 0;}
+	.view_dro .table_section .thead .col-md-4.col-sm-4.col-xs-12:nth-child(1){display:none;}
+	.view_dro .table_section .thead .col-md-3.col-sm-3.col-xs-12:nth-child(2){display:none;}
+    .view_dro .table_section .thead .col-md-3.col-sm-3.col-xs-12:nth-child(3){display:none;}
+    .view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12 .box{margin:0;}
+	.view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12 .box span{float:left; margin:0 10px 0 0; display:block;}
+    .view_dro .table_section .tbody .list_column{padding:9px 5px;}
+    .view_dro .table_section .tbody .list_column .title{margin-bottom:6px; font-size: 12px;}
+	.view_dro .table_section .tbody .list_column .col-md-4.col-sm-4.col-xs-4{padding:0;}
+	.view_dro .table_section .tbody .list_column .col-md-3.col-sm-3.col-xs-3{padding:0;}
+	.view_dro .table_section .tbody .list_column .col-md-5.col-sm-5.col-xs-5{padding:0;}
+	.view_dro .table_section .tbody .list_column img{height:10px;}
+	.list_column .padding-left{padding-right:5px;}
+	.view_dro .showing{margin:5px 0 0 0;}
+    .view_dro .showing ul{margin:0; display:table;}
+    .view_dro .showing ul li{font-size: 11px;}
+	.view_dro .controls{text-align:center;}
+    .view_dro .controls .pagination{margin:0px 0 45px; display: table; text-align: center; float: right;}
+    .view_dro .pagination .ngx-pagination li.disabled{padding:2px 8px; font-size:13px;}
+    .view_dro .pagination .ngx-pagination li.current div{padding:2px 8px;}
+    .view_dro .pagination .ngx-pagination li.current span{font-size: 11px;}
+    .view_dro .pagination .ngx-pagination li a{font-size: 12px; padding:3.3px 6px;}
+    .view_dro .pagination .ngx-pagination li a span{font-weight: 400; font-size: 11px;}
+    .view_dro .table_section .tbody .list_column .card .text{margin:0 5px 0 0; width:auto;}
+
+    .view_dro .table_section .thead{padding-top:9px; padding-bottom:9px;}
+    .view_dro .search_form_section{margin-bottom:38px;}
+	/** View DRO page css end **/
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    /** Dashboard clinical page css start **/
+    .view_dro{min-height: 100%;}
+    .view_dro_status .view_dro{padding-bottom:35px;}
+    .view_dro_status .five_box_section .box_section #column .col-md-2{width:50%;}
+    .view_dro_status .five_box_section .box_section #column .padding-right{padding-right:5px;}
+    .view_dro_status .five_box_section .box_section #column .padding-left{padding-left: 5px;}
+    .view_dro_status .five_box_section .box_section #column .box .icon{height:67px; line-height: 67px; width:30%;}
+    .view_dro_status .five_box_section .box_section #column .box .icon img{height: 28px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail{width:70%;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .info{text-align: left; padding:0 10px;font-size:20px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .info span{float:right;}
+	.view_dro_status .five_box_section .box_section #column .box{margin-bottom:12px;}
+    .view_dro_status .five_box_section .box_section .btn_sec{bottom:-15px; top:inherit; right:15px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .heading{font-size:14px; text-align: left; padding-left:8px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .info .popover .popover-content{padding:5px;}
+
+	.dashboard_clinical .calendar_section{height:140px; background-image:none; background:#232732;}
+	.dashboard_clinical .calendar_section .icon{width:10%;}
+	.dashboard_clinical .calendar_section .content{width:82%;}
+	.dashboard_clinical .detail_box{margin-bottom:12px;}
+	.dashboard_clinical .calendar_section .arrow_icon img{height:30px;}
+	.dashboard_clinical .calendar_section .content .column .detail{font-size:12px; margin:18px 0 0 0;}
+	.dashboard_clinical .left_sidebar .btn{padding:0; margin:10px 0 0 0;}
+	.dashboard_clinical .left_sidebar .btn a{width:100%;}
+	/** Dashboard clinical page css end **/
+	
+    /** View DRO page css start **/
+    .view_dro{padding-bottom:0;}
+    .view_dro .cmw{margin:0 35px 0 0;}
+    .dashboard_clinical .title_box h3{margin-bottom: 0;}
+	.view_dro_title_column{padding-top:0; padding-bottom:14px;}
+	.view_dro .table_section{margin-bottom:15px;}
+	.view_dro_title_column .welcome_title_section .title_box{margin-top:0;}
+    .view_dro .table_section .tbody .list_column .padding-right{padding-left:5px;}
+    .view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12{padding-right: 0;}
+	.view_dro .table_section .thead .col-md-4.col-sm-4.col-xs-12:nth-child(1){display:none;}
+	.view_dro .table_section .thead .col-md-3.col-sm-3.col-xs-12:nth-child(2){display:none;}
+    .view_dro .table_section .thead .col-md-3.col-sm-3.col-xs-12:nth-child(3){display:none;}
+    .view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12 .box{margin:0;}
+	.view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12 .box span{float:left; margin:0 10px 0 0; display:block;}
+    .view_dro .table_section .tbody .list_column{padding:9px 5px;}
+    .view_dro .table_section .tbody .list_column .title{margin-bottom:6px; font-size: 12px;}
+	.view_dro .table_section .tbody .list_column .col-md-4.col-sm-4.col-xs-4{padding:0;}
+	.view_dro .table_section .tbody .list_column .col-md-3.col-sm-3.col-xs-3{padding:0;}
+	.view_dro .table_section .tbody .list_column .col-md-5.col-sm-5.col-xs-5{padding:0;}
+	.view_dro .table_section .tbody .list_column img{height:10px;}
+	.list_column .padding-left{padding-right:5px;}
+	.view_dro .showing{margin:5px 0 0 0;}
+    .view_dro .showing ul{margin:0 auto; display:table;}
+    .view_dro .showing ul li{font-size: 11px;}
+	.view_dro .controls{text-align:center;}
+    .view_dro .controls .pagination{margin:13px auto 45px; display: table; text-align: center; float: none;}
+    .view_dro .pagination .ngx-pagination li.disabled{padding:2px 5px; font-size: 13px;}
+    .view_dro .pagination .ngx-pagination li.current div{padding:1px 8px;}
+    .view_dro .pagination .ngx-pagination li.current span{font-size: 11px;}
+    .view_dro .pagination .ngx-pagination li a{font-size: 12px; padding:2px 6px 3.3px;}
+    .view_dro .pagination .ngx-pagination li a span{font-weight: 400; font-size: 11px;}
+    .view_dro .table_section .tbody .list_column .card .text{margin:0 5px 0 0; width:auto;}
+    
+    .view_dro .table_section .thead{padding-top:9px; padding-bottom:9px;}
+    .view_dro .search_form_section{margin-bottom:38px;}
+	/** View DRO page css end **/
+}
+
+@media (min-width: 300px) and (max-width: 479px) {
+    /** Dashboard clinical page css start **/
+    .view_dro{min-height: 100%;}
+    .view_dro_status .view_dro{padding-bottom:35px;}
+    .view_dro_status .five_box_section .box_section #column .col-md-2{width:50%;}
+    .view_dro_status .five_box_section .box_section #column .padding-right{padding-right:5px;}
+    .view_dro_status .five_box_section .box_section #column .padding-left{padding-left: 5px;}
+    .view_dro_status .five_box_section .box_section #column .box .icon{height:100%; line-height: 55px; width:40%;}
+    .view_dro_status .five_box_section .box_section #column .box .icon img{height: 22px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail{width:60%;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .info{text-align: left; padding:0 10px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .info span{float:right;}
+	.view_dro_status .five_box_section .box_section #column .box{margin-bottom:12px;}
+    .view_dro_status .five_box_section .box_section .btn_sec{bottom:-15px; top:inherit; right:15px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .heading{font-size:12px; text-align: left; padding-left:8px; margin-bottom:0;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .info{font-size: 20px; line-height: 25px;}
+    .view_dro_status .five_box_section .box_section #column .box .detail .info .popover .popover-content{padding:5px;}
+
+	.dashboard_clinical .calendar_section{height:auto; padding-bottom:20px; background-image:none; background:#232732;}
+	.dashboard_clinical .calendar_section .icon{width:10%;}
+	.dashboard_clinical .calendar_section .content{width:82%;}
+	.dashboard_clinical .calendar_section .arrow_icon img{height:auto;}
+	.dashboard_clinical .calendar_section .content .column .detail{font-size:12px; margin:18px 0 0 0;}
+	.dashboard_clinical .left_sidebar .btn{padding:0; margin:10px 0 0 0;}
+	.dashboard_clinical .left_sidebar .btn a{width:100%;}
+	/** Dashboard clinical page css end **/
+	
+    /** View DRO page css start **/
+    .view_dro{padding-bottom:0;}
+    .view_dro .cmw{margin:0 35px 0 0;}
+    .dashboard_clinical .title_box h3{margin-bottom: 0;}
+	.view_dro_title_column{padding-top:0; padding-bottom:14px;}
+	.view_dro .table_section{margin-bottom:15px;}
+	.view_dro_title_column .welcome_title_section .title_box{margin-top:0;}
+    .view_dro .table_section .tbody .list_column .padding-right{padding-left:5px;}
+    .view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12{padding-right: 0;}
+	.view_dro .table_section .thead .col-md-4.col-sm-4.col-xs-12:nth-child(1){display:none;}
+	.view_dro .table_section .thead .col-md-3.col-sm-3.col-xs-12:nth-child(2){display:none;}
+    .view_dro .table_section .thead .col-md-3.col-sm-3.col-xs-12:nth-child(3){display:none;}
+    .view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12 .box{margin:0;}
+	.view_dro .table_section .thead .col-md-2.col-sm-2.col-xs-12 .box span{float:left; margin:0 10px 0 0; display:block;}
+    .view_dro .table_section .tbody .list_column{font-size:10px; padding:9px 0px;}
+    .view_dro .table_section .tbody .list_column .title{margin-bottom:6px; font-size: 12px;}
+	.view_dro .table_section .tbody .list_column .col-md-4.col-sm-4.col-xs-4{padding:0; width:26%; margin-right:2px;}
+	.view_dro .table_section .tbody .list_column .col-md-3.col-sm-3.col-xs-3{padding:0; width:auto;}
+	.view_dro .table_section .tbody .list_column .col-md-5.col-sm-5.col-xs-5{padding:0; width:auto; float: right;}
+	.view_dro .table_section .tbody .list_column img{height:10px;}
+	.list_column .padding-left{padding-right:5px;}
+	.view_dro .showing{margin:5px 0 0 0;}
+    .view_dro .showing ul{margin:0 auto; display:table;}
+    .view_dro .showing ul li{font-size: 11px;}
+	.view_dro .controls{text-align:center;}
+    .view_dro .controls .pagination{margin:13px auto 45px; display: table; text-align: center; float: none;}
+    .view_dro .pagination .ngx-pagination li.disabled{padding:2px 5px; font-size: 13px;}
+    .view_dro .pagination .ngx-pagination li.current div{padding:0px 6px 2px;}
+    .view_dro .pagination .ngx-pagination li.current span{font-size: 10px;}
+    .view_dro .pagination .ngx-pagination li a{font-size: 11px; padding:3.5px 6px 3.3px;}
+    .view_dro .pagination .ngx-pagination li a span{font-weight: 400; font-size: 11px;}
+    .view_dro .table_section .tbody .list_column .card .text{margin:0 5px 0 0; width:auto;}
+    
+    .view_dro .table_section .thead{padding-top:9px; padding-bottom:9px;}
+    .view_dro .search_form_section{margin-bottom:38px;}
+	/** View DRO page css end **/
+}

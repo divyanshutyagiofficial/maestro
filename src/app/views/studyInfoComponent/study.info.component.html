@@ -1,0 +1,16 @@
+<div class="skeleton" *ngIf="!loaded" style="text-align:center">
+  <a>
+    <img src="assets/study_skeleton.png" content="origin" alt="" />
+  </a>
+</div>
+<article class="forgot-password study-information  terms-conditions defaul-page" *ngIf="loaded">
+  <!-- Article section start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <app-visual-header-body [fields]="studyInfo?.fields"></app-visual-header-body>
+      </div>
+    </div>
+  </div>
+</article>
+<!-- Article section end -->

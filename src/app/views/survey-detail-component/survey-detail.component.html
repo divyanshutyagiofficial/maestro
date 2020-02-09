@@ -1,0 +1,700 @@
+<!-- header section starts -->
+<div class="drawSection">
+  <!--<div class="canvasView">
+    <img id="scream" width="220" height="277" src="assets/img/questionnaire/color_blindness/figure01.png"
+      alt="The Scream" style="display: none">
+    <canvas #myCanvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;">
+      Your browser does not support the HTML5 canvas tag.
+    </canvas>
+  </div>
+  <div class="controller">
+    <div class="pointerSlider">
+      <input #sliderRange id="sliderRange" type="range" min="2" max="9" value="_getPointerSize()"
+        (change)="_setPointerSize($event.target.value)" />
+    </div>
+    <div class="chooseColor">
+      <label>Color:</label>
+      <div class="colorPalette">
+        <input name="Color Picker" type="color" id="colorPicker" />
+      </div>
+    </div>
+  </div>
+  <button (click)="_surveyService.open()">open Image</button>-->
+</div>
+
+
+<div class="header-section">
+  <div class="print_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+          <div id="section" class="section" *ngIf="!_programService.isAdhoc() && !_programService.isCRO()">
+            <a class="hm_ic" (click)="surveyDetailData.homeModal = true" referrerpolicy="origin">
+              <img src="assets/img/Home.png" alt="logo" content="origin" />
+              <span>{{ (surveyDetailData.placeholders?.header)[9] }}</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+          <ul class="save_print">
+            <li>
+              <div class="lang-icon" (click)="closeDroModal()">
+                <a>
+                  <img class="clos_ic" src="assets/img/cancel.png" content="origin" alt="" />
+                  <span>{{ (surveyDetailData.placeholders?.header)[11] }}</span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" *ngIf="getCurrentQuestion() && getCurrentQuestion()['required'] === false">
+    <div class="notice green" *ngIf="isSkipped() === true">
+      <i class="material-icons icon">info</i>
+      <span>{{ (surveyDetailData.placeholders?.survey_detail)[29] }}</span>
+    </div>
+
+    <div class="notice" *ngIf="isSkipped() === false">
+      <i class="material-icons icon">info</i>
+      <span>{{ (surveyDetailData.placeholders?.survey_detail)[28] }}</span>
+    </div>
+  </div>
+</div>
+<!-- header section end -->
+
+<div class="question_section">
+  <div class="container">
+    <div class="row">
+      <div class="title-section">
+        <div class="col-md-8 col-sm-12 col-xs-12">
+          <div class="survey-title">
+            {{ data?.survey.name }}
+          </div>
+          <div class="survey-name">
+            <p>
+              {{ data?.survey.programInfo.organizationName }} :
+              <b>
+                {{ data?.survey.programInfo.programName }}
+              </b>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <div class="due-date-time" *ngIf="data?.userSurveySession.scheduledSession.endTime != 0">
+            <p>
+              {{ (surveyDetailData.placeholders?.dashboard)[26] }}
+              {{
+                data?.userSurveySession.scheduledSession.endTime + offset
+                  | date: "medium"
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="survey_column">
+  <div class="container">
+    <div class="row">
+      <div class="progress-section">
+        <div class="question_info">
+          <div class="col-md-2 col-sm-12 col-xs-12">
+            <div class="question-number">
+              <ng-template #question>{{
+                (surveyDetailData.placeholders?.survey_detail)[13]
+              }}</ng-template>
+              <span *ngIf="
+                  _programService.getSurveyType() == 'TRAINING';
+                  else question
+                ">{{ (surveyDetailData.placeholders?.survey_detail)[23] }}</span>
+              {{ page?.pageNumber }}
+              <span>{{
+                (surveyDetailData.placeholders?.survey_detail)[14]
+              }}</span>
+              {{ data?.survey.pages.length }}
+            </div>
+          </div>
+
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div id="progress" class="progress">
+              <div id="progress_bar" class="progress-bar progress-striped" role="progressbar" aria-valuenow="90"
+                aria-valuemin="0" aria-valuemax="100"></div>
+              <!--<div id="progress_bar" class="progress progress-striped" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                            </div>-->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5 col-sm-12 col-xs-12">
+          <div class="question-control">
+            <input *ngIf="page?.pageNumber > 1" id="previous" class="btn btn-lg btn-info" type="button"
+              value="{{ (surveyDetailData.placeholders?.survey_detail)[16] }}" (click)="previous()" />
+            <input [disabled]="false" *ngIf="data?.survey.pages.length !== page?.pageNumber" id="next"
+              class="btn btn-lg btn-info" type="button" value="{{ (surveyDetailData.placeholders?.survey_detail)[17] }}"
+              (click)="next()" />
+            <input *ngIf="data?.survey?.pages.length === page?.pageNumber" id="submit" class="btn btn-lg btn-info"
+              type="button" value="{{ (surveyDetailData.placeholders?.survey_detail)[18] }}" (click)="submitModal()" />
+            <input *ngIf="getCurrentQuestion() && getCurrentQuestion()['required'] === false" id="skip"
+              class="btn btn-lg btn-info skip_btn" type="button"
+              value="{{ (surveyDetailData.placeholders?.survey_detail)[27] }}" (click)="skip()" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="questionnaire-section question_section">
+    <div class="value_section">
+      <div class="container">
+        <div class="section" *ngFor="let section of page?.sections">
+          <div class="row">
+            <div class="col-md-12">
+              <ng-template #text>
+                <div class="questionnaire-title">
+                  {{ section.text }}
+                </div>
+              </ng-template>
+              <div [innerHTML]="section.text" *ngIf="isHyperText(section.text); else text" class="innerHTML"></div>
+              <div class="section_media">
+                <p *ngIf="section.mediaType == 'IMAGE'">
+                  <img [src]="section.url" content="origin" alt="" />
+                </p>
+                <p *ngIf="section.mediaType == 'AUDIO'">
+                  <audio controls>
+                    <source [src]="sanitizeUrl(section.url)" type="audio/ogg" />
+                    <source [src]="sanitizeUrl(section.url)" type="audio/ogg; codecs=opus" />
+                    <source [src]="sanitizeUrl(section.url)" type="audio/ogg; codecs=vorbi" />
+                    <source [src]="sanitizeUrl(section.url)" type="audio/mp3" />
+                    <source [src]="sanitizeUrl(section.url)" type="audio/wav" />
+                    <source [src]="sanitizeUrl(section.url)" type="audio/mpeg">
+                    <source [src]="sanitizeUrl(section.url)" type="audio/x-m4a">
+                    Your browser does not support the
+                    <code>audio</code> element.
+                  </audio>
+                </p>
+                <p *ngIf="section.mediaType == 'VIDEO'">
+                  <video width="560" height="315" controls>
+                    <source [src]="sanitizeUrl(section.url)" type="video/mp4" />
+                    <source [src]="sanitizeUrl(section.url)" type="video/ogg" />
+                    <source [src]="sanitizeUrl(section.url)" type="video/webm">
+                    <source [src]="sanitizeUrl(section.url)" type="video/quicktime">
+                    Your browser does not support the
+                    <code>audio</code> element.
+                  </video>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="question" *ngFor="let question of section.questions; let i = index">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="questionnaire-title question-mark">
+                  {{ question.text }}
+                  <img *ngIf="question.helpText" src="assets/img/info.png" (click)="openHelpModal(question.helpText)" content="origin" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <form name="surveyForm" id="surveyForm" autocomplete="off">
+                  <div class="questionnaire-options btn-group btn-group-vertical">
+                    <div class="form-group">
+                      <p *ngIf="question.questionType == 'VIDEO'">
+                        <!--<iframe width="560" height="315" [src]="url" frameborder="0" allowfullscreen></iframe>-->
+                        <video width="560" height="315" controls>
+                          <source [src]="sanitizeUrl(question.url)" type="video/mp4" />
+                          <source [src]="sanitizeUrl(question.url)" type="video/ogg" />
+                          <source [src]="sanitizeUrl(question.url)" type="video/webm">
+                          <source [src]="sanitizeUrl(question.url)" type="video/quicktime">
+                          Your browser does not support the
+                          <code>audio</code> element.
+                        </video>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.questionType == 'AUDIO'">
+                        <audio controls id="audio_player">
+                          <source [src]="sanitizeUrl(question.url)" type="audio/mp3" />
+                          <source [src]="sanitizeUrl(question.url)" type="audio/wav" />
+                          <source [src]="sanitizeUrl(question.url)" type="audio/ogg" />
+                          <source [src]="sanitizeUrl(question.url)" type="audio/ogg; codecs=opus" />
+                          <source [src]="sanitizeUrl(question.url)" type="audio/ogg; codecs=vorbi" />
+                          <source [src]="sanitizeUrl(question.url)" type="audio/wav" />
+                          <source [src]="sanitizeUrl(question.url)" type="audio/mpeg">
+                          <source [src]="sanitizeUrl(question.url)" type="audio/x-m4a">
+                          Your browser does not support the
+                          <code>audio</code> element.
+                        </audio>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'RADIO_BUTTON'" class="heading">
+                        <label *ngFor="let ip of question.choices; let i = index">
+                          <input class="btn btn-primary ng-untouched ng-pristine ng-valid" type="radio" name="radio"
+                            value="{{ ip.text }}" (click)="choose(ip.id, question.id, ip.score, '', question.url)"
+                            [checked]="question.choice == ip.id" />
+                          <span class="text" *ngIf="ip.url.length == 0">{{
+                            ip.text
+                          }}</span>
+                          <div [ngClass]="{'image':!ip.url, 'faceReaction':ip.url}" *ngIf="ip.url.length > 1">
+                            <img src="{{ ip.url }}" alt="{{ ip.text }}" content="origin" />
+                          </div>
+                        </label>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'NUMERIC'" class="heading">
+                        <label>
+                          <input class="numeric" type="number" name="numeric" [(ngModel)]="question.freeText" min="1"
+                            max="5" (change)="save(question.freeText, question.id)" />
+                        </label>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'TEXT_BOX'" class="heading">
+                        <label>
+                          <input class="btn btn-primary ng-untouched ng-pristine ng-valid" type="text" name="text"
+                            maxlength="3" [(ngModel)]="question.freeText"
+                            (keyup)="save($event.target.value, question.id)" />
+                        </label>
+                        <span class="error_message" *ngIf="
+                            question.validationRules.length &&
+                            question.validationRules[0].type == 'BP' &&
+                            i == surveyDetailData.pos &&
+                            surveyDetailData.error
+                          ">{{
+                            question.validationRules[0].failureMessage
+                          }}</span>
+                        <span class="error_message" *ngIf="
+                            question.validationRules.length &&
+                            question.validationRules[0].type == 'AGE' &&
+                            i == surveyDetailData.pos &&
+                            surveyDetailData.error
+                          ">{{
+                            question.validationRules[0].failureMessage
+                          }}</span>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'RATING'" class="heading">
+                        <!-- <ngb-rating [(rate)]="question.freeText" (click)="save(question.freeText, question.id)" max="5"></ngb-rating>
+                      <label class="star-column">
+                        <span class="text_review" value="1">Poor</span>
+                        <span class="text_review" value="2">Fair</span>
+                        <span class="text_review" value="3">Good</span>
+                        <span class="text_review" value="4">Very Good</span>
+                        <span class="text_review" value="5">Excellent</span>
+                      </label>-->
+                        <rating [(ngModel)]="question.freeText" [ngModelOptions]="{ standalone: true }" [max]="5"
+                          (click)="save(question.freeText, question.id)">
+                        </rating>
+                        <label class="star-column">
+                          <span class="text_review" value="1">Poor</span>
+                          <span class="text_review" value="2">Fair</span>
+                          <span class="text_review" value="3">Good</span>
+                          <span class="text_review" value="4">Very Good</span>
+                          <span class="text_review" value="5">Excellent</span>
+                        </label>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'BP'" class="heading systolic-bg">
+                        <label>
+                          <input #systolic type="number" class="bp" name="systolic" [value]="question.sys" maxLength="3"
+                            placeholder="{{
+                              (surveyDetailData.placeholders?.survey_detail)[21]
+                            }}" (keyup)="
+                              question.sys = $event.target.value;
+                              bp(question)
+                            " (click)="
+                              question.sys = $event.target.value;
+                              bp(question)
+                            " />
+                          <input #diastolic type="number" class="bp" name="diastolic" [value]="question.dia"
+                            maxLength="3" placeholder="{{
+                              (surveyDetailData.placeholders?.survey_detail)[22]
+                            }}" (keyup)="
+                              question.dia = $event.target.value;
+                              bp(question)
+                            " (click)="
+                              question.dia = $event.target.value;
+                              bp(question)
+                            " />
+                        </label>
+                        <span class="error_message" *ngIf="
+                            question.error === true
+                          ">{{
+                            question.validationRules[0].failureMessage
+                          }}</span>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'AGE'" class="heading">
+                        <label>
+                          <input class="numeric" type="number" name="age" [(ngModel)]="question.freeText" maxLength="3"
+                            placeholder="{{
+                              (surveyDetailData.placeholders?.survey_detail)[20]
+                            }}" (keyup)="save($event.target.value, question.id)" />
+                        </label>
+                        <span class="error_message" *ngIf="
+                            question.validationRules[0].type == 'AGE' &&
+                            i == surveyDetailData.pos &&
+                            surveyDetailData.error
+                          ">{{
+                            question.validationRules[0].failureMessage
+                          }}</span>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'SLIDER_WITHOUT_SCALE'" class="heading slidecontainer">
+                        <input [ngClass]="{ dull_range: slideFlag == false }" type="range" min="0" max="10"
+                          value="{{ question.freeText || 0 }}" class="slider" step="1" id="slider"
+                          (change)="save($event.target.value, question.id)" />
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'SLIDER_WITH_SCALE'" class="heading slidecontainer">
+                        <input [ngClass]="{ dull_range: slideFlag == false }" type="range" min="0" max="10"
+                          value="{{ question.freeText || 0 }}" class="slider" step="1" id="slider"
+                          (change)="save($event.target.value, question.id)" />
+                        <!--<br>
+                      <br>
+                      <mat-slider thumbLabel displayWith="formatLabel" tickInterval="1000" step=1 min="0" max="10"></mat-slider>-->
+                        <span class="arrow-box">
+                          <span class="range-value">{{
+                            question.freeText
+                          }}</span>
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'CHECK_BOX'" class="heading">
+                        <label *ngFor="let c of question.choices; let i = index">
+                          <input type="checkbox" name="checkbox" [checked]="c.isSelected == true" value="{{ c.id }}"
+                            (click)="
+                              c.isSelected = !c.isSelected;
+                              check(c.id, question.id)
+                            " />
+                          <span class="text">{{ c.text }}</span>
+                        </label>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'DATE'" class="heading">
+                        <span class="data_picker calender_picker">
+                          <!--<input type="date" name="bday" [(ngModel)]="surveyDetailData.date" (change)="type($event.target.value, question.validationRules[0], i)">-->
+                          <input type="text" name="bday" [(ngModel)]="question.freeText" (ngModelChange)="
+                              save(question.freeText, question.id)
+                            " class="form-control ng_date_picker" #dp="bsDatepicker" bsDatepicker [bsValue]="bsValue"
+                            placeholder="Month / Day / Year" />
+                          <button class="btn btn-success calender_icon" (click)="
+                              dp.toggle(); save(question.freeText, question.id)
+                            " [attr.aria-expanded]="dp.isOpen">
+                            <img src="assets/img/q_date.png" content="origin" alt="" />
+                          </button>
+                        </span>
+                        <span class="error_message" *ngIf="question.error === true">{{
+                            question.validationRules[0].failureMessage
+                          }}</span>
+                        <!--<span class="error_message" *ngIf="
+                            question.validationRules[0].type == 'DOB' &&
+                            i == surveyDetailData.pos &&
+                            surveyDetailData.error
+                          ">{{
+                            question.validationRules[0].failureMessage
+                          }}</span>-->
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'RICH_TEXT'">
+                        <ckeditor (change)="save($event, question.id)" [(ngModel)]="question.freeText"
+                          [ngModelOptions]="{ standalone: true }">
+                          <ckbutton [name]="'saveButton'" [command]="'saveCmd'" (click)="save($event)"
+                            [icon]="'save.png'" [label]="'Save Document'" [toolbar]="'clipboard,1'">
+                          </ckbutton>
+                        </ckeditor>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'TIME'">
+                        <span class="data_time">
+                          <!--<input type="time" name="time" [(ngModel)]="surveyDetailData.time">-->
+                          <timepicker name="time" [(ngModel)]="question.freeText"
+                            (click)="save(question.freeText, question.id)"
+                            (keyup)="save(question.freeText, question.id)"></timepicker>
+                          <!--<pre class="alert alert-info">Time is: {{mytime}}</pre>-->
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'DROP_DOWN'">
+                        <select [(ngModel)]="question.choiceId" [ngModelOptions]="{ standalone: true }" (change)="
+                            choose(
+                              $event.target.value,
+                              question.id,
+                              0,
+                              ''
+                            )
+                          ">
+                          <option *ngFor="let c of question.choices" id="{{ c.id }}"
+                            [selected]="c.id == question.choiceId" [value]="c.id">{{ c.text }}
+                          </option>
+                        </select>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'IMAGE_UPLOAD'" class="heading img_upload"
+                        [ngClass]="{ after_upload: question.url }">
+                        <!--<span *ngFor="let imgs of surveyDetailData.imgUrl"><img src="http://192.168.1.8:4000/public/uploads/{{imgs.id}}"/></span>-->
+                        <span>
+                          <img *ngIf="question.url" id="preview"
+                            [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)" class="uploaded_image" content="origin" alt="" />
+                          <form enctype="multipart/form-data">
+                            <input [ngClass]="{
+                                upload_file: !question.url,
+                                re_upload: question.url
+                              }" type="file" (change)="
+                                fileEvent($event, question.id);
+                                file = $event.target.files[0]
+                              " accept="image/*" />
+                            <img *ngIf="!question.url" class="material-icons upload_icon"
+                              src="assets/img/upload_img.jpg" content="origin" alt="" />
+                          </form>
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p  class="draw_image" *ngIf="question.answerType == 'DRAW' && question.questionType === 'IMAGE'">
+                        <span>
+                            <div class="displaySection" *ngIf="question.url && question.url.length > 0 && isQuestionAttempted(question?.id) === true && !editCanvas; else drawSection_">
+                              <img [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)" class="appImg" alt=""/>
+                              <div class="editDrawline" *ngIf="isQuestionAttempted(question?.id) && !editCanvas" (click)="editCanvas = true;"><img src="../../../assets/img/edit.png" alt="" /></div>
+                            </div>
+                          <ng-template #drawSection_>
+                            <div class="drawSection">
+                            <div class="canvasView" id="drawImage" #drawImage>
+                              <img #scream id="scream" crossorigin="anonymous"
+                                src="{{question.url}}" alt="The Scream" style="display: none"
+                                (load)="onImageLoad($event)" content="origin"
+                                 />
+                              <!-- <div class="editDrawline" *ngIf="editDrawline" (click)="changeDrawline()"><img src="../../../assets/img/edit.png" alt="" /></div> -->
+                              <canvas #myCanvas id="myCanvas"width="250" height="250"
+                                style="border:1px solid #d3d3d3;" 
+                                (document:mousemove)="onMouseMove($event)" 
+                                (document:touchmove)="onMouseMove($event)" 
+                                (document:pointermove)="onMouseMove($event)" 
+                                (document:mouseenter)="onMouseEnter($event)"
+                                (document:pointerenter)="onMouseEnter($event)"
+                                (document:mousedown)="onMouseDown($event)"
+                                (document:touchstart)="onMouseDown($event)"
+                                (document:pointerdown)="onMouseDown($event)"
+                                >
+                                Your browser does not support the HTML5 canvas tag.
+                              </canvas>
+                            </div>
+                            <div class="controller">
+                              <div class="pointerSlider">
+                                <label> Adjust width:</label>
+                                <input #sliderRange id="sliderRange" type="range" min="2" max="9"
+                                  value="_getPointerSize()" (change)="_setPointerSize($event.target.value)" />
+                              </div>
+                              <!--<div class="chooseColor">
+                                <label>Color picker:</label>
+                                <div class="colorPalette">
+                                  <input name="Color Picker" type="color" id="colorPicker" (change)="updatePointerColor($event)"/>
+                                </div>
+                              </div>-->
+                              <div class="chooseBtncard">
+                                <button (click)="resetCanvas()" class="chooseBtn btnReset">Reset </button>
+                                <button (click)="finishCanvas(question)" class="chooseBtn btnSave">Save</button>
+                              </div>
+                            </div>
+                          </div>     
+                        </ng-template>                   
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'VIDEO_UPLOAD'" class="heading img_upload"
+                        [ngClass]="{ after_upload: question.url }">
+                        <!--<span *ngFor="let imgs of surveyDetailData.imgUrl"><img src="http://192.168.1.8:4000/public/uploads/{{imgs.id}}"/></span>-->
+                        <span>
+                          <form enctype="multipart/form-data">
+                            <input type="file" (change)="
+                                fileEvent($event, question.id);
+                                file = $event.target.files[0]
+                              " [ngClass]="{
+                                upload_file: !question.url,
+                                re_upload: question.url
+                              }" accept="video/*" />
+                            <i *ngIf="!question.url" class="material-icons upload_icon">
+                              videocam
+                            </i>
+                            <!--<img *ngIf="!fileUrl" class="material-icons upload_icon" src="assets/img/upload_img.jpg" />-->
+                          </form>
+                          <video controls *ngIf="question.url" class="uploaded_video">
+                            <source [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)" type="video/mp4" />
+                            <source [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)" type="video/ogg" />
+                            <source [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)" type="video/webm">
+                            <source [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)"
+                              type="video/quicktime">
+                          </video>
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="form-group">
+                      <p *ngIf="question.answerType == 'AUDIO_UPLOAD'" class="heading img_upload audio_upload"
+                        [ngClass]="{ after_upload: question.url }">
+                        <!--<span *ngFor="let imgs of surveyDetailData.imgUrl"><img src="http://192.168.1.8:4000/public/uploads/{{imgs.id}}"/></span>-->
+                        <span>
+                          <form enctype="multipart/form-data">
+                            <input [ngClass]="{
+                                upload_file: !question.url,
+                                re_upload: question.url
+                              }" type="file" (change)="
+                                fileEvent($event, question.id);
+                                file = $event.target.files[0]
+                              " accept="audio/*" />
+                            <i *ngIf="!question.url" class="material-icons upload_icon">
+                              audiotrack
+                            </i>
+                            <!--<img *ngIf="!fileUrl" class="material-icons upload_icon" src="assets/img/upload_img.jpg" />-->
+                          </form>
+                          <audio controls *ngIf="question.url">
+                            <source [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)" type="audio/mp3" />
+                            <source [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)" type="audio/ogg" />
+                            <source [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)"
+                              type="audio/ogg; codecs=opus" />
+                            <source [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)"
+                              type="audio/ogg; codecs=vorbi" />
+                            <source [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)" type="audio/wav" />
+                            <source [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)" type="audio/mpeg">
+                            <source [src]="sanitizer.bypassSecurityTrustResourceUrl(question.url)" type="audio/x-m4a">
+                          </audio>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="surveyDetailData.submitSuccessModal" class="modal fade show in danger survery_complete_popup" id="myModal"
+  role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h4>{{ (surveyDetailData.placeholders?.survey_detail)[12] }}</h4>
+        <p>
+          {{ (surveyDetailData.placeholders?.survey_detail)[5] }} "
+          {{ data?.survey.name }}".
+          {{ (surveyDetailData.placeholders?.survey_detail)[6] }}
+        </p>
+      </div>
+      <div class="modal-footer">
+        <ul>
+          <button type="button" class="btn" (click)="submit()" style="background-color: #269abc;">
+            {{ (surveyDetailData.placeholders?.survey_detail)[10] }}
+          </button>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="surveyDetailData.savingProgressModal" class="modal fade show in danger survery_complete_popup" id="myModal"
+  role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h4>{{ (surveyDetailData.placeholders?.survey_detail)[7] }}</h4>
+        <p>{{ (surveyDetailData.placeholders?.survey_detail)[8] }}</p>
+      </div>
+      <div class="modal-footer">
+        <ul>
+          <button type="button" class="btn" (click)="closeDRO()" style="background-color: #269abc;">
+            {{ (surveyDetailData.placeholders?.survey_detail)[10] }}
+          </button>
+          <button type="button" class="btn" (click)="surveyDetailData.savingProgressModal = false">
+            {{ (surveyDetailData.placeholders?.survey_detail)[11] }}
+          </button>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="surveyDetailData.helpModal" class="modal fade show in danger survery_complete_popup" id="myModal"
+  role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h4>{{ (surveyDetailData.placeholders?.survey_detail)[24] }}</h4>
+        <p>{{ surveyDetailData.helpText }}</p>
+      </div>
+      <div class="modal-footer">
+        <ul>
+          <button type="button" class="btn"
+            (click)="surveyDetailData.helpModal = false; surveyDetailData.helpText = ''">
+            {{ (surveyDetailData.placeholders?.survey_detail)[11] }}
+          </button>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="surveyDetailData.homeModal" class="modal fade show in danger survery_complete_popup" id="myModal"
+  role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h4>{{ (surveyDetailData.placeholders?.survey_detail)[7] }}</h4>
+      </div>
+      <div class="modal-footer">
+        <ul>
+          <button type="button" class="btn" (click)="droHome()" style="background-color: #269abc;">
+            {{ (surveyDetailData.placeholders?.survey_detail)[10] }}
+          </button>
+          <button type="button" class="btn" (click)="surveyDetailData.homeModal = false">
+            {{ (surveyDetailData.placeholders?.survey_detail)[11] }}
+          </button>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

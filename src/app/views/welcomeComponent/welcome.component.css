@@ -1,0 +1,370 @@
+
+.req_error{
+    background: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+.close_button {
+    z-index: 99999;
+    position: absolute;
+    right: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+i.close {
+    font-size: 30px !important;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+}
+.modal-dialog {
+    top: 25% !important;
+}
+.fade.in {
+    opacity: 1 !important;
+    background: rgba(1,1,1,0.8) !important;
+}
+.modal-body {
+    position: relative;
+    padding: 20px 50px 40px 50px;
+}
+.material-icons {
+    font-size: 80px;
+}
+
+li.welcome_checkbox {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+::ng-deep .welcome_container{
+    min-height: 91vh;
+    display: grid;
+    overflow: hidden;
+}
+.article-section {
+    background: #dff4f8 url('../../../assets/img/home-bg-img.png') no-repeat center -150px;
+	background-size:cover;
+    padding: 69px 0;
+}
+.article-section .img-column {
+    margin: 0;
+    padding: 0 0 0 0;
+}
+.article-section .img-column img{width:308px; height: auto;}
+.article-section .content-column {
+    margin: 0;
+    padding: 0 0 0 86px;
+}
+.article-section .content-column p {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 500;
+    font-family:"Montserrat";
+    margin: 18px 0 0 0;
+    padding: 0 0 0 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px !important;
+}
+
+
+.article-section .content-column .loggedin_user li:first-child {
+    background: transparent;
+    box-shadow: none;
+    margin: 23px 35px 0 0;
+}
+.article-section .content-column .loggedin_user li:first-child .form-check label {
+    font-size: 14px;
+    color: #888b8d;
+    font-weight: 500;
+    font-family:"Montserrat";
+}
+.article-section .content-column .loggedin_user li:first-child .form-check label .form-check-input {
+    margin: 1px 9px 0 0;
+    float: left;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    color: #ffff;
+}
+.article-section .content-column .loggedin_user li:first-child .form-check label img {
+    height: 12px;
+    margin-left: 3px;
+}
+
+.article-section .content-column ul {
+    margin: 57px 0 0 0;
+    padding:0 0 10px 0;
+    overflow: hidden;
+}
+.article-section .content-column ul li {
+    list-style: none;
+    margin: 0 35px 20px 0;
+    padding: 0;
+    float: left;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    cursor: pointer;
+}
+.article-section .content-column ul li:last-child{margin-right: 0; margin-bottom:0;}
+.article-section .content-column ul li a {
+    color: #232732;
+    font-family:'LatoWebMedium';
+    font-size: 20px;
+    font-weight: 600;
+    padding: 15px 20px;
+    margin: 0 0px 0 0;
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+}
+.article-section .content-column ul li .fa {
+    float: left;
+    margin:0px 10px 0 0;
+    color: #009cde;
+    font-size: 27.2px;
+}
+.article-section .content-column ul li a:hover{text-decoration: none;}
+.article-section .content-column ul li a img {
+    max-width: 100%;
+    height: 25px;
+}
+.article-section .content-column ul li a .icon {
+    float: left;
+    margin: 3px 9px 0 0;
+    font-size: 28px;
+    line-height: 26px;
+    color: #009cde;
+}
+.article-section .content-column ul li a span {
+    margin: 0 0 0 0;
+    float: left;
+}
+
+
+::ng-deep .article-section .content-column ul .welcome_checkbox label {
+    margin-top: 13px;
+    overflow: hidden;
+    padding: 5px 0;
+}
+::ng-deep .article-section .content-column ul .welcome_checkbox input{
+	height: 25px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    background: rgba(0,0,0,0.0);
+    border: none;
+    position: relative;
+    float: left;
+    width: 25px;
+    margin-top: 0px;
+}
+::ng-deep .article-section .content-column ul .welcome_checkbox input[type="checkbox"]::after {
+    content: "";
+    vertical-align: middle;
+    text-align: center;
+    line-height: 25px;
+    position: absolute;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    left: 0;
+    top: -3px;
+    font-size: 20px;
+    border: 1px solid #c5c9cc;
+    background: #ffffff;
+    border-radius: 2px;
+}
+::ng-deep .article-section .content-column ul .welcome_checkbox input[type="checkbox"]:checked::after {
+    background: #009cde;
+    content: '\2714';
+    color: #ffffff !important;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 500;
+    border: 1px solid #009cde;
+}
+::ng-deep .article-section .content-column ul .welcome_checkbox input[type="checkbox"]:checked::after {
+    background: #009cde;
+    border: 1px solid #009cde;
+    color: #ffffff !important;
+}
+::ng-deep .article-section .content-column ul .welcome_checkbox input[type="checkbox"]:hover,
+::ng-deep .article-section .content-column ul .welcome_checkbox input[type="checkbox"]:focus{background: rgba(0,0,0,0.0);}
+
+
+/** LOADER CSS START **/
+::ng-deep .animation_loader_section{
+	background: rgba(0, 0, 0, 0.7);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	z-index: 99;
+	position: fixed;
+	display: none;
+}
+::ng-deep .animation_loader_section .loader_section{
+	width:16%;
+	height:198px;
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right: 0;
+	margin: auto;
+	z-index: 999;
+}
+::ng-deep .st0{enable-background:new;}
+::ng-deep .st1{fill:rgba(255,255,255,0.0);}
+::ng-deep .st2{font-size:290;}
+::ng-deep .st3{fill-rule:evenodd; clip-rule:evenodd; fill:#fff;stroke:none;stroke-width:0;stroke-miterlimit:0;}
+::ng-deep .st4{font-family:'Allura', cursive; font-size:290px; fill:rgba(255,255,255,0.0); stroke:rgba(255,255,255,0.0); stroke-width:4;stroke-miterlimit:10;}
+
+::ng-deep .animation_loader_section .loader_section #dro_logo{
+	stroke:#fff;
+	fill: rgba(255,255,255,0.0);
+	stroke-dasharray:1800;
+	opacity:10;
+	animation: animate 4s cubic-bezier(0,0.23,1,.1) infinite;
+	-webkit-animation: animate 4s cubic-bezier(0,0.23,1,.1) infinite;
+	-moz-animation: animate 4s cubic-bezier(0,0.23,1,.1) infinite;
+	-o-animation: animate 4s cubic-bezier(0,0.23,1,.1) infinite;
+	
+	
+}
+::ng-deep .animation_loader_section .loader_section #circle{
+	stroke:none;
+	fill:#fff;
+	stroke-dasharray:2500;
+	opacity:10;
+	animation: animate 4s cubic-bezier(0,0.23,1,.1) infinite;
+	-webkit-animation: animate 4s cubic-bezier(0,0.23,1,.1) infinite;
+	-moz-animation: animate 4s cubic-bezier(0,0.23,1,.1) infinite;
+	-o-animation: animate 4s cubic-bezier(0,0.23,1,.1) infinite;
+}				
+::ng-deep @keyframes animate{
+	0%{
+		opacity:0;
+		fill: rgba(255,255,255,0.0);
+		stroke-dashoffset:1800;
+	}
+	
+	10%{
+		opacity:10;
+		fill: rgba(255,255,255,0.0);
+		stroke-dashoffset:1800;
+	}
+	
+	50%{
+		fill: rgba(255,255,255,0);
+	}
+	
+	60%{
+		opacity:10;
+		fill: rgba(255,255,255,1);
+		stroke-dashoffset:0;
+	}
+	
+	70%{
+		opacity:10;
+		fill: rgba(255,255,255,1);
+		stroke-dashoffset:0;
+	}
+	
+	80%{
+		opacity:10;
+		fill: rgba(255,255,255,1);
+		stroke-dashoffset:0;
+	}
+	
+	90%{
+		opacity:10;
+		fill: rgba(255,255,255,1);
+		stroke-dashoffset:0;
+	}
+	
+	100%{
+		opacity:10;
+		fill: rgba(255,255,255,1);
+		stroke-dashoffset:0;
+	}
+}
+/** LOADER CSS END **/
+
+@media (min-width: 992px) and (max-width: 1199px){
+    /** article section css start **/
+	.article-section .content-column ul li{margin:0 0 11px 0; float: none; width:100%; display: block; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.02);}
+    .article-section .content-column ul li a{display: table; margin: 0 auto; padding:15px;}
+	.article-section .content-column .loggedin_user li:first-child{margin-bottom:30px;}
+	/** article section css end **/
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /** article section css start **/
+	.article-section{padding:45px 0;}
+	.article-section .img-column{text-align: center;}
+    .article-section .img-column img {width: 160px; height: auto;}
+    .article-section .content-column{margin:30px 0 0 0; text-align: center; padding:0;}
+    .article-section .content-column .large-title{font-size: 38px;}
+    .article-section .content-column p{margin-top:12px;}
+	.article-section .content-column ul{padding-bottom: 0; margin-top: 43px;}
+	.article-section .content-column ul li{margin:0 0 11px 0; float: none; width:100%; display: block; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.02);}
+    .article-section .content-column ul li:last-child{margin-bottom: 0;}
+    .article-section .content-column ul li .fa{font-size: 22px; margin-top:0;}
+    .article-section .content-column ul li a{display: table; margin: 0 auto; font-size: 15px; padding:15px;}
+    .article-section .content-column ul li:first-child a .icon {margin-top:1px; width:24px;}
+	.article-section .content-column ul li a .icon {float: left; margin: 0px 9px 0 0; font-size: 28px; line-height: 26px; color: #009cde; width: 20px; height: auto;}
+	.article-section .content-column .loggedin_user li:first-child{margin-bottom:30px;}
+	/** article section css end **/
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    /** article section css start **/
+	.article-section{padding:45px 0;}		
+	.article-section .img-column{text-align: center;}
+    .article-section .img-column img {width: 90px; height: auto;}
+    .article-section .content-column{margin:13px 0 0 0; text-align: center; padding:0;}
+    .article-section .content-column .large-title{font-size: 28px;}
+    .article-section .content-column p{font-size: 14px; margin-top:0; line-height: 26px;}
+	.article-section .content-column ul{padding-bottom: 0; margin-top: 23px;}
+	.article-section .content-column ul li{margin:0 0 11px 0; float: none; width:100%; display: block; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.02);}
+    .article-section .content-column ul li:last-child{margin-bottom: 0;}
+    .article-section .content-column ul li .fa{font-size: 22px; margin-top:0;}
+    .article-section .content-column ul li a{display: table; margin: 0 auto; font-size: 15px; padding:15px;}
+    .article-section .content-column ul li:first-child a .icon {margin-top:1px; width:24px;}
+	.article-section .content-column ul li a .icon {float: left; margin: 0px 9px 0 0; font-size: 28px; line-height: 26px; color: #009cde; width: 20px; height: auto;}
+	.article-section .content-column .loggedin_user li:first-child{margin-bottom:30px;}
+	/** article section css end **/
+}
+
+@media (min-width: 300px) and (max-width: 479px) {
+    /** article section css start **/
+    ::ng-deep .welcome_container{min-height: 100%; overflow: inherit; display: block; background-color: #dff4f8;}
+	.article-section{padding:37px 0 42px;}
+    .article-section .img-column{text-align: center;}
+    .article-section .img-column img {width: 90px; height: auto;}
+    .article-section .content-column{margin:13px 0 0 0; text-align: center; padding:0;}
+    .article-section .content-column .large-title{font-size: 28px;}
+    .article-section .content-column p{font-size: 14px; margin-top:0; line-height: 26px;}
+	.article-section .content-column ul{padding-bottom: 0; margin-top: 23px;}
+	.article-section .content-column ul li{margin:0 0 11px 0; float: none; width:100%; display: block; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.02);}
+    .article-section .content-column ul li:last-child{margin-bottom: 0;}
+    .article-section .content-column ul li .fa{font-size: 22px; margin-top:0;}
+    .article-section .content-column ul li a{display: table; margin: 0 auto; font-size: 15px; padding:15px;}
+    .article-section .content-column ul li:first-child a .icon {margin-top:1px; width:24px;}
+	.article-section .content-column ul li a .icon {float: left; margin: 0px 9px 0 0; font-size: 28px; line-height: 26px; color: #009cde; width: 20px; height: auto;}
+	.article-section .content-column .loggedin_user li:first-child{margin-bottom:30px;}
+	/** article section css end **/
+}

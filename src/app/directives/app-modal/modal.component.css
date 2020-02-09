@@ -1,0 +1,219 @@
+.box{
+  position:relative;
+}
+.tooltip {
+  text-align: left;
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip .trigger {
+  display: inline-block;
+  padding: 0.75em;
+  z-index: 1;
+  text-decoration: none;
+  color: #2980b9;
+  cursor: help;
+}
+
+.tooltip .trigger::before {
+  content: '';
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  transition: all 150ms ease-in-out;
+}
+
+.tooltip .content {
+  display: inline-block;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 1em;
+  border-radius: 5px;
+  width: 280px;
+  font-size: 14px;
+  transition: all 150ms ease-in-out;
+}
+
+.tooltip .trigger::before {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.9);
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.tooltip .content {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.tooltip .trigger::before {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip .content {
+  top: 100%;
+  left: 0;
+}
+
+.tooltip.bottom .trigger::before {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.9);
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.tooltip.bottom .content {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.tooltip.bottom .trigger::before {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip.bottom .content {
+  top: 100%;
+  left: 0;
+}
+
+.tooltip.left .trigger::before {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-left-color: rgba(0, 0, 0, 0.9);
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.tooltip.left .content {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.tooltip.left .trigger::before {
+  border-right: none;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 100%;
+}
+
+.tooltip.left .content {
+  top: -100%;
+  right: 106%;
+  right: calc( 100% + 6px);
+}
+
+.tooltip.right .trigger::before {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: rgba(0, 0, 0, 0.9);
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.tooltip.right .content {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.tooltip.right .trigger::before {
+  border-left: none;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100%;
+}
+
+.tooltip.right .content {
+  top: -100%;
+  left: 106%;
+  left: calc( 100% + 6px);
+}
+
+.tooltip.top .trigger::before {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-top-color: rgba(0, 0, 0, 0.9);
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.tooltip.top .content {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.tooltip.top .trigger::before {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip.top .content {
+  top: auto;
+  bottom: 100%;
+  left: 0;
+}
+
+.tooltip:hover .trigger::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip .trigger:focus::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip .trigger:focus + .content {
+  opacity: 1;
+  visibility: visible;
+}
+

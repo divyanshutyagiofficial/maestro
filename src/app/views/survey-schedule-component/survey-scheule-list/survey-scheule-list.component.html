@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="left_sidebar">
+      <app-survey-schedule-list-item *ngFor="let item of surveySchedules; let i = index;" [content]=content [surveySchedule]="item"
+        (onSelect)="check(i)"></app-survey-schedule-list-item>
+    </div>
+  </div>
+</div>

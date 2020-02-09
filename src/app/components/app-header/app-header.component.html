@@ -1,0 +1,162 @@
+<div class="wrapper">
+  <!--- Mobile Menu start -->
+  <div class="modal_section" [ngClass]="{'show-background':isSideBarOpen}">
+    <div class="mobile_section" [ngClass]="{'nav-wrapper-opened':isSideBarOpen}"
+      *ngIf="showUserNavigation && !showSurveyNavigation">
+      <ul class="menu mobile">
+        <div class="closed" (click)="closeMobileMenu()">
+          <img src="assets/img/close.png" content="origin" alt="close" />
+        </div>
+        <li>
+          <a referrerpolicy="origin">
+            <div class="profile-pic" *ngIf="avatarImageSafe">
+              <img [src]="avatarImageSafe" [routerLink]="['/personaldetails']" content="origin" alt="profile" />
+            </div>
+            <div class="name" [routerLink]="['/personaldetails']">{{userDetails?.firstName}} {{userDetails?.lastName}}
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="['/dashboard']" (click)="closeMobileMenu()" referrerpolicy="origin">{{headerData[1]}}</a>
+        </li>
+        <li>
+          <a [routerLink]="['/schedule']" (click)="closeMobileMenu()" referrerpolicy="origin">{{headerData[2]}}</a>
+        </li>
+        <li>
+          <a [routerLink]="['/viewdros']" (click)="closeMobileMenu()" referrerpolicy="origin">{{headerData[3]}}</a>
+        </li>
+        <li>
+          <a [routerLink]="['/studyinfo']" (click)="closeMobileMenu()" referrerpolicy="origin">{{headerData[4]}}</a>
+        </li>
+        <li>
+          <a [routerLink]="['/personaldetails']" (click)="closeMobileMenu()" referrerpolicy="origin">{{headerData[5]}}</a>
+        </li>
+        <li>
+          <a [routerLink]="['/viewmessage']" (click)="closeMobileMenu()" referrerpolicy="origin">{{headerData[6]}}
+            <span *ngIf="noOfMessages > 0">{{ noOfMessages }}</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/changePassword']" (click)="closeMobileMenu()" referrerpolicy="origin">Change Password
+          </a>
+        </li>
+        <li>
+          <a href="#" (click)="closeMobileMenu()" referrerpolicy="origin">
+            <div class="logout-icon">
+              <img src="assets/img/logout.png" content="origin" alt="logout" />
+            </div>
+            <div class="text" (click)="logout()">{{headerData[8]}}</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--- Mobile Menu end -->
+
+  <div class="header-section"
+    *ngIf="_programService.isAdhoc() && _router.url.indexOf('/adhoc-intent') >= 0 || !showSurveyNavigation">
+    <div class="logo-section" id="logo-section">
+      <div class="container">
+        <div class="col-md-4 col-sm-4 col-xs-4">
+          <div class="toggle_menu" (click)="mobileMenu()" *ngIf="showUserNavigation && !showSurveyNavigation">
+            <img src="assets/img/toggle.png" content="origin" alt="toggle" />
+          </div>
+
+          <div class="logo" *ngIf="!showSurveyNavigation">
+            <a class="hm_ic" (click)="goToWelcome()">
+              <img src="{{logo || 'assets/img/logo.png'}}" alt="logo"/>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-8 col-sm-8 col-xs-8">
+          <ul class="user_login">
+            <li>
+              <div class="lang-section">
+                <div class="lang-column">
+                  <div class="lang-icon">
+                    <img src="assets/img/gb.png" content="origin" alt="" />
+                  </div>
+                  <div class="lang">{{headerData[7]}}:</div>
+                </div>
+                <div class="lang-drp-dwn-column">
+                  <ul class="nav nav-pills">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" referrerpolicy="origin">{{selectedLanguage}}</a>
+                      <div class="dropdown-menu" id="languageMenu" aria-labelledby="dropdownMenuButton">
+                        <a id="{{lang.code}}" class="dropdown-item"
+                          [ngClass]="{'active-arrow': selectedLanguage == lang.desc}" (click)="setLanguage(lang)"
+                          *ngFor="let lang of supportedLanguages">{{lang.desc}}</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li *ngIf="showUserNavigation && !showSurveyNavigation">
+              <a referrerpolicy="origin">
+                <div class="profile-pic">
+                  <img *ngIf='avatarImageSafe' [src]="avatarImageSafe" [routerLink]="['/personaldetails']" content="origin" alt="" />
+                </div>
+                <div class="name" [routerLink]="['/personaldetails']">{{userDetails?.firstName}}
+                  {{userDetails?.lastName}}</div>
+              </a>
+            </li>
+
+            <li *ngIf="showUserNavigation && !showSurveyNavigation">
+              <div class="logout-icon">
+                <img src="assets/img/logout.png" content="origin" alt="logout" />
+              </div>
+              <div class="text">
+                <a (click)="logout()" referrerpolicy="origin">{{headerData[8]}}</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-bar" *ngIf="showUserNavigation && !showSurveyNavigation">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <!--- Desktop Menu start -->
+            <div class="menu_section">
+              <ul>
+                <li>
+                  <a [routerLink]="['/dashboard']" routerLinkActive="active" referrerpolicy="origin">{{headerData[1]}}</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/schedule']" routerLinkActive="active" referrerpolicy="origin">{{headerData[2]}}</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/viewdros']" routerLinkActive="active" referrerpolicy="origin">{{headerData[3]}}</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/studyinfo']" routerLinkActive="active" referrerpolicy="origin">{{headerData[4]}}</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/personaldetails']" routerLinkActive="active" referrerpolicy="origin">{{headerData[5]}}</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/viewmessage']" routerLinkActive="active" referrerpolicy="origin">{{headerData[6]}}
+                    <span *ngIf="noOfMessages > 0">{{ noOfMessages }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/changePassword']" routerLinkActive="active" referrerpolicy="origin">Change Password
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--- Desktop Menu end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- header section end -->
+</div>

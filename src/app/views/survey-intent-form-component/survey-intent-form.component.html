@@ -1,0 +1,111 @@
+<article class="dro_home">
+    <!-- Article section start -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="title_with_breadcrum_section">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="title">
+                            <h1>{{ surveyDetail?.survey.name }}</h1>
+                            <p>{{ surveyDetail?.survey.programInfo.organizationName }} :
+                                <span>{{ surveyDetail?.survey.programInfo.programName }}</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="sub_title">
+                            <h1 *ngIf="dueByDate != 0">{{content?.dashboard[26]}} {{dueByDate + offset | date: 'medium'}}</h1>
+                            <p>{{content?.survey_intent[1]}}:
+                                <span>{{content?.survey_intent[2]}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="discription">
+                    <p>{{ surveyDetail?.survey.surveyIntroduction.text }}</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row" *ngIf="surveyDetail?.survey.surveyInstructions.length > 0">
+            <div class="col-md-3 col-sm-6 col-xs-12" intent-block [data]="intent" *ngFor="let intent of surveyDetail?.survey.surveyInstructions">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="btn_section">
+                    <ul>
+                        <li *ngIf="surveyDetail?.userSurveySession.scheduledSession.scheduleType != 'UNSCHEDULED' && !_programService.isCRO() && !_programService.isAdhoc() && surveyDetail?.userSurveySession.userSurveySessionDetail.progressStatus == 'NOT_STARTED' && surveyDetail?.userSurveySession.userSurveySessionDetail.percentageComplete == 0">
+                            <a (click)="declineParticipation()" referrerpolicy="origin">{{content?.survey_intent[4]}}</a>
+                        </li>
+                        <li>
+                            <a (click)="continueToSurvey()" referrerpolicy="origin">{{content?.survey_intent[5]}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="decline-page" *ngIf="declineConfirm">
+                    <div class="shadow-box">
+                        <a (click)="cross()" class="close" referrerpolicy="origin">
+                            <span class="cross">
+                                <img src="assets/img/close.png" content="origin" alt="close" />
+                            </span>
+                        </a>
+                        <h1 class="medium-title">{{content?.survey_intent[6]}}</h1>
+                        <p>{{content?.survey_intent[7]}}</p>
+                        <ol class="order" type="1">
+                            <li *ngFor="let item of declineSchedule">
+                                {{item.surveyName}}
+                            </li>
+                        </ol>
+                        <select #reason class="custom-select glyphicon glyphicon-play">
+                            <option [value]="reason.declineReasonId" *ngFor="let reason of declineReasonlist">
+                                {{reason.declineReason}}
+                            </option>
+                        </select>
+
+                        <div class="btn">
+                            <a referrerpolicy="origin" (click)="confirmDeclination(reason.value)" skipLocationChange>{{content?.survey_intent[8]}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="showDeclineConfirmModal" class="modal fade show in danger popup_section" id="myModal" role="dialog">
+            <div class="modal-dialog popup-box warning_popup">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <a (click)="close()" class="close" referrerpolicy="origin">
+                            <span class="cross">
+                                <img src="assets/img/close.png" content="origin" alt="close" />
+                            </span>
+                        </a>
+                        <h1 class="medium-title confirm_title">{{content?.survey_intent[9]}}</h1>
+                    </div>
+                    <div class="btn_column">
+
+                        <button type="button" class="not_confirm" (click)="close()">{{content?.survey_intent[11]}}</button>
+                        <button type="button" class="confirm" (click)="confirmDecline()">{{content?.survey_intent[10]}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Article section end -->

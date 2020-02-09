@@ -1,0 +1,21 @@
+<div class="not_connected" *ngIf="!(isConnected | async)">
+    <div class="modal fade show in danger" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/warning.png" content="origin" alt="warning" />
+                    <h2 class="heading">No internet connectivity.</h2>
+                    <p class="text">It seems like you are not connected to the Internet. Please check your internet connection.</p>
+                </div>
+                <!--<div class="modal-footer">
+               <ul>
+                   <button type="button" class="btn" (click)="close()" style="background-color: #269abc;">Ok</button>
+               </ul>
+           </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<block-ui *blockUI="'app-component'" [template]="blockTemplate" [delayStart]="100" [delayStop]="100" [message]="'Loading...'">
+    <router-outlet> </router-outlet>
+</block-ui>

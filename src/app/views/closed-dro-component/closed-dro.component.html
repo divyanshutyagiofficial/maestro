@@ -1,0 +1,80 @@
+<div class="skeleton" *ngIf="!loaded" style="text-align:center">
+  <a referrerpolicy="origin">
+    <img src="assets/dro_skeleton.png" content="origin" alt="" />
+  </a>
+</div>
+<div class="close_dro" *ngIf="loaded">
+  <ng-container *ngIf="content">
+    <app-fourbox-section [content]="content"></app-fourbox-section>
+  </ng-container>
+  <div class="dashboard_clinical dashboard_hc_manager not_maker view_dro_title_column">
+    <!-- welcome_title_section start -->
+    <div class="container welcome_title_section">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="title_box">
+            <h3>{{viewDroContent[1]}}
+              <span>{{viewDroContent[2]}}</span>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- welcome_title_section end -->
+
+  <article class="view_dro">
+    <!-- Article section start -->
+    <div class="container">
+      <div class="row">
+        <app-view-dros-list [surveys]="viewDrosData" [content]="viewDroContent" (onSort)="sort($event)"></app-view-dros-list>
+        <div class="col-md-3 col-sm-12 col-xs-12">
+          <div class="search_form_section">
+            <div class="form_title">{{viewDroContent[3]}}</div>
+            <div class="form-group">
+              <input id="search" type="text" [(ngModel)]="search" (keyup)="filterSearchByDroName()" placeholder="{{viewDroContent[4]}}">
+            </div>
+
+            <div class="form-group">
+              <select [(ngModel)]="progressStatus" id="status">
+                <option value="" selected>{{viewDroContent[5]}}</option>
+                <option value="COMPLETED">{{viewDroContent[22]}}</option>
+                <option value="DECLINED">{{viewDroContent[23]}}</option>
+                <option value="EXPIRED">{{viewDroContent[24]}}</option>
+              </select>
+            </div>
+
+            <div class="picker_section">
+              <div class="picker_title">{{viewDroContent[6]}}</div>
+
+              <div class="calender_picker">
+                <div class="form-group">
+                  <input type="text" class="form-control" #dp="bsDatepicker" placeholder="{{viewDroContent[13]}}" bsDatepicker [(ngModel)]="fromDate">
+                </div>
+              </div>
+
+              <div class="calender_picker">
+                <div class="form-group">
+                  <input type="text" class="form-control" #dp="bsDatepicker" placeholder="{{viewDroContent[14]}}" bsDatepicker [(ngModel)]="toDate">
+                </div>
+              </div>
+            </div>
+            <div class="error">{{errorMessage}}</div>
+
+            <div class="search-controls">
+              <ul>
+                <li>
+                  <a (click)="clear()" referrerpolicy="origin">{{viewDroContent[7]}}</a>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-default" (click)="droSearch()">{{viewDroContent[3]}}</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <!-- Article section end -->
+</div>

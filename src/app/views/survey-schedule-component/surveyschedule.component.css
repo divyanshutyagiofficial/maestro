@@ -1,0 +1,796 @@
+.surveryschedule_container{min-height:91vh;display:grid;overflow:hidden;}
+/** CALENDER CSS START **/
+.dros_schedule .calendar_column .input-group{padding-right: 15px; margin: 10px 0;}
+.dros_schedule .calendar_column .input-group input {
+    background: #ece8e8;
+    border-radius: 2px;
+    color: #101010;
+    font-weight: 500;
+    border-top:1px solid rgba(0,0,0,0.08);
+    border-left: 1px solid rgba(0,0,0,0.08);
+    border-right:none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    box-shadow: none;
+    height: 38px;
+}
+.dros_schedule .calendar_column .input-group button {
+    background: #01a7ed;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 7px 22px;
+    margin-left:0;
+    float: left;
+    width: 122px;
+    margin-bottom: 7px;
+    border: 1px solid #01a7ed;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-top-left-radius: 0;
+    -moz-border-bottom-left-radius: 0;
+    -o-border-top-left-radius: 0;
+    -o-border-bottom-left-radius: 0;
+}
+.dros_schedule .calendar_column .input-group button:hover{
+    background: #18d24f !important;
+    border: 1px solid #18d24f !important;
+    color:#fff !important;
+}
+.dros_schedule .calendar_column .mobile_view {
+    margin: 0 15px 0 0;
+    padding: 0;
+    position: relative;
+    display: none;
+    float: right;
+}
+.dros_schedule .calendar_column .mobile_view img {
+    height: 18px;
+    margin: 0;
+}
+.dros_schedule .calendar_column .mobile_view .card_view {
+    margin: 0;
+    padding: 8px 8px;
+    background: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.20) !important;
+    position: absolute;
+    top: 34px;
+    right: 8px;
+    z-index: 2;
+    border-radius: 3px;
+    width: 178px;
+    text-align: center;
+}
+.dros_schedule .calendar_column .mobile_view img {
+    margin: 0 8px 0 0;
+    height: 18px;
+    cursor: pointer;
+}
+.dros_schedule .calendar_column .mobile_view .card_view a {
+    font-weight: 600;
+    font-size: 14px;
+    color: #009cdd;
+    text-decoration: underline;
+}
+/** CALENDER CSS END **/
+
+/** DROS Schedule page css start **/
+.dros_schedule{
+	margin:45px 0;
+    padding:0;
+    background: #fbfcfd;
+    overflow-x:hidden;
+}
+.dros_schedule .left_sidebar {
+    margin: 0;
+    padding: 0;
+}
+.dros_schedule .left_sidebar .horizontal_list {
+    border: 1px solid #d4dbe3;
+    overflow: hidden;
+    clear: both;
+    border-radius: 2px;
+    margin: 0px 0 15px 0;
+    background: #fff;
+    padding: 12px 5px;
+    transition: all 0.4s ease-in-out;
+}
+.dros_schedule .left_sidebar .horizontal_list:hover {
+    border: 1px solid #3bbcf2;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.10) !important;
+}
+.dros_schedule .calendar_column{
+	margin:0 15px;
+	padding:15px 0 0 0;
+	background:#ffffff;
+    border-top:1px solid #d4dbe3;
+    border-left: 1px solid #d4dbe3;
+    border-right: 1px solid #d4dbe3;
+    border-bottom: none;
+	border-radius:2px;
+	position:relative;
+}
+.dros_schedule .calendar_column .today {
+    padding: 5px 10px;
+    text-transform: capitalize;
+    background: #eff3f5;
+    border: 1px solid #d4dbe3;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 0 0 15px 15px;
+    color: #232732;
+    font-size: 14px;
+    font-weight: 500;
+}
+.dros_schedule .calendar_column .forwad {
+    text-align: right;
+    padding: 0;
+    margin: 7px 15px 0 0;
+}
+.dros_schedule .calendar_column .forwad img {
+    height: 18px;
+    margin: 0 8px 0 0;
+}
+.dros_schedule .calendar_column .forwad a {
+    font-weight: 600;
+    font-size: 14px;
+    color: #009cdd;
+    text-decoration: underline;
+}
+.dros_schedule .calendar_column .forwad a:focus,
+.dros_schedule .calendar_column .forwad a:hover{color: #009cdd; text-decoration:underline;}
+.dros_schedule .calendar_column .forwad_mobile_view {
+    text-align: right;
+    margin: 0 15px 0 0;
+	display:none;
+}
+.dros_schedule .calendar_column .forwad_mobile_view img {
+    height: 18px;
+    margin: 0 8px 0 0;
+}
+.dros_schedule .calendar_column .forwad_mobile_view a {
+    font-weight: 600;
+    font-size: 14px;
+    color: #009cdd;
+    text-decoration: underline;
+}
+.dros_schedule .calendar_column .forwad_mobile_view a:focus,
+.dros_schedule .calendar_column .forwad_mobile_view:hover{color: #009cdd; text-decoration:underline;}
+.dros_schedule .calendar_column .publish {
+    top: 47px;
+    right: 38px;
+    position: absolute;
+    background: #fff;
+    padding: 10px 22px;
+    border: 1px solid #d4dbe3;
+    cursor: pointer;
+	display:none;
+}
+.dros_schedule .information_box {
+    color: #ff9041;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    border: 1px solid #ff8038;
+    padding: 15px;
+    border-radius: 2px;
+    margin: 18px 0 0 0;
+    background: #ffffff;
+}
+
+.dros_schedule .title_box {
+    margin-top: 42px;
+    margin-bottom: 25px;
+}
+.dros_schedule .title_box h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    font-weight: 600;
+    font-family:"Montserrat";
+    color: #222731;
+}
+.dros_schedule .title_section {
+    margin: 0 0 12px 0;
+}
+.dros_schedule .title_section h4 {
+    font-size: 14px;
+    color: #888b8d;
+    margin: 0;
+    padding: 0;
+}
+.dros_schedule .title_section h4 label{font-weight:500;}
+
+.dros_schedule #selectAll h4 label input[type="checkbox"]{margin-top:-1.4px;}
+.dros_schedule .title_section h4 label input[type='checkbox'] {
+    margin-top: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+}
+.dros_schedule .title_section h4 label input[type='checkbox'] {
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
+    height: 18px;
+    width: 18px;
+    margin: -1px 12px 0 0;
+    display: block;
+    float: left;
+    position: relative;
+    cursor: pointer;
+	border-radius:2px;
+}
+.dros_schedule .title_section h4 label input[type='checkbox']:after {
+	content: "";
+	vertical-align: middle;
+	text-align: center;
+	line-height: 13px;
+	position: absolute;
+	cursor: pointer;
+	height: 18px;
+    width: 18px;
+	left: 0;
+	top: 0;
+	font-size: 12px;
+	border:1px solid #c5c9cc;
+	background: #ffffff;
+	border-radius:2px;
+}
+.dros_schedule #selectAll h4 label input[type="checkbox"]:checked::after{
+    background-size: auto 70% !important;
+}
+.dros_schedule .title_section h4 label input[type='checkbox']:checked:after {
+    background: #009cde url('../../../assets/img/checked.png') no-repeat 2px 3px !important;
+    background-size: auto 70% !important;
+    font-weight: 500;
+	border:1px solid #009cde;
+}
+
+.dros_schedule .date_rate_section {
+    margin: 0px 0 15px 0px;
+    padding: 0;
+}
+
+.dros_schedule .date_rate_section .dr {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+.dros_schedule .date_rate_section .dr li {
+    display: inline-block;
+    margin: 0 0 0 18px;
+    padding: 0;
+    list-style: none;
+}
+.dros_schedule .date_rate_section .dr li img {
+    height: 19px;
+    margin:-2px 4px 0 0;
+}
+.dros_schedule .left_sidebar .horizontal_list .form-check-input {
+    margin: 9px 18px 0 0;
+    padding: 0;
+    height: 25px;
+    width: 25px;
+    float: left;
+    border-radius:2px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    background: #fff;
+}
+.dros_schedule .horizontal_list:first-child input[type='checkbox']:after{background:#fff;}
+.dros_schedule .horizontal_list:first-child input[type='checkbox']:checked:after{border:1px solid #009cde;}
+
+.dros_schedule .horizontal_list:nth-child(2) input[type='checkbox']:after{background:#fff;}
+.dros_schedule .horizontal_list:nth-child(2) input[type='checkbox']:checked:after{border:1px solid #009cde;}
+
+.dros_schedule .horizontal_list input[type='checkbox'] {
+	margin-top: 0;
+}
+.dros_schedule .horizontal_list input[type='checkbox'] {
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
+    height: 25px;
+    width: 25px;
+    margin: 13px 18px 0 0;
+    display: block;
+    float: left;
+    position: relative;
+    cursor: pointer;
+	border-radius:2px;
+}
+.dros_schedule .horizontal_list input[type='checkbox']:after {
+	content: "";
+	vertical-align: middle;
+	text-align: center;
+	line-height: 13px;
+	position: absolute;
+	cursor: pointer;
+	height: 25px;
+    width: 25px;
+	left: 0;
+	top: 0;
+	font-size: 10px;
+	border:1px solid #c5c9cc;
+	background: #ffffff;
+	border-radius:2px;
+}
+.dros_schedule .horizontal_list input[type='checkbox']:checked:after {
+    background: #009cde url('../../../assets/img/checked.png') no-repeat 2px 3px !important;
+    background-size: auto 70% !important;
+    line-height: 25px;
+	border:1px solid #009cde;
+}
+
+.dros_schedule .left_sidebar .horizontal_list label{overflow: hidden; display: block;}
+.dros_schedule .left_sidebar .horizontal_list .column {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+}
+.dros_schedule .left_sidebar .horizontal_list .column .icon {
+    margin: 9px 0px 0 0;
+    padding: 0;
+}
+.dros_schedule .left_sidebar .horizontal_list .column .icon img {
+    height: 28px;
+    float: left;
+    margin-right:12px;
+}
+.dros_schedule .left_sidebar .horizontal_list .column .icon .sub_title{
+    margin:0; 
+    padding:0; 
+    font-size: 18px; 
+    color: #222731; 
+    font-weight: 600;
+    float: left;
+    width:88%;
+}
+.dros_schedule .left_sidebar .horizontal_list .column .detail {
+    margin: 4px 0 0 0;
+    padding: 0 0 0 0px;
+    clear: both;
+}
+.dros_schedule .left_sidebar .horizontal_list .precent_detail {
+    margin: 5px 0 0 0;
+    padding: 0;
+    height: 35px;
+}
+.dros_schedule .left_sidebar .horizontal_list .precent_detail .text {
+    font-size: 14px;
+    color: #222731;
+    font-weight: 500;
+    margin: 0 0px 5px 0;
+}
+.dros_schedule .left_sidebar .horizontal_list .precent_detail .progress {
+    background: #e7ebf1;
+    border: none;
+    border-radius: 2px;
+    height: 8px;
+    margin-bottom:0;
+}
+.dros_schedule .left_sidebar .horizontal_list .precent_detail .progress .progress-bar-success {
+    background: #3bc440;
+}
+.dros_schedule .left_sidebar .btn a {
+    margin: 0;
+    float: right;
+    text-align: center;
+}
+
+.dros_schedule .btn_column {
+    margin: 30px 0 0 0;
+    padding: 0;
+    color: #ff3737;
+    font-size: 14px;
+    font-weight: 500;
+}
+.dros_schedule .btn_column a {
+    background: #ff3737;
+    color: #fff;
+    font-size: 16px;
+	line-height:17px;
+    padding: 12px 22px;
+    margin: 0 15px 0 0;
+    border-radius: 3px;
+    display:inline-block;
+}
+
+.dros_schedule .btn_column .disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.dros_schedule .btn {
+    width: 100%;
+    padding-bottom:0;
+    padding-right: 0;
+    padding-top:6px;
+    cursor: inherit;
+}
+.dros_schedule .btn a {
+    background: #ff7733;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 7px 16px;
+    margin: 0;
+    float: right;
+    text-align: center;
+    width: 122px;
+    display: block;
+    border-radius:4px;
+    text-decoration: none;
+}
+
+.span_disabled {
+    display: none;
+}
+.span_enabled {
+    display: inline-block;
+}
+.dros_schedule .start a{background: #01a7ed;}
+.dros_schedule .disabled{cursor: inherit;}
+.dros_schedule .disabled a{cursor: not-allowed; background: rgba(108,117,125,0.6);}
+.dros_schedule .btn_decl a{cursor: not-allowed; background: rgb(252, 55, 55);}
+
+.dros_schedule .btn_column a:hover{text-decoration:none; color:#fff;}
+.dros_schedule .horizontal_list span{font-weight:500; color: #888b8d;}
+
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn{opacity:1;}
+.dashboard_clinical .left_sidebar .disabled{cursor: text !important;}
+.dashboard_clinical .left_sidebar .disabled a{pointer-events: none; background:#caccce !important; color:rgba(16,16,16, 0.7) !important;}
+/** DROS Schedule page css start **/
+
+/** POPUP CSS START **/
+.schedule_popup {
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    position: fixed;
+}
+.schedule_popup .popup-box {
+    background: #fff;
+    width: 680px;
+    text-align: center;
+    padding:48px 51px;
+    height: fit-content;
+    border-radius: 4px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position:fixed;
+    box-shadow: 0px 0px 29px 11px rgba(0, 0, 0, 0.10) !important;
+    display: table;
+    -moz-transform: translate(0%,20%) !important;
+}
+.schedule_popup .popup-box .modal-content {
+    border: none;
+    box-shadow: none !important;
+    text-align: left;
+    background: rgba(0,0,0,0.0);
+    padding:0;
+}
+.schedule_popup .popup-box .modal-content .modal-body{padding:0; position: relative;}
+.schedule_popup .popup-box .modal-content .modal-body .close {
+    position: absolute;
+    background: #222731;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    display: block;
+    text-align: center;
+    top: -66px;
+    right: -68px;
+    border-radius: 100%;
+    font-weight: 600;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.schedule_popup .popup-box .modal-content .modal-body .close .cross {margin:0; padding:0; vertical-align:middle; height:35px; width:35px; display:block; text-align:center; position:relative;}
+.schedule_popup .popup-box .modal-content .modal-body .close .cross img{margin:auto; padding:0; width:19px; top:0px; bottom:0; left:0; right:0; position:absolute;}
+.schedule_popup .popup-box .modal-content .modal-body .close:hover{background:rgb(252, 55, 55);}
+.schedule_popup .popup-box .modal-content .modal-body .medium-title {
+    font-size: 27px;
+    font-weight: 600;
+    text-transform: inherit;
+    margin-bottom:17px;
+}
+.schedule_popup .popup-box .modal-content .modal-body p {
+    color: #888b8d;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom:15px;
+}
+.schedule_popup .popup-box .modal-content .modal-body .order {
+    margin: 28px auto;
+    padding: 0;
+    text-align: left;
+    display: table;
+}
+.schedule_popup .popup-box .modal-content .modal-body .order li {
+    margin: 0 0 8px 0;
+    padding: 0;
+    font-size: 16px;
+    color: #222731;
+    font-weight: 500;
+    width:100%;
+}
+.schedule_popup .popup-box .modal-content .modal-body select {
+    float: none;
+    clear: both;
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    height: 45px;
+    padding: 0 15px;
+    border-radius: 2px;
+    border: 1px solid #c5c9cc;
+    font-family:"Montserrat";
+    font-size: 14px;
+    background: url(../../../assets/img/arrow.png) no-repeat right center;
+    background-origin: content-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+}
+.schedule_popup .popup-box .modal-content .modal-body .btn {
+    margin: 28px auto 0;
+    padding: 0;
+    display: block;
+    width: 70%;
+    overflow:hidden;
+}
+.schedule_popup .popup-box .modal-content .modal-body .btn a {
+    margin: 0px 0 0 0;
+    padding: 12px 28px;
+    background: #fc3737;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+    color: #fff;
+    float: none;
+    width:100%;
+}
+
+.schedule_popup .popup-box .modal-content .confirm_title{font-size: 23px !important;}
+.schedule_popup .popup-box .modal-content .btn_column{margin-top:40px; text-align: right;}
+.disabled_chkbox {
+    height: 25px;
+    width: 25px;
+    background: #dedbdb;
+    float: left;
+    margin: 10px 18px 0 0;
+    border: 1px solid #d2d2d2;
+    cursor: not-allowed;
+}
+
+
+.schedule_popup .schedule_popup_confirom{padding:32px 35px;}
+.schedule_popup .schedule_popup_confirom .modal-content .modal-body .close{top:-53px; right:-53px;}
+.schedule_popup .schedule_popup_confirom .modal-content .modal-body .medium-title{color:#ff8038; font-size: 18px !important;}
+.schedule_popup .schedule_popup_confirom .modal-content .btn_column{margin-top:47px;}
+.schedule_popup .schedule_popup_confirom .modal-content .btn_column .confirm{
+    border:1px solid #00b13f;
+    background: #00b13f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 38px;
+    margin-right: 0px;
+    border-radius: 3px;
+}
+.schedule_popup .schedule_popup_confirom .modal-content .btn_column .not_confirm{
+    border:none;
+    background:rgba(0,0,0,0.0);
+    color: #232732;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 38px;
+    margin-right: 0px;
+    border-radius: 3px;
+}
+/** POPUP CSS END **/
+.expired {background: #A170DD !important;}
+.completed{ background: #38C343 !important;}
+
+
+@media (min-width: 992px) and (max-width: 1199px){
+    /** POPUP CSS START **/
+    .schedule_popup .popup-box{-moz-transform: translate(0%,10%) !important;}
+    .dros_schedule .left_sidebar .horizontal_list .form-check-label{width:100%;}
+    .dros_schedule .left_sidebar .horizontal_list .column{width:90%;}
+    .dros_schedule .left_sidebar .horizontal_list .column .detail{width:88%;}
+    /** POPUP CSS END **/
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .dros_schedule .calendar_column{padding-top:11px;}
+    .dros_schedule .calendar_column .forwad{margin-top:0;}	
+	.dros_schedule .calendar_column .forwad_mobile_view{display:block; margin-bottom:15px;}
+	.dros_schedule .date_rate_section .dr li:first-child{display:none;}
+    .dros_schedule .calendar-month-header{top:-36px; left:25px;}
+    .dros_schedule .calendar_column .input-group{padding-left:12px; padding-right: 12px; margin-top:0; margin-bottom:0;}
+    .dros_schedule .calendar_column .input-group .input-group-btn{vertical-align: top;}
+    .dros_schedule .calendar_column .input-group .input-group-btn .btn.btn-default{margin-top:0;}
+
+    .dros_schedule .left_sidebar .horizontal_list .form-check-label{margin-bottom:0;}
+    .dros_schedule .left_sidebar .horizontal_list{padding:9px 0px;}
+    .dros_schedule .left_sidebar .horizontal_list .precent_detail{margin-top:0px; margin-left: 30px; height:auto;}
+    .dros_schedule .left_sidebar .horizontal_list .precent_detail .text{width:41%; margin:0 15px 5px 21px; float: left;}
+    .dros_schedule .left_sidebar .horizontal_list .precent_detail .progress{float:left; width:53%; margin-top:6px;}
+    .dros_schedule .left_sidebar .horizontal_list .btn{padding-left:30px; margin-bottom:10px;}
+    .dros_schedule .btn_column a{font-size:14px; padding-top:10px; padding-bottom:10px;}
+    .dros_schedule .btn_column span{margin-top:18px; font-size:12px;}
+    .dros_schedule .date_rate_section .dr{margin-top:-3px;}
+    .dros_schedule .date_rate_section .dr li img{margin-top:3px; height:14px; vertical-align:top;}
+
+    .dros_schedule .left_sidebar .horizontal_list .column{margin-top:4px;}
+    .dros_schedule .left_sidebar .horizontal_list .column .icon{margin:6px 0px 0 7px;}
+    .dros_schedule .left_sidebar .horizontal_list .column .icon img{height:18px; margin-right:10px;}
+    .dros_schedule .left_sidebar .horizontal_list .sub_title{font-size:14px !important; margin-bottom:6px !important;}
+    .dros_schedule .left_sidebar .horizontal_list .column .detail{clear: both; padding-left:6px; margin-bottom:7px;}
+    .dros_schedule .left_sidebar .horizontal_list .column .detail span{font-size: 13px;}
+
+    /** POPUP CSS START **/
+    .schedule_popup .popup-box{width:80% !important; padding:25px 15px 16px !important; -moz-transform: translate(0%,10%) !important;}
+    .schedule_popup .popup-box .modal-content .modal-body .medium-title{font-size: 16px !important; line-height:24px !important;}
+    .schedule_popup .popup-box .modal-content .modal-body .order{margin-left: 15px !important;}
+    .schedule_popup .popup-box .modal-content .modal-body select{width:100% !important;}
+    .schedule_popup .popup-box .modal-content .modal-body .btn{width:100% !important;}
+    .schedule_popup .popup-box .modal-content .confirm_title{font-size: 20px !important; line-height: 28px !important;}
+    .schedule_popup .popup-box .modal-content .modal-body .close{top:-40px !important; right: -30px !important;}
+    /** POPUP CSS END **/
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .dros_schedule .calendar_column{padding-top:11px;}
+    .dros_schedule .calendar_column .mobile_view{display: block; margin-right:9px;}
+	.dros_schedule .calendar_column .forwad{margin:0px 15px 15px 0; display:none;}
+	.dros_schedule .calendar_column .forwad_mobile_view{display:block; margin-bottom:15px;}
+	.dros_schedule .title_box{margin-top:39px; margin-bottom:17px;}
+	.dros_schedule .title_box h3{font-size:18px; line-height:26px;}
+	.dros_schedule .date_rate_section .dr li:first-child{display:none;}
+    .dros_schedule .left_sidebar .horizontal_list input[type='checkbox']{width:18px; height:18px; margin-right:8px;}
+    .disabled_chkbox {width:18px; height: 18px; margin-right: 8px;}
+	.dros_schedule .left_sidebar .horizontal_list input[type='checkbox']:after{width:18px; height:18px; font-size: 12px;}
+	.dros_schedule .left_sidebar .horizontal_list input[type='checkbox']:checked:after{line-height:18px; font-size: 12px;}
+	
+    .dros_schedule .left_sidebar .horizontal_list .column{margin-top:4px; width:93%;}
+    .dros_schedule .left_sidebar .horizontal_list .column .icon{margin:6px 0px 0 7px;}
+    .dros_schedule .left_sidebar .horizontal_list .column .icon img{height:18px; margin-right:10px;}
+    .dros_schedule .left_sidebar .horizontal_list .sub_title{font-size:14px !important; margin-bottom:6px !important;}
+    .dros_schedule .left_sidebar .horizontal_list .column .detail{clear: both; padding-left:6px; margin-bottom:7px;}
+    .dros_schedule .left_sidebar .horizontal_list .column .detail span{font-size: 13px;}
+    
+	.dros_schedule .btn {padding: 0; margin: 10px 0 0 0;}
+	.dros_schedule .btn a{width:100%;}
+    .dros_schedule .calendar-month-header{top:-36px; left:25px;}
+    .dros_schedule .calendar_column .input-group{padding-left:12px; padding-right: 12px; margin-top:0; margin-bottom:0;}
+    .dros_schedule .calendar_column .input-group .input-group-btn{vertical-align: top;}
+    .dros_schedule .calendar_column .input-group .input-group-btn .btn.btn-default{margin-top:0;}
+
+    .dros_schedule .left_sidebar .horizontal_list .form-check-label{margin-bottom:0;}
+    .dros_schedule .title_section{margin-bottom:8px;}
+    .dros_schedule .date_rate_section{margin-bottom:8px;}
+    .dros_schedule .left_sidebar .horizontal_list{padding:9px 0px;}
+
+    .dros_schedule .left_sidebar .horizontal_list .precent_detail{margin-top:0px; margin-left: 30px; height:auto;}
+    .dros_schedule .left_sidebar .horizontal_list .precent_detail .text{width:44%; margin:0 5px 5px 2px; float: left; font-size:12px;}
+    .dros_schedule .left_sidebar .horizontal_list .precent_detail .progress{float:left; width:52%; height:5px; margin-top:6px;}
+    .dros_schedule .left_sidebar .horizontal_list .btn{padding-left:30px; margin-bottom:10px;}
+    .dros_schedule .left_sidebar .btn a{font-size:14px; padding-top:6px; padding-bottom:6px;}
+    .dros_schedule .btn_column a{font-size:14px; padding-top:10px; padding-bottom:10px;}
+    .dros_schedule .btn_column span{margin-top:18px; font-size:12px;}
+    .dros_schedule .date_rate_section .dr{margin-top:-3px;}
+    .dros_schedule .date_rate_section .dr li img{margin-top:3px; height:14px; vertical-align: top;}
+
+    /** POPUP CSS START **/
+    .schedule_popup .popup-box{width:80% !important; padding:25px 15px 16px !important; -moz-transform: translate(0%,10%) !important;}
+    .schedule_popup .popup-box .modal-content .modal-body .medium-title{font-size: 16px !important; line-height:24px !important;}
+    .schedule_popup .popup-box .modal-content .modal-body .order{margin-left: 15px !important;}
+    .schedule_popup .popup-box .modal-content .modal-body select{width:100% !important;}
+    .schedule_popup .popup-box .modal-content .modal-body .btn{width:100% !important; margin-top:30px;}
+    .schedule_popup .popup-box .modal-content .confirm_title{font-size: 20px !important; line-height: 28px !important;}
+    .schedule_popup .popup-box .modal-content .modal-body .close{top:-40px !important; right: -30px !important;}
+    
+    .schedule_popup .schedule_popup_confirom .modal-content .modal-body .medium-title{font-size: 16px !important; line-height: 30px; text-align: center;}
+    .schedule_popup .schedule_popup_confirom .modal-content .btn_column{margin-top:25px; text-align: center;}
+    .schedule_popup .schedule_popup_confirom .modal-content .btn_column .confirm{margin:0 auto 10px; display: table;}
+    .schedule_popup .schedule_popup_confirom .modal-content .btn_column .not_confirm{margin: 0 auto 16px; display: table;}    
+    /** POPUP CSS END **/
+}
+
+@media (min-width: 300px) and (max-width: 479px) {
+    .surveryschedule_container{min-height:100%; overflow:inherit; display:block;}
+    .dros_schedule{margin:18px 0 33px;}	
+
+    .dros_schedule .calendar_column{padding-top:11px;}
+    .dros_schedule .calendar_column .mobile_view{display: block; margin-right:9px;}
+	.dros_schedule .calendar_column .forwad{margin:0px 15px 15px 0; display:none;}
+	.dros_schedule .calendar_column .forwad_mobile_view{display:block; margin-bottom:15px;}
+	.dros_schedule .title_box{margin-top:39px; margin-bottom:17px;}
+	.dros_schedule .title_box h3{font-size:18px; line-height:26px;}
+	.dros_schedule .date_rate_section .dr li:first-child{display:none;}
+    .dros_schedule .left_sidebar .horizontal_list input[type='checkbox']{width:18px; height:18px; margin-right:8px;}
+    .disabled_chkbox {width:18px; height: 18px; margin-right: 8px;}
+	.dros_schedule .left_sidebar .horizontal_list input[type='checkbox']:after{width:18px; height:18px; font-size: 12px;}
+	.dros_schedule .left_sidebar .horizontal_list input[type='checkbox']:checked:after{line-height:18px; font-size: 12px;}
+	.dros_schedule .left_sidebar .horizontal_list .column{margin-top:4px; width: 88%;}
+    .dros_schedule .left_sidebar .horizontal_list .column .icon{margin:6px 0px 0 7px;}
+    .dros_schedule .left_sidebar .horizontal_list .column .icon img{height:18px; margin-right:10px;}
+    .dros_schedule .left_sidebar .horizontal_list .sub_title{font-size:14px !important; margin-bottom:6px !important; width:86% !important;}
+    .dros_schedule .left_sidebar .horizontal_list .column .detail{clear: both; padding-left:6px; margin-bottom:7px;}
+    .dros_schedule .left_sidebar .horizontal_list .column .detail span{font-size: 13px;}
+    
+	.dros_schedule .btn {padding: 0; margin: 10px 0 0 0;}
+	.dros_schedule .btn a{width:100%;}
+    .dros_schedule .calendar-month-header{top:-36px; left:25px;}
+    .dros_schedule .calendar_column .input-group{padding-left:12px; padding-right: 12px; margin-top:0; margin-bottom:0;}
+    .dros_schedule .calendar_column .input-group .input-group-btn{vertical-align: top;}
+    .dros_schedule .calendar_column .input-group .input-group-btn .btn.btn-default{margin-top:0;}
+    .dros_schedule .btn_column{margin-top:10px;}
+
+    .dros_schedule .left_sidebar .horizontal_list .form-check-label{margin-bottom:0;}
+    .dros_schedule .title_section{margin-bottom:8px;}
+    .dros_schedule .date_rate_section{margin-bottom:8px;}
+    .dros_schedule .left_sidebar .horizontal_list{padding:9px 0px;}
+
+    .dros_schedule .left_sidebar .horizontal_list .precent_detail{margin-top:0px; margin-left: 30px; height:auto;}
+    .dros_schedule .left_sidebar .horizontal_list .precent_detail .text{width:53%; margin:0 5px 5px 2px; float: left; font-size:12px;}
+    .dros_schedule .left_sidebar .horizontal_list .precent_detail .progress{float:left; width:41%; height:5px; margin-top:6px;}
+    .dros_schedule .left_sidebar .horizontal_list .btn{padding-left:30px; margin-bottom:10px;}
+    .dros_schedule .left_sidebar .btn a{font-size:14px; padding-top:6px; padding-bottom:6px;}
+    .dros_schedule .btn_column a{font-size:14px; padding-top:10px; padding-bottom:10px;}
+    .dros_schedule .btn_column span{margin-top:18px; font-size:12px;}
+    .dros_schedule .date_rate_section .dr{margin-top:-3px;}
+    .dros_schedule .date_rate_section .dr li img{margin-top:3px; height:14px; vertical-align: top;}
+
+    /** POPUP CSS START **/
+    .schedule_popup .popup-box{width:80% !important; padding:25px 15px 16px !important; -moz-transform: translate(0%,10%) !important;}
+    .schedule_popup .popup-box .modal-content .modal-body .medium-title{font-size: 16px !important; line-height:24px !important;}
+    .schedule_popup .popup-box .modal-content .modal-body .order{margin-left: 15px !important;}
+    .schedule_popup .popup-box .modal-content .modal-body select{width:100% !important;}
+    .schedule_popup .popup-box .modal-content .modal-body .btn{width:100% !important; margin-top:30px;}
+    .schedule_popup .popup-box .modal-content .confirm_title{font-size: 20px !important; line-height: 28px !important;}
+    .schedule_popup .popup-box .modal-content .modal-body .close{top:-40px !important; right: -30px !important;}
+
+    .schedule_popup .popup-box .modal-content .modal-body p{font-size: 13px; line-break: 22px;}
+    .schedule_popup .popup-box .modal-content .modal-body .order li{font-size: 13px;}
+    .schedule_popup .popup-box .modal-content .modal-body .btn a{padding-top:10px; padding-bottom:10px; font-size:14px;}
+    .schedule_popup .popup-box .modal-content .modal-body select{height:35px; background-size:auto 25%;}
+
+    .schedule_popup .schedule_popup_confirom .modal-content .modal-body .medium-title{font-size: 16px !important; line-height: 30px; text-align: center;}
+    .schedule_popup .schedule_popup_confirom .modal-content .btn_column{margin-top:25px; text-align: center;}
+    .schedule_popup .schedule_popup_confirom .modal-content .btn_column .confirm{margin:0 auto 10px; display: table;}
+    .schedule_popup .schedule_popup_confirom .modal-content .btn_column .not_confirm{margin: 0 auto 16px; display: table;}    
+    /** POPUP CSS END **/
+}
